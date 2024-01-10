@@ -1,13 +1,17 @@
+import 'package:expense_xpress/auth/onboarding_screen.dart';
 import 'package:expense_xpress/generated/l10n.dart';
 import 'package:expense_xpress/services/lang/l10n.dart';
 import 'package:expense_xpress/services/models/language.dart';
 import 'package:expense_xpress/services/providers/language_provider.dart';
 import 'package:expense_xpress/utils/colors.dart';
+import 'package:expense_xpress/utils/contants.dart';
 import 'package:expense_xpress/utils/styles.dart';
+import 'package:expense_xpress/widgets/global/animate.dart';
 import 'package:expense_xpress/widgets/global/buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LanguageSelectionScreen extends StatefulWidget {
   const LanguageSelectionScreen({super.key});
@@ -102,7 +106,7 @@ Widget _buildUI(
     backgroundColor: AppColors.background,
     appBar: AppBar(
       title: Text(
-        AppLocalizations.of(context)?.language ?? '',
+        S.of(context)?.language ?? '',
         style: AppStyles.h2.copyWith(
           fontWeight: FontWeight.w600,
         ),
@@ -134,12 +138,31 @@ Widget _buildUI(
               vertical: 8,
             ),
             child: Buttons.primary(
-                child: Text(AppLocalizations.of(context)?.save ?? '',
+                child: Text(S.of(context)?.save ?? '',
                     style: AppStyles.h4.copyWith(
                       fontSize: 18,
                       color: Colors.white,
                     )),
-                onPressed: () {}),
+                onPressed: () {
+                  SharedPreferences.getInstance().then((prefs) {
+                    prefs.setString(
+                        Constants.language, _languages[currentSelected].code);
+                    // Navigator.pop(context);
+                    bool isOnboarding =
+                        prefs.getBool(Constants.isOnboarding) ?? false;
+                    if (isOnboarding) {
+                      // user actually see onboarding screen
+                    } else {
+                      // user not see onboarding screen yet
+                      // push to onboarding screen
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                        return AppAnimate()
+                            .fade(child: const OnBoardingScreen());
+                      }));
+                    }
+                  });
+                }),
           )
         ],
       ),

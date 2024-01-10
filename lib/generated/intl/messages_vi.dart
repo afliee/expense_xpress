@@ -21,5 +21,26 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'vi';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "hello": MessageLookupByLibrary.simpleMessage("Xin chào"),
+        "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
+        "onBoardingDescription1": MessageLookupByLibrary.simpleMessage(
+            "Quản lý tài chính cá nhân của bạn với ứng dụng tiện lợi."),
+        "onBoardingDescription2": MessageLookupByLibrary.simpleMessage(
+            "Theo dõi dòng tiền của bạn để biết bạn đã chi tiêu như thế nào."),
+        "onBoardingDescription3": MessageLookupByLibrary.simpleMessage(
+            "Lập kế hoạch ngân sách của bạn để tiết kiệm tiền."),
+        "onBoardingTitle1":
+            MessageLookupByLibrary.simpleMessage("Kiểm soát tài chính của bạn"),
+        "onBoardingTitle2":
+            MessageLookupByLibrary.simpleMessage("Theo dõi dòng tiền của bạn"),
+        "onBoardingTitle3":
+            MessageLookupByLibrary.simpleMessage("Làm chủ ngân sách của bạn"),
+        "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "save": MessageLookupByLibrary.simpleMessage("Lưu"),
+        "selectLanguage": MessageLookupByLibrary.simpleMessage("Chọn ngôn ngữ"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Đăng Nhập"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Đăng Ký")
+      };
 }

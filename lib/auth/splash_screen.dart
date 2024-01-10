@@ -1,3 +1,4 @@
+import 'package:expense_xpress/auth/onboarding_screen.dart';
 import 'package:expense_xpress/pages/select_language_screen.dart';
 import 'package:expense_xpress/utils/contants.dart';
 import 'package:expense_xpress/utils/images.dart';
@@ -75,6 +76,20 @@ class _SplashScreenState extends State<SplashScreen> {
         var languageSelected = prefs.getString(Constants.language);
         if (languageSelected != null) {
           // handle logic here
+          if (isAuth) {
+          } else {
+            if (isOnboarding) {
+              // user actually see onboarding screen
+            } else {
+              // user not see onboarding screen yet
+              // push to onboarding screen
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (BuildContext context) {
+                return AppAnimate()
+                    .fade(child: const OnBoardingScreen());
+              }));
+            }
+          }
         } else {
           // user not select language yet
           // push to select language screen

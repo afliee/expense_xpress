@@ -1,0 +1,16 @@
+{
+  "hello": "Xin chào",
+  "selectLanguage": "Chọn ngôn ngữ",
+  "language": "Ngôn ngữ",
+  "save": "Lưu",
+  "onBoardingTitle1": "Kiểm soát tài chính của bạn",
+  "onBoardingTitle2": "Theo dõi dòng tiền của bạn",
+  "onBoardingTitle3": "Làm chủ ngân sách của bạn",
+  "onBoardingDescription1": "Quản lý tài chính cá nhân của bạn với ứng dụng tiện lợi.",
+  "onBoardingDescription2": "Theo dõi dòng tiền của bạn để biết bạn đã chi tiêu như thế nào.",
+  "onBoardingDescription3": "Lập kế hoạch ngân sách của bạn để tiết kiệm tiền.",
+  "signIn": "Đăng Nhập",
+  "signUp": "Đăng Ký",
+  "phoneNumber": "Số điện thoại",
+  "password": "Mật khẩu"
+}

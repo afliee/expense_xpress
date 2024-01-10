@@ -21,5 +21,26 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "hello": MessageLookupByLibrary.simpleMessage("Hello"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "onBoardingDescription1": MessageLookupByLibrary.simpleMessage(
+            "Become your own money manager and make every cent count."),
+        "onBoardingDescription2": MessageLookupByLibrary.simpleMessage(
+            "Track your transaction easily, with categories and financial report "),
+        "onBoardingDescription3": MessageLookupByLibrary.simpleMessage(
+            "Setup your budget for each category so you in control"),
+        "onBoardingTitle1": MessageLookupByLibrary.simpleMessage(
+            "Gain total control of your money"),
+        "onBoardingTitle2":
+            MessageLookupByLibrary.simpleMessage("Know where your money goes"),
+        "onBoardingTitle3":
+            MessageLookupByLibrary.simpleMessage("Planning ahead"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "selectLanguage": MessageLookupByLibrary.simpleMessage("Language"),
+        "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up")
+      };
 }

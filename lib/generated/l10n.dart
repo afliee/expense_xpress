@@ -49,6 +49,146 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Hello`
+  String get hello {
+    return Intl.message(
+      'Hello',
+      name: 'hello',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get selectLanguage {
+    return Intl.message(
+      'Language',
+      name: 'selectLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gain total control of your money`
+  String get onBoardingTitle1 {
+    return Intl.message(
+      'Gain total control of your money',
+      name: 'onBoardingTitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Know where your money goes`
+  String get onBoardingTitle2 {
+    return Intl.message(
+      'Know where your money goes',
+      name: 'onBoardingTitle2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Planning ahead`
+  String get onBoardingTitle3 {
+    return Intl.message(
+      'Planning ahead',
+      name: 'onBoardingTitle3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Become your own money manager and make every cent count.`
+  String get onBoardingDescription1 {
+    return Intl.message(
+      'Become your own money manager and make every cent count.',
+      name: 'onBoardingDescription1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track your transaction easily, with categories and financial report `
+  String get onBoardingDescription2 {
+    return Intl.message(
+      'Track your transaction easily, with categories and financial report ',
+      name: 'onBoardingDescription2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setup your budget for each category so you in control`
+  String get onBoardingDescription3 {
+    return Intl.message(
+      'Setup your budget for each category so you in control',
+      name: 'onBoardingDescription3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message(
+      'Sign In',
+      name: 'signIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get signUp {
+    return Intl.message(
+      'Sign Up',
+      name: 'signUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

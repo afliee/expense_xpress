@@ -7,11 +7,11 @@ class AppAnimate {
   static const Duration durationSlow = Duration(milliseconds: 500);
   static const Duration durationVerySlow = Duration(milliseconds: 1000);
 
-  int _duration = 300;
-  int _delay = 0;
+  Duration _duration = const Duration(milliseconds: 300);
+  Duration _delay = Duration.zero;
   Curve _curve = Curves.easeInOut;
 
-  AppAnimate({int? duration, int? delay, Curve? curve}) {
+  AppAnimate({Duration? duration, Duration? delay, Curve? curve}) {
     _duration = duration ?? _duration;
     _delay = delay ?? _delay;
     _curve = curve ?? _curve;
@@ -21,8 +21,8 @@ class AppAnimate {
     return Animate(
       effects: [
         FadeEffect(
-          duration: Duration(milliseconds: _duration),
-          delay: Duration(milliseconds: _delay),
+          duration: _duration,
+          delay: _delay,
           curve: _curve,
         ),
       ],
@@ -34,8 +34,8 @@ class AppAnimate {
     return Animate(
       effects: [
         SlideEffect(
-          duration: Duration(milliseconds: _duration),
-          delay: Duration(milliseconds: _delay),
+          duration: _duration,
+          delay: _delay,
           curve: _curve,
         ),
       ],
@@ -47,8 +47,8 @@ class AppAnimate {
     return Animate(
       effects: [
         ScaleEffect(
-          duration: Duration(milliseconds: _duration),
-          delay: Duration(milliseconds: _delay),
+          duration: _duration,
+          delay: _delay,
           curve: _curve,
         ),
       ],
