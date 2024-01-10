@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class AppStyles {
   static const double padding = 16.0;
-  static const double buttonPadding = 8.0;
+  static const double buttonPadding = 16.0;
   static const double buttonBorderRadius = 12.0;
 
   static const h1 = TextStyle(
-    fontSize: 36,
+    fontSize: 32,
     fontWeight: FontWeight.bold,
     fontFamily: AppFonts.inter,
   );

@@ -1,5 +1,6 @@
 {
   "hello": "Hello",
   "selectLanguage": "Language",
-  "language": "Language"
+  "language": "Language",
+  "save": "Save"
 }
