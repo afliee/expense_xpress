@@ -4,4 +4,5 @@ class AppIcons {
 
   static const String iconEnLang = '$_imagesPath/ic_en.png';
   static const String iconViLang = '$_imagesPath/ic_vi.png';
+  static const String iconGoogle = '$_imagesPath/ic_google.png';
 }

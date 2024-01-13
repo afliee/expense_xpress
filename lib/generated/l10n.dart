@@ -189,6 +189,266 @@ class S {
       args: [],
     );
   }
+
+  /// `Forgot Password?`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account yet? `
+  String get dontHaveAccount {
+    return Intl.message(
+      'Don\'t have an account yet? ',
+      name: 'dontHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account? `
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have an account? ',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter some text`
+  String get requireSomeText {
+    return Intl.message(
+      'Please enter some text',
+      name: 'requireSomeText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number`
+  String get phoneNumberException {
+    return Intl.message(
+      'Please enter your phone number',
+      name: 'phoneNumberException',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your password`
+  String get passwordException {
+    return Intl.message(
+      'Please enter your password',
+      name: 'passwordException',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number is not valid`
+  String get phoneNumberNotValid {
+    return Intl.message(
+      'Phone number is not valid',
+      name: 'phoneNumberNotValid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number is required`
+  String get phoneNumberRequired {
+    return Intl.message(
+      'Phone number is required',
+      name: 'phoneNumberRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters`
+  String get passwordRequired {
+    return Intl.message(
+      'Password must be at least 8 characters',
+      name: 'passwordRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your phone number`
+  String get phoneNumberHint {
+    return Intl.message(
+      'Please enter your phone number',
+      name: 'phoneNumberHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter your password`
+  String get passwordHint {
+    return Intl.message(
+      'Please enter your password',
+      name: 'passwordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In with Google`
+  String get signInWithGoogle {
+    return Intl.message(
+      'Sign In with Google',
+      name: 'signInWithGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In Error`
+  String get signInErrorTitle {
+    return Intl.message(
+      'Sign In Error',
+      name: 'signInErrorTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please agree to our Terms of Service and Privacy Policy`
+  String get termRequired {
+    return Intl.message(
+      'Please agree to our Terms of Service and Privacy Policy',
+      name: 'termRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You already have an account`
+  String get alreadySignedUp {
+    return Intl.message(
+      'You already have an account',
+      name: 'alreadySignedUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There is an issue with this method\n Please try again later`
+  String get maybeIssueWithThisMethod {
+    return Intl.message(
+      'There is an issue with this method\n Please try again later',
+      name: 'maybeIssueWithThisMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message(
+      'OK',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Name`
+  String get yourName {
+    return Intl.message(
+      'Your Name',
+      name: 'yourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By signing up, you agree to our `
+  String get agreeToTerms {
+    return Intl.message(
+      'By signing up, you agree to our ',
+      name: 'agreeToTerms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms of Service`
+  String get termsOfService {
+    return Intl.message(
+      'Terms of Service',
+      name: 'termsOfService',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` and `
+  String get and {
+    return Intl.message(
+      ' and ',
+      name: 'and',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verifying your phone number`
+  String get yourPhoneVerifying {
+    return Intl.message(
+      'Verifying your phone number',
+      name: 'yourPhoneVerifying',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your code is on the way`
+  String get yourCodeOnTheWay {
+    return Intl.message(
+      'Your code is on the way',
+      name: 'yourCodeOnTheWay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Checking your phone {phoneNumber} and enter the code in next step to verify your phone number`
+  String checkingYourPhone(String phoneNumber) {
+    return Intl.message(
+      'Checking your phone $phoneNumber and enter the code in next step to verify your phone number',
+      name: 'checkingYourPhone',
+      desc: '',
+      args: [phoneNumber],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,3 +1,5 @@
+import 'package:expense_xpress/auth/sign_in_screen.dart';
+import 'package:expense_xpress/auth/sign_up_screen.dart';
 import 'package:expense_xpress/generated/l10n.dart';
 import 'package:expense_xpress/utils/colors.dart';
 import 'package:expense_xpress/utils/contants.dart';
@@ -119,7 +121,12 @@ Widget _buildButtons(context) {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              onPressed: () {})),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignUpScreen(isFromOnBoarding: true)));
+              })),
       const SizedBox(height: 16),
       SizedBox(
           width: double.infinity,
@@ -131,7 +138,13 @@ Widget _buildButtons(context) {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              onPressed: () {})),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const SignInScreen(isFromOnBoarding: true)));
+              })),
     ],
   );
 }

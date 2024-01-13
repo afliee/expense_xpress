@@ -6,6 +6,8 @@ class AppStyles {
   static const double buttonPadding = 16.0;
   static const double buttonBorderRadius = 12.0;
   static const double indicatorSelectedSize = 16.0;
+  static const double textFieldHorizontalPadding = 16.0;
+  static const double textFieldVerticalPadding = 20.0;
 
   static const h1 = TextStyle(
     fontSize: 32,
@@ -42,4 +44,7 @@ class AppStyles {
     fontWeight: FontWeight.bold,
     fontFamily: AppFonts.inter,
   );
+
+  static Widget sizedBoxSpace({double? height, double? width}) =>
+      SizedBox(height: height, width: width);
 }

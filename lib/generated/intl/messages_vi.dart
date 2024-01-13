@@ -20,10 +20,29 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'vi';
 
+  static String m0(phoneNumber) =>
+      "Kiểm tra số điện thoại ${phoneNumber} của bạn và nhập mã xác minh ở bước kế tiếp để xác minh số điện thoại của bạn";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "agreeToTerms":
+            MessageLookupByLibrary.simpleMessage("Tôi đồng ý với các "),
+        "alreadyHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
+        "alreadySignedUp":
+            MessageLookupByLibrary.simpleMessage("Bạn đã đăng ký"),
+        "and": MessageLookupByLibrary.simpleMessage(" và "),
+        "checkingYourPhone": m0,
+        "dontHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Bạn chưa có tài khoản?"),
+        "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
         "hello": MessageLookupByLibrary.simpleMessage("Xin chào"),
         "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
+        "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
+            "Có vẻ phương thực hiện tại đang gặp vấn đề\n Hãy thử lại sau"),
+        "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onBoardingDescription1": MessageLookupByLibrary.simpleMessage(
             "Quản lý tài chính cá nhân của bạn với ứng dụng tiện lợi."),
         "onBoardingDescription2": MessageLookupByLibrary.simpleMessage(
@@ -37,10 +56,41 @@ class MessageLookup extends MessageLookupByLibrary {
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Làm chủ ngân sách của bạn"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
+        "passwordException":
+            MessageLookupByLibrary.simpleMessage("Nhập mật khẩu của bạn"),
+        "passwordHint":
+            MessageLookupByLibrary.simpleMessage("Hãy nhập mật khẩu của bạn"),
+        "passwordRequired": MessageLookupByLibrary.simpleMessage(
+            "Mật khẩu chứa ít nhất 8 ký tự"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
+        "phoneNumberException":
+            MessageLookupByLibrary.simpleMessage("Nhập số điện thoại của bạn"),
+        "phoneNumberHint": MessageLookupByLibrary.simpleMessage(
+            "Hãy nhập số điện thoại của bạn"),
+        "phoneNumberNotValid":
+            MessageLookupByLibrary.simpleMessage("Số điện thoại không hợp lệ"),
+        "phoneNumberRequired":
+            MessageLookupByLibrary.simpleMessage("Yêu cầu số điện thoại"),
+        "privacyPolicy":
+            MessageLookupByLibrary.simpleMessage("Chính sách bảo mật"),
+        "requireSomeText":
+            MessageLookupByLibrary.simpleMessage("Yêu cầu nhập dữ liệu"),
         "save": MessageLookupByLibrary.simpleMessage("Lưu"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Chọn ngôn ngữ"),
         "signIn": MessageLookupByLibrary.simpleMessage("Đăng Nhập"),
-        "signUp": MessageLookupByLibrary.simpleMessage("Đăng Ký")
+        "signInErrorTitle":
+            MessageLookupByLibrary.simpleMessage("Lỗi đăng nhập"),
+        "signInWithGoogle":
+            MessageLookupByLibrary.simpleMessage("Đăng nhập với Google"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Đăng Ký"),
+        "termRequired": MessageLookupByLibrary.simpleMessage(
+            "Hãy đồng ý với các điều khoản và chính sách của chúng tôi"),
+        "termsOfService":
+            MessageLookupByLibrary.simpleMessage("Điều khoản dịch vụ"),
+        "yourCodeOnTheWay": MessageLookupByLibrary.simpleMessage(
+            "Mã xác minh đang được gửi đến số điện thoại của bạn"),
+        "yourName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
+        "yourPhoneVerifying": MessageLookupByLibrary.simpleMessage(
+            "Đang xác minh số điện thoại của bạn")
       };
 }

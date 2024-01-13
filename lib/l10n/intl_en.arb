@@ -12,5 +12,38 @@
   "signIn": "Sign In",
   "signUp": "Sign Up",
   "phoneNumber": "Phone Number",
-  "password": "Password"
+  "password": "Password",
+  "forgotPassword": "Forgot Password?",
+  "dontHaveAccount": "Don't have an account yet? ",
+  "alreadyHaveAccount": "Already have an account? ",
+  "requireSomeText": "Please enter some text",
+  "phoneNumberException": "Please enter your phone number",
+  "passwordException": "Please enter your password",
+  "phoneNumberNotValid": "Phone number is not valid",
+  "phoneNumberRequired": "Phone number is required",
+  "passwordRequired": "Password must be at least 8 characters",
+  "phoneNumberHint": "Please enter your phone number",
+  "passwordHint": "Please enter your password",
+  "signInWithGoogle": "Sign In with Google",
+  "signInErrorTitle": "Sign In Error",
+  "error": "Error",
+  "termRequired": "Please agree to our Terms of Service and Privacy Policy",
+  "alreadySignedUp": "You already have an account",
+  "maybeIssueWithThisMethod": "There is an issue with this method\n Please try again later",
+  "ok": "OK",
+  "yourName": "Your Name",
+  "agreeToTerms": "By signing up, you agree to our ",
+  "termsOfService": "Terms of Service",
+  "and": " and ",
+  "privacyPolicy": "Privacy Policy",
+  "yourPhoneVerifying": "Verifying your phone number",
+  "yourCodeOnTheWay": "Your code is on the way",
+  "checkingYourPhone": "Checking your phone {phoneNumber} and enter the code in next step to verify your phone number",
+  "@checkingYourPhone": {
+    "placeholders": {
+      "phoneNumber": {
+        "type": "String"
+      }
+    }
+  }
 }

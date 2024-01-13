@@ -20,10 +20,29 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(phoneNumber) =>
+      "Checking your phone ${phoneNumber} and enter the code in next step to verify your phone number";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "agreeToTerms": MessageLookupByLibrary.simpleMessage(
+            "By signing up, you agree to our "),
+        "alreadyHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account? "),
+        "alreadySignedUp":
+            MessageLookupByLibrary.simpleMessage("You already have an account"),
+        "and": MessageLookupByLibrary.simpleMessage(" and "),
+        "checkingYourPhone": m0,
+        "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
+            "Don\'t have an account yet? "),
+        "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "hello": MessageLookupByLibrary.simpleMessage("Hello"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
+            "There is an issue with this method\n Please try again later"),
+        "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onBoardingDescription1": MessageLookupByLibrary.simpleMessage(
             "Become your own money manager and make every cent count."),
         "onBoardingDescription2": MessageLookupByLibrary.simpleMessage(
@@ -37,10 +56,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Planning ahead"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordException":
+            MessageLookupByLibrary.simpleMessage("Please enter your password"),
+        "passwordHint":
+            MessageLookupByLibrary.simpleMessage("Please enter your password"),
+        "passwordRequired": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 8 characters"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "phoneNumberException": MessageLookupByLibrary.simpleMessage(
+            "Please enter your phone number"),
+        "phoneNumberHint": MessageLookupByLibrary.simpleMessage(
+            "Please enter your phone number"),
+        "phoneNumberNotValid":
+            MessageLookupByLibrary.simpleMessage("Phone number is not valid"),
+        "phoneNumberRequired":
+            MessageLookupByLibrary.simpleMessage("Phone number is required"),
+        "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "requireSomeText":
+            MessageLookupByLibrary.simpleMessage("Please enter some text"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Language"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
-        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up")
+        "signInErrorTitle":
+            MessageLookupByLibrary.simpleMessage("Sign In Error"),
+        "signInWithGoogle":
+            MessageLookupByLibrary.simpleMessage("Sign In with Google"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "termRequired": MessageLookupByLibrary.simpleMessage(
+            "Please agree to our Terms of Service and Privacy Policy"),
+        "termsOfService":
+            MessageLookupByLibrary.simpleMessage("Terms of Service"),
+        "yourCodeOnTheWay":
+            MessageLookupByLibrary.simpleMessage("Your code is on the way"),
+        "yourName": MessageLookupByLibrary.simpleMessage("Your Name"),
+        "yourPhoneVerifying":
+            MessageLookupByLibrary.simpleMessage("Verifying your phone number")
       };
 }

@@ -4,7 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Buttons {
-  static Widget primary({required Widget child, required Function() onPressed}) {
+  static Widget primary(
+      {required Widget child, required Function() onPressed}) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -23,7 +24,8 @@ class Buttons {
     );
   }
 
-  static Widget secondary({required Widget child, required Function() onPressed}) {
+  static Widget secondary(
+      {required Widget child, required Function() onPressed}) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -34,6 +36,54 @@ class Buttons {
           horizontal: AppStyles.buttonPadding,
           vertical: AppStyles.buttonPadding,
         ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppStyles.buttonBorderRadius),
+        ),
+      ),
+      child: child,
+    );
+  }
+
+  static Widget stroke(
+      {required Widget child,
+      required Function() onPressed,
+      EdgeInsets? padding,
+      Color? color}) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        elevation: 5,
+        primary: color ?? Colors.white,
+        shadowColor: Colors.grey,
+        padding: padding ??
+            const EdgeInsets.symmetric(
+              horizontal: AppStyles.buttonPadding,
+              vertical: AppStyles.buttonPadding,
+            ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppStyles.buttonBorderRadius),
+        ),
+      ),
+      child: child,
+    );
+  }
+
+  static Widget disabled(
+      {required Widget child,
+      required Function() onPressed,
+      EdgeInsets? padding,
+      Color? color}) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        elevation: 5,
+        primary: color ?? Colors.white,
+        shadowColor: Colors.grey,
+        padding: padding ??
+            const EdgeInsets.symmetric(
+              horizontal: AppStyles.buttonPadding,
+              vertical: AppStyles.buttonPadding,
+            ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppStyles.buttonBorderRadius),
         ),

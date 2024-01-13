@@ -9,6 +9,7 @@ import 'package:expense_xpress/utils/styles.dart';
 import 'package:expense_xpress/widgets/global/animate.dart';
 import 'package:expense_xpress/widgets/global/buttons.dart';
 import 'package:flutter/material.dart';
+
 // import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -75,12 +76,14 @@ Widget _buildLanguageItem(
             child: RichText(
           text: TextSpan(
             text: language.name,
-            style: AppStyles.h3.copyWith(color: Colors.black),
+            style: AppStyles.h3
+                .copyWith(color: Colors.black, fontWeight: FontWeight.w400),
             children: [
               TextSpan(
                 text: ' (${language.code})',
                 style: AppStyles.h4.copyWith(
                   color: AppColors.secondary,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],
