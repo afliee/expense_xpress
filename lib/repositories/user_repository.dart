@@ -75,4 +75,12 @@ class UserRepository extends Repository<User, String> {
       return users.isNotEmpty;
     });
   }
+
+  Future<User> getCurrentUser() async {
+    var user = await DB.auth.currentUser;
+    if (user == null) {
+      return Future.error('User not found');
+    }
+    return await get(user.uid);
+  }
 }

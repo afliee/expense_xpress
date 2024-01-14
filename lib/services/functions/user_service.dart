@@ -16,4 +16,12 @@ class UserService {
     }
     return false;
   }
+
+  static getCurrentUser() async {
+    return await _userRepository.getCurrentUser();
+  }
+
+  static Future<User> getUser(String uid) async {
+    return await _userRepository.get(uid);
+  }
 }

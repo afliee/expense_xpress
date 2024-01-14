@@ -350,6 +350,16 @@ class S {
     );
   }
 
+  /// `already in use`
+  String get alreadyInUse {
+    return Intl.message(
+      'already in use',
+      name: 'alreadyInUse',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `There is an issue with this method\n Please try again later`
   String get maybeIssueWithThisMethod {
     return Intl.message(
@@ -447,6 +457,116 @@ class S {
       name: 'checkingYourPhone',
       desc: '',
       args: [phoneNumber],
+    );
+  }
+
+  /// `Verification`
+  String get verificationTitle {
+    return Intl.message(
+      'Verification',
+      name: 'verificationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your Verification Code`
+  String get enterCode {
+    return Intl.message(
+      'Enter your Verification Code',
+      name: 'enterCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We sent a verification code to `
+  String get weSentVerificationCode {
+    return Intl.message(
+      'We sent a verification code to ',
+      name: 'weSentVerificationCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can check your phone`
+  String get youCanCheckYourPhone {
+    return Intl.message(
+      'You can check your phone',
+      name: 'youCanCheckYourPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend Code`
+  String get resendCode {
+    return Intl.message(
+      'Resend Code',
+      name: 'resendCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify`
+  String get verify {
+    return Intl.message(
+      'Verify',
+      name: 'verify',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification code is required`
+  String get verificationCodeRequired {
+    return Intl.message(
+      'Verification code is required',
+      name: 'verificationCodeRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I didn’t received the code? Send again`
+  String get didntReceiveCode {
+    return Intl.message(
+      'I didn’t received the code? Send again',
+      name: 'didntReceiveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid code! Please try again`
+  String get invalidCode {
+    return Intl.message(
+      'Invalid code! Please try again',
+      name: 'invalidCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many attempts! Please try again later`
+  String get tooManyAttempts {
+    return Intl.message(
+      'Too many attempts! Please try again later',
+      name: 'tooManyAttempts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please wait {seconds} seconds to resend the code`
+  String waitToResendCode(String seconds) {
+    return Intl.message(
+      'Please wait $seconds seconds to resend the code',
+      name: 'waitToResendCode',
+      desc: '',
+      args: [seconds],
     );
   }
 }

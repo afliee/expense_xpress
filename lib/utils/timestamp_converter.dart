@@ -13,4 +13,10 @@ class TimeStampConverter implements JsonConverter<DateTime, Timestamp> {
   Timestamp toJson(DateTime object) {
     return Timestamp.fromDate(object);
   }
+
+  static String secondsToMinutes(int seconds) {
+    var minutes = (seconds / 60).floor();
+    var remainingSeconds = seconds % 60;
+    return '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
+  }
 }

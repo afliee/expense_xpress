@@ -8,7 +8,7 @@ class AppStyles {
   static const double indicatorSelectedSize = 16.0;
   static const double textFieldHorizontalPadding = 16.0;
   static const double textFieldVerticalPadding = 20.0;
-
+  static const double pinMargin = 4.0;
   static const h1 = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.bold,

@@ -12,8 +12,11 @@ class Constants {
   static const String countryCode = "+84";
   static const String appName = "Expense Xpress";
   static const String isAuth = "isAuth";
+  static const String uid = "uid";
   static const String isOnboarding = "isOnboarding";
   static const String isDarkMode = "isDarkMode";
   static const String isFirstTime = "isFirstTime";
   static const String language = "language";
+  static const String signUpAction = 'sign_up';
+  static const String signInAction = 'sign_in';
 }

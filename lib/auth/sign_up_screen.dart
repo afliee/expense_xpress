@@ -71,6 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             builder: (context) => CodeSending(
                   phoneNumber: _phoneNumberController.text,
                   name: _nameController.text,
+                  from: 'sign_up',
                 )));
   }
 
@@ -83,15 +84,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _phoneNumberController = TextEditingController();
     _nameController = TextEditingController();
     _passwordController = TextEditingController();
-
-    // check if data in navigator is not null
-    // if (ModalRoute.of(context)!.settings.arguments != null) {
-    //   var data = ModalRoute.of(context)!.settings.arguments as List;
-    //   print('data: $data');
-    //   _phoneNumberController.text = data[0];
-    //   _nameController.text = data[1];
-    //   _isAgreeToTerms = data[2];
-    // }
   }
 
   _getDataFromCodeSending() {

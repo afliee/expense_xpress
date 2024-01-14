@@ -23,22 +23,31 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(phoneNumber) =>
       "Kiểm tra số điện thoại ${phoneNumber} của bạn và nhập mã xác minh ở bước kế tiếp để xác minh số điện thoại của bạn";
 
+  static String m1(seconds) =>
+      "Vui lòng đợi ${seconds} giây để gửi lại mã xác minh";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "agreeToTerms":
             MessageLookupByLibrary.simpleMessage("Tôi đồng ý với các "),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Bạn đã có tài khoản?"),
+        "alreadyInUse": MessageLookupByLibrary.simpleMessage("đã được sử dụng"),
         "alreadySignedUp":
             MessageLookupByLibrary.simpleMessage("Bạn đã đăng ký"),
         "and": MessageLookupByLibrary.simpleMessage(" và "),
         "checkingYourPhone": m0,
+        "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
+            "Không nhận được mã xác minh? Gửi lại"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Bạn chưa có tài khoản?"),
+        "enterCode": MessageLookupByLibrary.simpleMessage("Nhập mã xác minh"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
         "hello": MessageLookupByLibrary.simpleMessage("Xin chào"),
+        "invalidCode":
+            MessageLookupByLibrary.simpleMessage("Mã xác minh không hợp lệ"),
         "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
             "Có vẻ phương thực hiện tại đang gặp vấn đề\n Hãy thử lại sau"),
@@ -75,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Chính sách bảo mật"),
         "requireSomeText":
             MessageLookupByLibrary.simpleMessage("Yêu cầu nhập dữ liệu"),
+        "resendCode":
+            MessageLookupByLibrary.simpleMessage("Gửi lại mã xác minh"),
         "save": MessageLookupByLibrary.simpleMessage("Lưu"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Chọn ngôn ngữ"),
         "signIn": MessageLookupByLibrary.simpleMessage("Đăng Nhập"),
@@ -87,6 +98,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hãy đồng ý với các điều khoản và chính sách của chúng tôi"),
         "termsOfService":
             MessageLookupByLibrary.simpleMessage("Điều khoản dịch vụ"),
+        "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
+            "Quá nhiều lần thử! Hãy thử lại sau"),
+        "verificationCodeRequired":
+            MessageLookupByLibrary.simpleMessage("Yêu cầu mã xác minh"),
+        "verificationTitle":
+            MessageLookupByLibrary.simpleMessage("Xác minh số điện thoại"),
+        "verify": MessageLookupByLibrary.simpleMessage("Xác minh"),
+        "waitToResendCode": m1,
+        "weSentVerificationCode": MessageLookupByLibrary.simpleMessage(
+            "Chúng tôi đã gửi mã xác minh đến số điện thoại "),
+        "youCanCheckYourPhone": MessageLookupByLibrary.simpleMessage(
+            "Bạn có thể kiểm tra điện thoại của mình để xác minh mã xác minh"),
         "yourCodeOnTheWay": MessageLookupByLibrary.simpleMessage(
             "Mã xác minh đang được gửi đến số điện thoại của bạn"),
         "yourName": MessageLookupByLibrary.simpleMessage("Họ và tên"),

@@ -28,6 +28,7 @@
   "signInErrorTitle": "Lỗi đăng nhập",
   "error": "Lỗi",
   "alreadySignedUp": "Bạn đã đăng ký",
+  "alreadyInUse": "đã được sử dụng",
   "termRequired": "Hãy đồng ý với các điều khoản và chính sách của chúng tôi",
   "maybeIssueWithThisMethod": "Có vẻ phương thực hiện tại đang gặp vấn đề\n Hãy thử lại sau",
   "ok": "OK",
@@ -38,5 +39,16 @@
   "privacyPolicy": "Chính sách bảo mật",
   "yourPhoneVerifying": "Đang xác minh số điện thoại của bạn",
   "yourCodeOnTheWay": "Mã xác minh đang được gửi đến số điện thoại của bạn",
-  "checkingYourPhone": "Kiểm tra số điện thoại {phoneNumber} của bạn và nhập mã xác minh ở bước kế tiếp để xác minh số điện thoại của bạn"
+  "checkingYourPhone": "Kiểm tra số điện thoại {phoneNumber} của bạn và nhập mã xác minh ở bước kế tiếp để xác minh số điện thoại của bạn",
+  "verificationTitle": "Xác minh số điện thoại",
+  "enterCode": "Nhập mã xác minh",
+  "weSentVerificationCode": "Chúng tôi đã gửi mã xác minh đến số điện thoại ",
+  "youCanCheckYourPhone": "Bạn có thể kiểm tra điện thoại của mình để xác minh mã xác minh",
+  "resendCode": "Gửi lại mã xác minh",
+  "verify": "Xác minh",
+  "verificationCodeRequired": "Yêu cầu mã xác minh",
+  "didntReceiveCode": "Không nhận được mã xác minh? Gửi lại",
+  "invalidCode": "Mã xác minh không hợp lệ",
+  "tooManyAttempts": "Quá nhiều lần thử! Hãy thử lại sau",
+  "waitToResendCode": "Vui lòng đợi {seconds} giây để gửi lại mã xác minh"
 }

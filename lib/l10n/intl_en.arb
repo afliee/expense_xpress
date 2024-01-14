@@ -29,6 +29,7 @@
   "error": "Error",
   "termRequired": "Please agree to our Terms of Service and Privacy Policy",
   "alreadySignedUp": "You already have an account",
+  "alreadyInUse": "already in use",
   "maybeIssueWithThisMethod": "There is an issue with this method\n Please try again later",
   "ok": "OK",
   "yourName": "Your Name",
@@ -42,6 +43,24 @@
   "@checkingYourPhone": {
     "placeholders": {
       "phoneNumber": {
+        "type": "String"
+      }
+    }
+  },
+  "verificationTitle": "Verification",
+  "enterCode": "Enter your Verification Code",
+  "weSentVerificationCode": "We sent a verification code to ",
+  "youCanCheckYourPhone": "You can check your phone",
+  "resendCode": "Resend Code",
+  "verify": "Verify",
+  "verificationCodeRequired": "Verification code is required",
+  "didntReceiveCode": "I didn’t received the code? Send again",
+  "invalidCode": "Invalid code! Please try again",
+  "tooManyAttempts": "Too many attempts! Please try again later",
+  "waitToResendCode": "Please wait {seconds} seconds to resend the code",
+  "@waitToResendCode": {
+    "placeholders": {
+      "seconds": {
         "type": "String"
       }
     }

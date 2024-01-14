@@ -23,22 +23,32 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(phoneNumber) =>
       "Checking your phone ${phoneNumber} and enter the code in next step to verify your phone number";
 
+  static String m1(seconds) =>
+      "Please wait ${seconds} seconds to resend the code";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "agreeToTerms": MessageLookupByLibrary.simpleMessage(
             "By signing up, you agree to our "),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account? "),
+        "alreadyInUse": MessageLookupByLibrary.simpleMessage("already in use"),
         "alreadySignedUp":
             MessageLookupByLibrary.simpleMessage("You already have an account"),
         "and": MessageLookupByLibrary.simpleMessage(" and "),
         "checkingYourPhone": m0,
+        "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
+            "I didn’t received the code? Send again"),
         "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Don\'t have an account yet? "),
+        "enterCode": MessageLookupByLibrary.simpleMessage(
+            "Enter your Verification Code"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "hello": MessageLookupByLibrary.simpleMessage("Hello"),
+        "invalidCode": MessageLookupByLibrary.simpleMessage(
+            "Invalid code! Please try again"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
             "There is an issue with this method\n Please try again later"),
@@ -74,6 +84,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "requireSomeText":
             MessageLookupByLibrary.simpleMessage("Please enter some text"),
+        "resendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Language"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
@@ -86,6 +97,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please agree to our Terms of Service and Privacy Policy"),
         "termsOfService":
             MessageLookupByLibrary.simpleMessage("Terms of Service"),
+        "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
+            "Too many attempts! Please try again later"),
+        "verificationCodeRequired": MessageLookupByLibrary.simpleMessage(
+            "Verification code is required"),
+        "verificationTitle":
+            MessageLookupByLibrary.simpleMessage("Verification"),
+        "verify": MessageLookupByLibrary.simpleMessage("Verify"),
+        "waitToResendCode": m1,
+        "weSentVerificationCode": MessageLookupByLibrary.simpleMessage(
+            "We sent a verification code to "),
+        "youCanCheckYourPhone":
+            MessageLookupByLibrary.simpleMessage("You can check your phone"),
         "yourCodeOnTheWay":
             MessageLookupByLibrary.simpleMessage("Your code is on the way"),
         "yourName": MessageLookupByLibrary.simpleMessage("Your Name"),

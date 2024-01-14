@@ -1,4 +1,5 @@
 import 'package:expense_xpress/services/functions/user_service.dart';
+import 'package:expense_xpress/utils/contants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:expense_xpress/services/models/user.dart';
@@ -23,13 +24,31 @@ class AuthService {
   }
 
   // sign up with phone number and multiple other parameters
-  Future<void> signUpWithPhoneNumber(
+  Future<void> sendCode(
       String phoneNumber, Map<String, dynamic> opt) async {
     // create a new user with phone number
-    var isExist = await UserService.alreadyExists(phoneNumber: phoneNumber);
-    if (isExist) {
-      return opt['onUserExists'](isExist);
+    // check opt have key action
+    if (opt.containsKey('action')) {
+      if (opt['action'] == Constants.signUpAction) {
+        var isExist =
+            await UserService.alreadyExists(phoneNumber: phoneNumber);
+        if (isExist) {
+          return opt['onUserExists'](isExist);
+        }
+      }
     }
+    // check if exist 'forceResendingToken' in opt then resend code
+    if (opt['forceResendingToken'] != null) {
+      return await FirebaseAuth.instance.verifyPhoneNumber(
+          phoneNumber: phoneNumber,
+          verificationCompleted: opt['verificationCompleted'],
+          verificationFailed: opt['verificationFailed'],
+          codeSent: opt['codeSent'],
+          timeout: opt['timeout'],
+          forceResendingToken: opt['forceResendingToken'],
+          codeAutoRetrievalTimeout: opt['codeAutoRetrievalTimeout']);
+    }
+
     await FirebaseAuth.instance.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         verificationCompleted: opt['verificationCompleted'],
@@ -44,7 +63,7 @@ class AuthService {
     // create a new user with phone number
     var isExist =
         await UserService.alreadyExists(phoneNumber: opt['phoneNumber']);
-    if (isExist != null) {
+    if (isExist) {
       return opt['onUserExists'](isExist);
     }
 
@@ -57,6 +76,22 @@ class AuthService {
       PhoneAuthCredential phoneAuthCredential) async {
     return await FirebaseAuth.instance
         .signInWithCredential(phoneAuthCredential);
+  }
+
+  Future<void> resendCode(String phoneNumber, Map<String, dynamic> opt) async {
+    // create a new user with phone number
+    var isExist = await UserService.alreadyExists(phoneNumber: phoneNumber);
+    if (isExist) {
+      return opt['onUserExists'](isExist);
+    }
+    await FirebaseAuth.instance.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        verificationCompleted: opt['verificationCompleted'],
+        verificationFailed: opt['verificationFailed'],
+        codeSent: opt['codeSent'],
+        timeout: opt['timeout'],
+        forceResendingToken: opt['forceResendingToken'],
+        codeAutoRetrievalTimeout: opt['codeAutoRetrievalTimeout']);
   }
 
   Future<void> signOut() async {

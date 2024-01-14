@@ -36,4 +36,19 @@ class AppDialogs {
       },
     );
   }
+
+  void showLoadingDialog() {
+    showCupertinoDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CupertinoActivityIndicator(),
+        );
+      },
+    );
+  }
+
+  void hideLoadingDialog() {
+    Navigator.pop(context);
+  }
 }

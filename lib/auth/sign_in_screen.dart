@@ -1,3 +1,4 @@
+import 'package:expense_xpress/auth/code_sending.dart';
 import 'package:expense_xpress/auth/sign_up_screen.dart';
 import 'package:expense_xpress/generated/l10n.dart';
 import 'package:expense_xpress/services/functions/auth_service.dart';
@@ -14,6 +15,7 @@ import 'package:expense_xpress/widgets/global/inputs.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignInScreen extends StatefulWidget {
   final bool? isFromOnBoarding;
@@ -81,10 +83,10 @@ class _SignInScreenState extends State<SignInScreen> {
                         controller: _phoneNumberController,
                         countryCode: '${Constants.countryCode} '),
                     AppStyles.sizedBoxSpace(height: 16),
-                    Input.of(context).password(
-                      label: S.of(context).password,
-                      controller: _passwordController,
-                    ),
+                    // Input.of(context).password(
+                    //   label: S.of(context).password,
+                    //   controller: _passwordController,
+                    // ),
                     AppStyles.sizedBoxSpace(height: 40),
                     SizedBox(
                       width: double.infinity,
@@ -96,7 +98,18 @@ class _SignInScreenState extends State<SignInScreen> {
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          onPressed: () {}),
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return CodeSending(
+                                    phoneNumber:
+                                        _phoneNumberController.text.trim(),
+                                    name: '',
+                                    from: 'sign_in');
+                              }));
+                            }
+                          }),
                     ),
                     _buildNavigator(context)
                   ],
@@ -185,13 +198,14 @@ Widget _buildGoogleButton(context) {
               print(credential.user!.toString());
               if (credential.user != null) {
                 var result = await UserService.saveUser(UserModel.User(
-                  uid: credential.user!.uid,
-                  displayName: credential.user!.displayName ?? '',
-                  mail: credential.user!.email,
-                  photoUrl: credential.user!.photoURL ?? '',
-                  authType: UserModel.AuthType.google.name
-                ));
-
+                    uid: credential.user!.uid,
+                    displayName: credential.user!.displayName ?? '',
+                    mail: credential.user!.email,
+                    photoUrl: credential.user!.photoURL ?? '',
+                    authType: UserModel.AuthType.google.name));
+                SharedPreferences prefs = await SharedPreferences.getInstance();
+                prefs.setString(Constants.uid, credential.user!.uid);
+                prefs.setBool(Constants.isAuth, true);
                 // navigate to home screen
                 // Navigator.pushNamedAndRemoveUntil(
                 //     context, AppRoutes.home, (route) => false);
