@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadySignedUp":
             MessageLookupByLibrary.simpleMessage("Bạn đã đăng ký"),
         "and": MessageLookupByLibrary.simpleMessage(" và "),
+        "bugdet": MessageLookupByLibrary.simpleMessage("Ngân sách"),
         "checkingYourPhone": m0,
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
             "Không nhận được mã xác minh? Gửi lại"),
@@ -46,6 +47,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
         "hello": MessageLookupByLibrary.simpleMessage("Xin chào"),
+        "history": MessageLookupByLibrary.simpleMessage("Lịch sử"),
+        "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "invalidCode":
             MessageLookupByLibrary.simpleMessage("Mã xác minh không hợp lệ"),
         "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
@@ -88,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Gửi lại mã xác minh"),
         "save": MessageLookupByLibrary.simpleMessage("Lưu"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Chọn ngôn ngữ"),
+        "settings": MessageLookupByLibrary.simpleMessage("Cài đặt"),
         "signIn": MessageLookupByLibrary.simpleMessage("Đăng Nhập"),
         "signInErrorTitle":
             MessageLookupByLibrary.simpleMessage("Lỗi đăng nhập"),
@@ -100,6 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Điều khoản dịch vụ"),
         "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
             "Quá nhiều lần thử! Hãy thử lại sau"),
+        "transactions": MessageLookupByLibrary.simpleMessage("Giao dịch"),
         "verificationCodeRequired":
             MessageLookupByLibrary.simpleMessage("Yêu cầu mã xác minh"),
         "verificationTitle":

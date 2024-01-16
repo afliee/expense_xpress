@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadySignedUp":
             MessageLookupByLibrary.simpleMessage("You already have an account"),
         "and": MessageLookupByLibrary.simpleMessage(" and "),
+        "bugdet": MessageLookupByLibrary.simpleMessage("Budget"),
         "checkingYourPhone": m0,
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
             "I didn’t received the code? Send again"),
@@ -47,6 +48,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "hello": MessageLookupByLibrary.simpleMessage("Hello"),
+        "history": MessageLookupByLibrary.simpleMessage("History"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "invalidCode": MessageLookupByLibrary.simpleMessage(
             "Invalid code! Please try again"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -87,6 +90,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "resendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Language"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "signInErrorTitle":
             MessageLookupByLibrary.simpleMessage("Sign In Error"),
@@ -99,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Terms of Service"),
         "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
             "Too many attempts! Please try again later"),
+        "transactions": MessageLookupByLibrary.simpleMessage("Transactions"),
         "verificationCodeRequired": MessageLookupByLibrary.simpleMessage(
             "Verification code is required"),
         "verificationTitle":

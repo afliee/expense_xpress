@@ -1,5 +1,8 @@
 import 'package:expense_xpress/auth/onboarding_screen.dart';
+import 'package:expense_xpress/auth/sign_in_screen.dart';
+import 'package:expense_xpress/pages/main_screen.dart';
 import 'package:expense_xpress/pages/select_language_screen.dart';
+import 'package:expense_xpress/services/functions/user_service.dart';
 import 'package:expense_xpress/utils/contants.dart';
 import 'package:expense_xpress/utils/images.dart';
 import 'package:expense_xpress/widgets/global/animate.dart';
@@ -30,6 +33,51 @@ class _SplashScreenState extends State<SplashScreen> {
   bool isAuth = false;
   bool isOnboarding = false;
   bool isDarkMode = false;
+
+  _redirectPage(context) {
+    SharedPreferences.getInstance().then((prefs) async {
+      var languageSelected = prefs.getString(Constants.language);
+      if (languageSelected != null) {
+        // handle logic here
+        if (isAuth) {
+          var user = await UserService.getCurrentUser();
+          if (user != null) {
+            // user is logged in
+            // push to home screen
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (BuildContext context) {
+              return AppAnimate().fade(child: MainScreen(user: user));
+            }));
+          } else {
+            // user is not logged in
+            // push to sign in screen
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (BuildContext context) {
+              return AppAnimate().fade(child: const SignInScreen());
+            }));
+          }
+        } else {
+          if (isOnboarding) {
+            // user actually see onboarding screen
+          } else {
+            // user not see onboarding screen yet
+            // push to onboarding screen
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (BuildContext context) {
+              return AppAnimate().fade(child: const OnBoardingScreen());
+            }));
+          }
+        }
+      } else {
+        // user not select language yet
+        // push to select language screen
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (BuildContext context) {
+          return AppAnimate().fade(child: const LanguageSelectionScreen());
+        }));
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +112,14 @@ class _SplashScreenState extends State<SplashScreen> {
     isOnboarding = widget.isOnboarding;
     isDarkMode = widget.isDarkMode;
 
+    // get pref
+    SharedPreferences.getInstance().then((prefs) {
+      isAuth = prefs.getBool(Constants.isAuth) ?? false;
+      isOnboarding = prefs.getBool(Constants.isOnboarding) ?? false;
+      isDarkMode = prefs.getBool(Constants.isDarkMode) ?? false;
+      print('after get pref '
+          'isAuth: $isAuth; isOnboarding: $isOnboarding; isDarkMode: $isDarkMode;');
+    });
     print(
         'isAuth: $isAuth; isOnboarding: $isOnboarding; isDarkMode: $isDarkMode;');
     // print time to show splash screen
@@ -72,33 +128,7 @@ class _SplashScreenState extends State<SplashScreen> {
         .then((value) {
       print('Splash screen hide at ${DateTime.now()}');
       // check if user is select language for app
-      SharedPreferences.getInstance().then((prefs) {
-        var languageSelected = prefs.getString(Constants.language);
-        if (languageSelected != null) {
-          // handle logic here
-          if (isAuth) {
-          } else {
-            if (isOnboarding) {
-              // user actually see onboarding screen
-            } else {
-              // user not see onboarding screen yet
-              // push to onboarding screen
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                return AppAnimate()
-                    .fade(child: const OnBoardingScreen());
-              }));
-            }
-          }
-        } else {
-          // user not select language yet
-          // push to select language screen
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (BuildContext context) {
-            return AppAnimate().fade(child: const LanguageSelectionScreen());
-          }));
-        }
-      });
+      _redirectPage(context);
     });
   }
 }

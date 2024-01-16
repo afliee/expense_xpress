@@ -64,5 +64,10 @@
         "type": "String"
       }
     }
-  }
+  },
+  "home": "Home",
+  "transactions": "Transactions",
+  "history": "History",
+  "bugdet": "Budget",
+  "settings": "Settings"
 }

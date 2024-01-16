@@ -9,6 +9,8 @@ class Constants {
   static const int optMaxAge = 60;
   static const int otpLength = 6;
   static const int otpResendTime = 30;
+  static const double bottomNavBarHeight = 56;
+  static const double iconSize = 24;
   static const String countryCode = "+84";
   static const String appName = "Expense Xpress";
   static const String isAuth = "isAuth";

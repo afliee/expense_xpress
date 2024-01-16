@@ -50,5 +50,10 @@
   "didntReceiveCode": "Không nhận được mã xác minh? Gửi lại",
   "invalidCode": "Mã xác minh không hợp lệ",
   "tooManyAttempts": "Quá nhiều lần thử! Hãy thử lại sau",
-  "waitToResendCode": "Vui lòng đợi {seconds} giây để gửi lại mã xác minh"
+  "waitToResendCode": "Vui lòng đợi {seconds} giây để gửi lại mã xác minh",
+  "home": "Trang chủ",
+  "transactions": "Giao dịch",
+  "history": "Lịch sử",
+  "bugdet": "Ngân sách",
+  "settings": "Cài đặt"
 }

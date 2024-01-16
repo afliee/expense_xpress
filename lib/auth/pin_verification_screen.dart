@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:expense_xpress/auth/sign_up_screen.dart';
 import 'package:expense_xpress/generated/l10n.dart';
-import 'package:expense_xpress/pages/home_screen.dart';
+import 'package:expense_xpress/pages/main_screen.dart';
 import 'package:expense_xpress/services/functions/auth_service.dart';
 import 'package:expense_xpress/services/functions/user_service.dart';
 import 'package:expense_xpress/services/models/user.dart' as user;
@@ -117,7 +117,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
             });
             Navigator.pushAndRemoveUntil(context,
                 MaterialPageRoute(builder: (context) {
-              return HomeScreen(user: user);
+              return MainScreen(user: user);
             }), (route) => false);
           }
         });
@@ -164,13 +164,14 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
       // navigate to home screen
       var user = await UserService.getCurrentUser();
       if (user != null) {
-        SharedPreferences.getInstance().then((pref) {
+        await SharedPreferences.getInstance().then((pref) {
           pref.setBool(Constants.isAuth, true);
           pref.setBool(Constants.isOnboarding, true);
+          print('pref set isAuth: ${pref.getBool(Constants.isAuth)}');
         });
         Navigator.pushAndRemoveUntil(context,
             MaterialPageRoute(builder: (context) {
-          return HomeScreen(user: user);
+          return MainScreen(user: user);
         }), (route) => false);
       }
     }).catchError((error) {

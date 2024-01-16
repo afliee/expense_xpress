@@ -31,19 +31,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool _isAuth = false;
+  bool _isOnboarding = false;
+  bool _isDarkMode = false;
+  bool _isFirstTime = false;
+
   @override
   Widget build(BuildContext context) {
-    bool isAuth = false;
-    bool isOnboarding = false;
-    bool isDarkMode = false;
-    bool isFirstTime = false;
+
     // get pref
-    SharedPreferences.getInstance().then((prefs) {
-      isAuth = prefs.getBool(Constants.isAuth) ?? false;
-      isOnboarding = prefs.getBool(Constants.isOnboarding) ?? false;
-      isDarkMode = prefs.getBool(Constants.isDarkMode) ?? false;
-      isFirstTime = prefs.getBool(Constants.isFirstTime) ?? false;
-    });
     // hide status bar
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 
@@ -69,14 +65,25 @@ class _MyAppState extends State<MyApp> {
             locale: provider.locale,
             supportedLocales: Languages.allLocale,
             home: SplashScreen(
-              isAuth: isAuth,
-              isOnboarding: isOnboarding,
-              isDarkMode: isDarkMode,
+              isAuth: _isAuth,
+              isOnboarding: _isOnboarding,
+              isDarkMode: _isDarkMode,
             ),
             debugShowCheckedModeBanner: false,
           );
         },
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    SharedPreferences.getInstance().then((prefs) {
+      _isAuth = prefs.getBool(Constants.isAuth) ?? false;
+      _isOnboarding = prefs.getBool(Constants.isOnboarding) ?? false;
+      _isDarkMode = prefs.getBool(Constants.isDarkMode) ?? false;
+      _isFirstTime = prefs.getBool(Constants.isFirstTime) ?? false;
+    });
   }
 }
