@@ -10,11 +10,19 @@ class AppBottomAppBar extends StatefulWidget {
 
   @override
   State<AppBottomAppBar> createState() => _AppBottomAppBarState();
+
+  void onSwipes(int index) {
+
+  }
 }
 
 class _AppBottomAppBarState extends State<AppBottomAppBar> {
   int? _currentIndex;
   Function? _onTap;
+  Function? _onSwipes;
+
+
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -113,5 +121,6 @@ class _AppBottomAppBarState extends State<AppBottomAppBar> {
     super.initState();
     _currentIndex = widget.currentIndex;
     _onTap = widget.onTap;
+    _onSwipes = _onSwipes;
   }
 }

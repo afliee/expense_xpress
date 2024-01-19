@@ -11,6 +11,7 @@ class HistoryScreen extends StatefulWidget {
 }
 
 class _HistoryScreenState extends State<HistoryScreen> with MainScreenStateMixin {
+  static const String _TAG = 'HistoryScreen';
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,6 +23,7 @@ class _HistoryScreenState extends State<HistoryScreen> with MainScreenStateMixin
 
   @override
   void onPageVisible() {
+    print('$_TAG: onPageVisible');
     // TODO: implement onPageVisible
     MainScreen.of(context).params = AppBarParams(
       actions: [

@@ -10,6 +10,7 @@ import 'package:expense_xpress/services/models/user.dart';
 import 'package:expense_xpress/utils/colors.dart';
 import 'package:expense_xpress/utils/contants.dart';
 import 'package:expense_xpress/utils/dialogs.dart';
+import 'package:expense_xpress/utils/images.dart';
 import 'package:expense_xpress/utils/styles.dart';
 import 'package:expense_xpress/utils/timestamp_converter.dart';
 import 'package:expense_xpress/widgets/global/buttons.dart';
@@ -95,13 +96,18 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
       ))
           .then((value) async {
         // save user to firestore
+        // random a number more than 0 and less than avatarDefaultSize
+
+        int random = DateTime.now().millisecondsSinceEpoch % Constants.avatarDefaultSize;
+
         await UserService.saveUser(user.User(
                 uid: value.user!.uid,
                 displayName: _name,
-                photoUrl: value.user!.photoURL ?? '',
-                phone: '${Constants.countryCode} $_phoneNumber',
+                photoUrl: value.user!.photoURL ?? '${ImagesAsset.avatarDefaultPath}_$random.${ImagesAsset.avatarDefaultExt}',
+                phone: _phoneNumber.trim(),
                 mail: value.user!.email,
-                authType: AuthType.phone.name,
+                authType: AuthType.phone,
+                avatarType: AvatarType.phone,
                 lastLogin: DateTime.now(),
                 createdAt: DateTime.now(),
                 updatedAt: DateTime.now()))
@@ -117,7 +123,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
             });
             Navigator.pushAndRemoveUntil(context,
                 MaterialPageRoute(builder: (context) {
-              return MainScreen(user: user);
+              return MainScreen(user: user, initialIndex: 0,);
             }), (route) => false);
           }
         });
@@ -171,7 +177,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
         });
         Navigator.pushAndRemoveUntil(context,
             MaterialPageRoute(builder: (context) {
-          return MainScreen(user: user);
+          return MainScreen(user: user, initialIndex: 0,);
         }), (route) => false);
       }
     }).catchError((error) {

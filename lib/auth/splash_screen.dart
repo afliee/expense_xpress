@@ -46,7 +46,11 @@ class _SplashScreenState extends State<SplashScreen> {
             // push to home screen
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (BuildContext context) {
-              return AppAnimate().fade(child: MainScreen(user: user));
+              return AppAnimate().fade(
+                  child: MainScreen(
+                user: user,
+                initialIndex: 0,
+              ));
             }));
           } else {
             // user is not logged in

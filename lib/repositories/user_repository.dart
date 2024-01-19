@@ -57,9 +57,17 @@ class UserRepository extends Repository<User, String> {
   }
 
   @override
-  Future<User> update(User item) {
+  Future<User> update(User item) async {
     // TODO: implement update
-    throw UnimplementedError();
+    // check if document exists
+    final DocumentSnapshot documentSnapshot = await _users.doc(item.uid).get();
+    if (documentSnapshot.exists) {
+      // update document
+      await _users.doc(item.uid).update(item.toJson());
+      return item;
+    }
+
+    return Future.error('User not found');
   }
 
   Future<bool> alreadyExists(String phoneNumber) {

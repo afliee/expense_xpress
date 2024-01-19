@@ -1,14 +1,17 @@
 import 'package:expense_xpress/utils/fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class AppStyles {
   static const double padding = 16.0;
+  static const double margin = 16.0;
   static const double buttonPadding = 16.0;
   static const double buttonBorderRadius = 12.0;
   static const double indicatorSelectedSize = 16.0;
   static const double textFieldHorizontalPadding = 16.0;
   static const double textFieldVerticalPadding = 20.0;
   static const double pinMargin = 4.0;
+  static const double dividerIndent = 8.0;
   static const h1 = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.bold,
@@ -45,6 +48,8 @@ class AppStyles {
     fontFamily: AppFonts.inter,
   );
 
+  // date format with template date, Month year
+  static DateFormat dateFormat = DateFormat('dd, MMM yyyy');
   static Widget sizedBoxSpace({double? height, double? width}) =>
       SizedBox(height: height, width: width);
 }

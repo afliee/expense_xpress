@@ -123,11 +123,23 @@ class _CodeSendingState extends State<CodeSending> {
           //   'isFromSignUp': true
           // });
         },
-        'onUserExists': (bool isExist) {},
+        'onUserExists': (bool isExist) {
+          // hide loading dialog
+        },
         // check if _resentToken != 0 then resend code
         'forceResendingToken': _resentToken != 0 ? _resentToken : null,
       },
-    );
+    ).catchError((error) {
+      print('error: $error');
+      // hide loading dialog
+      AppDialogs.of(context).showAlertDialog(
+          title: S.of(context).error,
+          message: error.toString(),
+          positiveText: S.of(context).ok,
+          onPositivePressed: () {
+            Navigator.pop(context);
+          });
+    });
   }
 
   @override

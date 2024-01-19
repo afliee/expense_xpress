@@ -29,6 +29,7 @@ class AuthService {
     // create a new user with phone number
     // check opt have key action
     if (opt.containsKey('action')) {
+      print('action: ${opt['action']}');
       if (opt['action'] == Constants.signUpAction) {
         var isExist =
             await UserService.alreadyExists(phoneNumber: phoneNumber);
@@ -39,6 +40,7 @@ class AuthService {
     }
     // check if exist 'forceResendingToken' in opt then resend code
     if (opt['forceResendingToken'] != null) {
+      print('resend code');
       return await FirebaseAuth.instance.verifyPhoneNumber(
           phoneNumber: phoneNumber,
           verificationCompleted: opt['verificationCompleted'],
@@ -49,7 +51,8 @@ class AuthService {
           codeAutoRetrievalTimeout: opt['codeAutoRetrievalTimeout']);
     }
 
-    await FirebaseAuth.instance.verifyPhoneNumber(
+    print('send code');
+    return await FirebaseAuth.instance.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         verificationCompleted: opt['verificationCompleted'],
         verificationFailed: opt['verificationFailed'],

@@ -1,21 +1,58 @@
+import 'package:expense_xpress/services/models/wallet.dart';
 import 'package:expense_xpress/services/providers/language_provider.dart';
 import 'package:expense_xpress/utils/timestamp_converter.dart';
 
-enum AuthType { google, phone }
-enum UserAttribute { mail, phone, displayName, photoUrl, authType, locale, lastLogin, createdAt, updatedAt }
+enum AuthType {
+  google,
+  phone;
+
+  String toJson() => name;
+
+  static AuthType fromJson(String json) => AuthType.values.firstWhere(
+        (element) => element.name == json,
+        orElse: () => AuthType.phone,
+      );
+}
+
+enum AvatarType {
+  google,
+  phone,
+  none;
+
+  String toJson() => name;
+
+  static AvatarType fromJson(String json) => AvatarType.values.firstWhere(
+        (element) => element.name == json,
+        orElse: () => AvatarType.none,
+      );
+}
+
+enum UserAttribute {
+  mail,
+  phone,
+  displayName,
+  photoUrl,
+  authType,
+  locale,
+  lastLogin,
+  createdAt,
+  updatedAt
+}
 
 class User {
   final TimeStampConverter timestampConverter = const TimeStampConverter();
   final String uid;
   final String? mail;
   final String? phone;
-  final String displayName;
-  final String photoUrl;
-  final String? authType;
+  late String displayName;
+  late String photoUrl;
+  final AuthType? authType;
+  final AvatarType? avatarType;
   String? locale = LanguageProvider().locale.languageCode;
   DateTime? lastLogin;
   DateTime? createdAt;
   DateTime? updatedAt;
+  List<Wallet>? wallets;
 
   User({
     required this.uid,
@@ -23,7 +60,8 @@ class User {
     this.phone,
     required this.displayName,
     required this.photoUrl,
-    this.authType,
+    required this.authType,
+    required this.avatarType,
     this.locale,
     this.lastLogin,
     this.createdAt,
@@ -37,11 +75,15 @@ class User {
       phone: parseMap['phone'],
       displayName: parseMap['displayName'],
       photoUrl: parseMap['photoUrl'],
-      authType: parseMap['authType'],
+      authType: AuthType.fromJson(parseMap['authType']),
+      avatarType: AvatarType.fromJson(parseMap['avatarType']),
       locale: parseMap['locale'],
-      lastLogin: parseMap['lastLogin'] == null ? null : parseMap['lastLogin'].toDate(),
-      createdAt: parseMap['createdAt'] == null ? null : parseMap['createdAt'].toDate(),
-      updatedAt: parseMap['updatedAt'] == null ? null : parseMap['updatedAt'].toDate(),
+      lastLogin:
+          parseMap['lastLogin'] == null ? null : parseMap['lastLogin'].toDate(),
+      createdAt:
+          parseMap['createdAt'] == null ? null : parseMap['createdAt'].toDate(),
+      updatedAt:
+          parseMap['updatedAt'] == null ? null : parseMap['updatedAt'].toDate(),
     );
   }
 
@@ -53,11 +95,15 @@ class User {
       'phone': phone,
       'displayName': displayName,
       'photoUrl': photoUrl,
-      'authType': authType,
+      'authType': authType?.toJson(),
+      'avatarType': avatarType?.toJson(),
       'locale': locale,
-      'lastLogin': lastLogin == null ? null : timestampConverter.toJson(lastLogin!),
-      'createdAt': createdAt == null ? null : timestampConverter.toJson(createdAt!),
-      'updatedAt': updatedAt == null ? null : timestampConverter.toJson(updatedAt!),
+      'lastLogin':
+          lastLogin == null ? null : timestampConverter.toJson(lastLogin!),
+      'createdAt':
+          createdAt == null ? null : timestampConverter.toJson(createdAt!),
+      'updatedAt':
+          updatedAt == null ? null : timestampConverter.toJson(updatedAt!),
     };
   }
 }

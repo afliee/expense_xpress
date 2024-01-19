@@ -11,6 +11,8 @@ class Constants {
   static const int otpResendTime = 30;
   static const double bottomNavBarHeight = 56;
   static const double iconSize = 24;
+  static const int avatarDefaultSize = 22;
+  static const double profileImageSize = 100;
   static const String countryCode = "+84";
   static const String appName = "Expense Xpress";
   static const String isAuth = "isAuth";

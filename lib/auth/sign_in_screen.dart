@@ -1,6 +1,7 @@
 import 'package:expense_xpress/auth/code_sending.dart';
 import 'package:expense_xpress/auth/sign_up_screen.dart';
 import 'package:expense_xpress/generated/l10n.dart';
+import 'package:expense_xpress/pages/main_screen.dart';
 import 'package:expense_xpress/services/functions/auth_service.dart';
 import 'package:expense_xpress/services/functions/user_service.dart';
 import 'package:expense_xpress/services/models/user.dart' as UserModel;
@@ -65,7 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
       body: Container(
           width: double.infinity,
           height: double.infinity,
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(AppStyles.padding),
           child: Column(
             children: [
               const SizedBox(
@@ -100,14 +101,31 @@ class _SignInScreenState extends State<SignInScreen> {
                           ),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return CodeSending(
-                                    phoneNumber:
-                                        _phoneNumberController.text.trim(),
-                                    name: '',
-                                    from: 'sign_in');
-                              }));
+                              UserService.alreadyExists(
+                                      phoneNumber:
+                                          _phoneNumberController.text.trim())
+                                  .then((isExist) {
+                                if (!isExist) {
+                                  AppDialogs.of(context).showAlertDialog(
+                                      title: S.of(context).signInErrorTitle,
+                                      message:
+                                          S.of(context).phoneNumberNotValid,
+                                      positiveText: S.of(context).ok,
+                                      onPositivePressed: () {
+                                        Navigator.pop(context);
+                                      });
+                                  return;
+                                }
+
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return CodeSending(
+                                      phoneNumber:
+                                          _phoneNumberController.text.trim(),
+                                      name: '',
+                                      from: 'sign_in');
+                                }));
+                              });
                             }
                           }),
                     ),
@@ -202,14 +220,29 @@ Widget _buildGoogleButton(context) {
                     displayName: credential.user!.displayName ?? '',
                     mail: credential.user!.email,
                     photoUrl: credential.user!.photoURL ?? '',
-                    authType: UserModel.AuthType.google.name));
+                    authType: UserModel.AuthType.google,
+                    avatarType: UserModel.AvatarType.google));
                 SharedPreferences prefs = await SharedPreferences.getInstance();
                 prefs.setString(Constants.uid, credential.user!.uid);
                 prefs.setBool(Constants.isAuth, true);
+                prefs.setBool(Constants.isOnboarding, true);
                 // navigate to home screen
                 // Navigator.pushNamedAndRemoveUntil(
                 //     context, AppRoutes.home, (route) => false);
                 print('successfull to login with ${credential.user!.email}');
+                UserService.getCurrentUser().then((user) {
+                  print('user: ${user.toJson()}');
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return MainScreen(
+                        user: user,
+                        initialIndex: 0,
+                      );
+                    }),
+                    (route) => false,
+                  );
+                });
               }
             } catch (e) {
               print(e);

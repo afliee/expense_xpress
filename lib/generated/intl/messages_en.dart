@@ -37,11 +37,19 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You already have an account"),
         "and": MessageLookupByLibrary.simpleMessage(" and "),
         "bugdet": MessageLookupByLibrary.simpleMessage("Budget"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "checkingYourPhone": m0,
+        "chooseFromGallery":
+            MessageLookupByLibrary.simpleMessage("Choose from Gallery"),
+        "credential": MessageLookupByLibrary.simpleMessage("Credential"),
+        "defaultGallery":
+            MessageLookupByLibrary.simpleMessage("Default Gallery"),
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
             "I didn’t received the code? Send again"),
+        "displayName": MessageLookupByLibrary.simpleMessage("Display Name"),
         "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Don\'t have an account yet? "),
+        "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "enterCode": MessageLookupByLibrary.simpleMessage(
             "Enter your Verification Code"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
@@ -52,9 +60,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "invalidCode": MessageLookupByLibrary.simpleMessage(
             "Invalid code! Please try again"),
+        "joinDate": MessageLookupByLibrary.simpleMessage("Join Date"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "lastLogin": MessageLookupByLibrary.simpleMessage("Last Login"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
             "There is an issue with this method\n Please try again later"),
+        "notValidPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Not a valid phone number"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onBoardingDescription1": MessageLookupByLibrary.simpleMessage(
             "Become your own money manager and make every cent count."),
@@ -85,10 +98,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumberRequired":
             MessageLookupByLibrary.simpleMessage("Phone number is required"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "requireSomeText":
             MessageLookupByLibrary.simpleMessage("Please enter some text"),
         "resendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Language"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
@@ -97,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signInWithGoogle":
             MessageLookupByLibrary.simpleMessage("Sign In with Google"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "takePhoto": MessageLookupByLibrary.simpleMessage("Take Photo"),
         "termRequired": MessageLookupByLibrary.simpleMessage(
             "Please agree to our Terms of Service and Privacy Policy"),
         "termsOfService":
@@ -114,8 +130,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "We sent a verification code to "),
         "youCanCheckYourPhone":
             MessageLookupByLibrary.simpleMessage("You can check your phone"),
+        "yourCamera": MessageLookupByLibrary.simpleMessage("Your Camera"),
         "yourCodeOnTheWay":
             MessageLookupByLibrary.simpleMessage("Your code is on the way"),
+        "yourGallery": MessageLookupByLibrary.simpleMessage("Your Gallery"),
         "yourName": MessageLookupByLibrary.simpleMessage("Your Name"),
         "yourPhoneVerifying":
             MessageLookupByLibrary.simpleMessage("Verifying your phone number")

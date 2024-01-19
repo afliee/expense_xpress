@@ -570,6 +570,16 @@ class S {
     );
   }
 
+  /// `Not a valid phone number`
+  String get notValidPhoneNumber {
+    return Intl.message(
+      'Not a valid phone number',
+      name: 'notValidPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Home`
   String get home {
     return Intl.message(
@@ -615,6 +625,146 @@ class S {
     return Intl.message(
       'Settings',
       name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Display Name`
+  String get displayName {
+    return Intl.message(
+      'Display Name',
+      name: 'displayName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Login`
+  String get lastLogin {
+    return Intl.message(
+      'Last Login',
+      name: 'lastLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Join Date`
+  String get joinDate {
+    return Intl.message(
+      'Join Date',
+      name: 'joinDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get editProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Default Gallery`
+  String get defaultGallery {
+    return Intl.message(
+      'Default Gallery',
+      name: 'defaultGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Camera`
+  String get yourCamera {
+    return Intl.message(
+      'Your Camera',
+      name: 'yourCamera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Gallery`
+  String get yourGallery {
+    return Intl.message(
+      'Your Gallery',
+      name: 'yourGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take Photo`
+  String get takePhoto {
+    return Intl.message(
+      'Take Photo',
+      name: 'takePhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose from Gallery`
+  String get chooseFromGallery {
+    return Intl.message(
+      'Choose from Gallery',
+      name: 'chooseFromGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Changes`
+  String get saveChanges {
+    return Intl.message(
+      'Save Changes',
+      name: 'saveChanges',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credential`
+  String get credential {
+    return Intl.message(
+      'Credential',
+      name: 'credential',
       desc: '',
       args: [],
     );

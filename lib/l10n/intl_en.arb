@@ -65,9 +65,24 @@
       }
     }
   },
+  "notValidPhoneNumber": "Not a valid phone number",
   "home": "Home",
   "transactions": "Transactions",
   "history": "History",
   "bugdet": "Budget",
-  "settings": "Settings"
+  "settings": "Settings",
+  "profile": "Profile",
+  "displayName": "Display Name",
+  "lastLogin": "Last Login",
+    "logout": "Logout",
+  "joinDate": "Join Date",
+    "editProfile": "Edit Profile",
+  "defaultGallery": "Default Gallery",
+  "yourCamera": "Your Camera",
+  "yourGallery": "Your Gallery",
+  "takePhoto": "Take Photo",
+  "chooseFromGallery": "Choose from Gallery",
+  "cancel": "Cancel",
+  "saveChanges": "Save Changes",
+  "credential": "Credential"
 }

@@ -37,11 +37,20 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bạn đã đăng ký"),
         "and": MessageLookupByLibrary.simpleMessage(" và "),
         "bugdet": MessageLookupByLibrary.simpleMessage("Ngân sách"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Hủy"),
         "checkingYourPhone": m0,
+        "chooseFromGallery":
+            MessageLookupByLibrary.simpleMessage("Chọn từ thư viện"),
+        "credential":
+            MessageLookupByLibrary.simpleMessage("Thông tin đăng nhập"),
+        "defaultGallery":
+            MessageLookupByLibrary.simpleMessage("Thư viện mặc định"),
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
             "Không nhận được mã xác minh? Gửi lại"),
+        "displayName": MessageLookupByLibrary.simpleMessage("Tên hiển thị"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Bạn chưa có tài khoản?"),
+        "editProfile": MessageLookupByLibrary.simpleMessage("Chỉnh sửa hồ sơ"),
         "enterCode": MessageLookupByLibrary.simpleMessage("Nhập mã xác minh"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
         "forgotPassword":
@@ -51,9 +60,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
         "invalidCode":
             MessageLookupByLibrary.simpleMessage("Mã xác minh không hợp lệ"),
+        "joinDate": MessageLookupByLibrary.simpleMessage("Ngày tham gia"),
         "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
+        "lastLogin": MessageLookupByLibrary.simpleMessage("Lần đăng nhập cuối"),
+        "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
             "Có vẻ phương thực hiện tại đang gặp vấn đề\n Hãy thử lại sau"),
+        "notValidPhoneNumber":
+            MessageLookupByLibrary.simpleMessage("Số điện thoại không hợp lệ"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onBoardingDescription1": MessageLookupByLibrary.simpleMessage(
             "Quản lý tài chính cá nhân của bạn với ứng dụng tiện lợi."),
@@ -85,11 +99,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Yêu cầu số điện thoại"),
         "privacyPolicy":
             MessageLookupByLibrary.simpleMessage("Chính sách bảo mật"),
+        "profile": MessageLookupByLibrary.simpleMessage("Hồ sơ"),
         "requireSomeText":
             MessageLookupByLibrary.simpleMessage("Yêu cầu nhập dữ liệu"),
         "resendCode":
             MessageLookupByLibrary.simpleMessage("Gửi lại mã xác minh"),
         "save": MessageLookupByLibrary.simpleMessage("Lưu"),
+        "saveChanges": MessageLookupByLibrary.simpleMessage("Lưu thay đổi"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Chọn ngôn ngữ"),
         "settings": MessageLookupByLibrary.simpleMessage("Cài đặt"),
         "signIn": MessageLookupByLibrary.simpleMessage("Đăng Nhập"),
@@ -98,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signInWithGoogle":
             MessageLookupByLibrary.simpleMessage("Đăng nhập với Google"),
         "signUp": MessageLookupByLibrary.simpleMessage("Đăng Ký"),
+        "takePhoto": MessageLookupByLibrary.simpleMessage("Chụp ảnh"),
         "termRequired": MessageLookupByLibrary.simpleMessage(
             "Hãy đồng ý với các điều khoản và chính sách của chúng tôi"),
         "termsOfService":
@@ -115,8 +132,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Chúng tôi đã gửi mã xác minh đến số điện thoại "),
         "youCanCheckYourPhone": MessageLookupByLibrary.simpleMessage(
             "Bạn có thể kiểm tra điện thoại của mình để xác minh mã xác minh"),
+        "yourCamera": MessageLookupByLibrary.simpleMessage("Máy ảnh của bạn"),
         "yourCodeOnTheWay": MessageLookupByLibrary.simpleMessage(
             "Mã xác minh đang được gửi đến số điện thoại của bạn"),
+        "yourGallery": MessageLookupByLibrary.simpleMessage("Thư viện của bạn"),
         "yourName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
         "yourPhoneVerifying": MessageLookupByLibrary.simpleMessage(
             "Đang xác minh số điện thoại của bạn")

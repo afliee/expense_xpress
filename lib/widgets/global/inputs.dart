@@ -15,7 +15,7 @@ class Input {
 
   static Input of(BuildContext context) => Input(context);
 
-  Widget text({@required label, @required controller, style}) {
+  Widget text({required String label, @required controller, style}) {
     return Container(
       child: TextFormField(
         controller: controller,
@@ -151,6 +151,41 @@ class Input {
           }
           return null;
         },
+      ),
+    );
+  }
+
+  Widget disabled({required label, required controller, style}) {
+    return Container(
+      child: TextFormField(
+        controller: controller,
+        style: style,
+        enabled: false,
+        decoration: InputDecoration(
+          labelText: label,
+          labelStyle: const TextStyle(
+            color: AppColors.textFieldsColor,
+          ),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: AppStyles.textFieldHorizontalPadding,
+            vertical: AppStyles.textFieldVerticalPadding,
+          ),
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.tertiary,
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.textFieldsColor,
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+        ),
       ),
     );
   }

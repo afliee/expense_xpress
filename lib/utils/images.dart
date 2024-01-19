@@ -1,5 +1,7 @@
 class ImagesAsset {
   ImagesAsset();
+  static const String avatarDefaultPath = 'assets/images/im_avatar_default';
+  static const String avatarDefaultExt = 'png';
   static const String _imagesPath = 'assets/images';
 
   static String logoSplash = '$_imagesPath/im_logo_64.svg';

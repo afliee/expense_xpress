@@ -7,6 +7,10 @@ class UserService {
     return await _userRepository.create(user);
   }
 
+  static Future<User> updateUser(User user) async {
+    return await _userRepository.update(user);
+  }
+
   static Future<bool> alreadyExists({required String phoneNumber, Function(bool)? onUserExist}) async {
     var result = await _userRepository.alreadyExists(phoneNumber);
 
@@ -17,7 +21,7 @@ class UserService {
     return false;
   }
 
-  static getCurrentUser() async {
+  static Future<User> getCurrentUser() async {
     return await _userRepository.getCurrentUser();
   }
 

@@ -8,5 +8,7 @@ class DB {
   static final CollectionReference users =
       _firestore.collection('users');
 
-
+  // wallets collection reference
+  static final CollectionReference wallets =
+      _firestore.collection('wallets');
 }
