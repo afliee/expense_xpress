@@ -76,7 +76,8 @@
   "lastLogin": "Last Login",
     "logout": "Logout",
   "joinDate": "Join Date",
-    "editProfile": "Edit Profile",
+    "editProfile": "Change Profile Picture",
+  "youCanEditYourProfileWithUsOptions": "You can edit your profile with us options",
   "defaultGallery": "Default Gallery",
   "yourCamera": "Your Camera",
   "yourGallery": "Your Gallery",
@@ -84,5 +85,8 @@
   "chooseFromGallery": "Choose from Gallery",
   "cancel": "Cancel",
   "saveChanges": "Save Changes",
-  "credential": "Credential"
+  "credential": "Credential",
+  "choosePhotoFromUsGallery": "Choose photo from us gallery",
+  "choosePhotoFromYourGallery": "Choose photo from your gallery",
+  "takePhotoWithYourCamera": "Take photo with your camera"
 }

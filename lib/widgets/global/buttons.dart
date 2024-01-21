@@ -4,14 +4,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Buttons {
-  static Widget primary(
-      {required Widget child, required Function() onPressed}) {
+  late BuildContext _context;
+
+  static Buttons of(BuildContext context) {
+    return Buttons().._context = context;
+  }
+
+  Widget primary({required Widget child, required Function() onPressed}) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         primary: AppColors.primary,
         elevation: 5,
-        shadowColor: Colors.grey,
+        shadowColor: Theme.of(_context).shadowColor,
         padding: const EdgeInsets.symmetric(
           horizontal: AppStyles.buttonPadding,
           vertical: AppStyles.buttonPadding,
@@ -44,7 +49,7 @@ class Buttons {
     );
   }
 
-  static Widget stroke(
+  Widget stroke(
       {required Widget child,
       required Function() onPressed,
       EdgeInsets? padding,
@@ -52,9 +57,9 @@ class Buttons {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        elevation: 5,
-        primary: color ?? Colors.white,
-        shadowColor: Colors.grey,
+        elevation: 0,
+        primary: color ?? Theme.of(_context).colorScheme.background,
+        // shadowColor: Colors.grey,
         padding: padding ??
             const EdgeInsets.symmetric(
               horizontal: AppStyles.buttonPadding,
@@ -62,13 +67,17 @@ class Buttons {
             ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppStyles.buttonBorderRadius),
+          side: BorderSide(
+            color: Theme.of(_context).colorScheme.onSurface,
+            width: 1,
+          ),
         ),
       ),
       child: child,
     );
   }
 
-  static Widget disabled(
+  Widget disabled(
       {required Widget child,
       required Function() onPressed,
       EdgeInsets? padding,
@@ -76,8 +85,8 @@ class Buttons {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        elevation: 5,
-        primary: color ?? Colors.white,
+        elevation: 1,
+        backgroundColor: color ?? Theme.of(_context).colorScheme.surfaceVariant,
         shadowColor: Colors.grey,
         padding: padding ??
             const EdgeInsets.symmetric(

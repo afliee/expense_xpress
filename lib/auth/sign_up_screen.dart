@@ -101,7 +101,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     _getDataFromCodeSending();
     return Scaffold(
-      backgroundColor: AppColors.background,
+      // backgroundColor: AppColors.background,
       appBar: AppBar(
         elevation: 0,
         // if isfromonboarding is true then show back button
@@ -114,10 +114,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               )
             : null,
         title: Text(S.of(context).signUp,
-            style: AppStyles.h3.copyWith(
-              color: AppColors.appBarColor,
-              fontWeight: FontWeight.w600,
-            )),
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                color: Theme.of(context).colorScheme.onBackground,
+                fontWeight: FontWeight.w600)),
         centerTitle: true,
       ),
       body: Container(
@@ -159,8 +158,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             overflow: TextOverflow.visible,
                             text: TextSpan(
                                 text: S.of(context).agreeToTerms,
-                                style:
-                                    AppStyles.h5.copyWith(color: Colors.black),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelLarge
+                                    ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onBackground,
+                                    ),
                                 children: [
                                   TextSpan(
                                       text: S.of(context).termsOfService,
@@ -169,12 +174,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                           // navigate to terms of service
                                           print('terms of service');
                                         },
-                                      style: AppStyles.h5
-                                          .copyWith(color: AppColors.primary)),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelLarge
+                                          ?.copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .primary,
+                                          )),
                                   TextSpan(
                                       text: S.of(context).and,
-                                      style: AppStyles.h5
-                                          .copyWith(color: Colors.black)),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelLarge
+                                          ?.copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .onBackground,
+                                          )),
                                   TextSpan(
                                       text: S.of(context).privacyPolicy,
                                       recognizer: TapGestureRecognizer()
@@ -182,8 +199,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                           // navigate to privacy policy
                                           print('privacy policy');
                                         },
-                                      style: AppStyles.h5
-                                          .copyWith(color: AppColors.primary))
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .labelLarge
+                                          ?.copyWith(
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .primary,
+                                          ))
                                 ])),
                       ),
                       onChanged: (value) {
@@ -196,15 +219,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: _isShowLoading
-                        ? Buttons.disabled(
+                        ? Buttons.of(context).disabled(
                             child: _buildLoading(), onPressed: () {})
-                        : Buttons.primary(
+                        : Buttons.of(context).primary(
                             child: Text(
                               S.of(context).signUp,
-                              style: AppStyles.h3.copyWith(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
+                                  ?.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500),
                             ),
                             onPressed: () {
                               _signUp(context);
@@ -216,9 +241,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       Text(
                         S.of(context).alreadyHaveAccount,
-                        style: AppStyles.h4.copyWith(
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.textFieldsHintColor,
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Theme.of(context).colorScheme.onBackground.withOpacity(0.6),
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                       TextButton(
@@ -231,9 +256,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           },
                           child: Text(
                             S.of(context).signIn,
-                            style: AppStyles.h4.copyWith(
+                            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: Theme.of(context).colorScheme.primary,
                               fontWeight: FontWeight.w500,
-                              color: AppColors.primary,
                             ),
                           ))
                     ],

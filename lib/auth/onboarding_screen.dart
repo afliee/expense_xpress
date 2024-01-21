@@ -42,7 +42,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 Widget _buildOnBoardingScreen(
     context, pageController, currentPage, Function onPageChanged) {
   return Scaffold(
-    backgroundColor: AppColors.background,
     body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -60,14 +59,17 @@ Widget _buildOnBoardingScreen(
                   },
                   children: [
                 _buildOnboardingItem(
+                    context,
                     S.of(context).onBoardingTitle1,
                     S.of(context).onBoardingDescription1,
                     ImagesAsset.onboarding1),
                 _buildOnboardingItem(
+                    context,
                     S.of(context).onBoardingTitle2,
                     S.of(context).onBoardingDescription2,
                     ImagesAsset.onboarding2),
                 _buildOnboardingItem(
+                    context,
                     S.of(context).onBoardingTitle3,
                     S.of(context).onBoardingDescription3,
                     ImagesAsset.onboarding3),
@@ -80,7 +82,7 @@ Widget _buildOnBoardingScreen(
   );
 }
 
-Widget _buildOnboardingItem(title, subtitle, image) {
+Widget _buildOnboardingItem(BuildContext context, title, subtitle, image) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,8 +92,9 @@ Widget _buildOnboardingItem(title, subtitle, image) {
       Text(
         title,
         textAlign: TextAlign.center,
-        style: AppStyles.h1.copyWith(
-            // fontWeight: FontWeight.w700,
+        style: Theme.of(context).textTheme.displaySmall?.copyWith(
+              fontWeight: FontWeight.w600,
+              color: Theme.of(context).colorScheme.primary,
             ),
       ),
       const SizedBox(height: 16),
@@ -99,8 +102,10 @@ Widget _buildOnboardingItem(title, subtitle, image) {
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Text(
           subtitle,
-          style: AppStyles.h4.copyWith(
-              fontWeight: FontWeight.w400, color: const Color(0xFF91919F)),
+          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                fontWeight: FontWeight.w400,
+                color: Theme.of(context).textTheme.bodyMedium?.color,
+              ),
           textAlign: TextAlign.center,
         ),
       ),
@@ -113,19 +118,20 @@ Widget _buildButtons(context) {
     children: <Widget>[
       SizedBox(
           width: double.infinity,
-          child: Buttons.primary(
+          child: Buttons.of(context).primary(
               child: Text(
                 S.of(context).signUp,
-                style: AppStyles.h3.copyWith(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: AppColors.background,
+                      fontWeight: FontWeight.w600,
+                    ),
               ),
               onPressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const SignUpScreen(isFromOnBoarding: true)));
+                        builder: (context) =>
+                            const SignUpScreen(isFromOnBoarding: true)));
               })),
       const SizedBox(height: 16),
       SizedBox(
@@ -133,10 +139,10 @@ Widget _buildButtons(context) {
           child: Buttons.secondary(
               child: Text(
                 S.of(context).signIn,
-                style: AppStyles.h3.copyWith(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.w600,
+                    )
               ),
               onPressed: () {
                 Navigator.push(

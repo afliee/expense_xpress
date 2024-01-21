@@ -41,6 +41,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkingYourPhone": m0,
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Chọn từ thư viện"),
+        "choosePhotoFromUsGallery": MessageLookupByLibrary.simpleMessage(
+            "Chọn ảnh từ thư viện của chúng tôi"),
+        "choosePhotoFromYourGallery": MessageLookupByLibrary.simpleMessage(
+            "Chọn ảnh từ thư viện của bạn"),
         "credential":
             MessageLookupByLibrary.simpleMessage("Thông tin đăng nhập"),
         "defaultGallery":
@@ -115,6 +119,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Đăng nhập với Google"),
         "signUp": MessageLookupByLibrary.simpleMessage("Đăng Ký"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Chụp ảnh"),
+        "takePhotoWithYourCamera": MessageLookupByLibrary.simpleMessage(
+            "Chụp ảnh với máy ảnh của bạn"),
         "termRequired": MessageLookupByLibrary.simpleMessage(
             "Hãy đồng ý với các điều khoản và chính sách của chúng tôi"),
         "termsOfService":
@@ -132,6 +138,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Chúng tôi đã gửi mã xác minh đến số điện thoại "),
         "youCanCheckYourPhone": MessageLookupByLibrary.simpleMessage(
             "Bạn có thể kiểm tra điện thoại của mình để xác minh mã xác minh"),
+        "youCanEditYourProfileWithUsOptions":
+            MessageLookupByLibrary.simpleMessage(
+                "Bạn có thể chỉnh sửa hồ sơ của mình với các tùy chọn sau"),
         "yourCamera": MessageLookupByLibrary.simpleMessage("Máy ảnh của bạn"),
         "yourCodeOnTheWay": MessageLookupByLibrary.simpleMessage(
             "Mã xác minh đang được gửi đến số điện thoại của bạn"),

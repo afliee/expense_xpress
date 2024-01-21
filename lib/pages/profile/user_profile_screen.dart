@@ -6,6 +6,7 @@ import 'package:expense_xpress/utils/contants.dart';
 import 'package:expense_xpress/utils/dialogs.dart';
 import 'package:expense_xpress/utils/images.dart';
 import 'package:expense_xpress/utils/styles.dart';
+import 'package:expense_xpress/widgets/features/user/bs_profile_avatar.dart';
 import 'package:expense_xpress/widgets/global/buttons.dart';
 import 'package:expense_xpress/widgets/global/inputs.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +24,20 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
   late final TextEditingController _nameController, _credentialController;
   User? _user;
 
+  _checkDataFromScreens() {
+    var data = ModalRoute.of(context)?.settings.arguments as Map?;
+    if (data != null) {
+      if (data.containsKey(Constants.user)) {
+        // _user = data[Constants.user];
+        print('user: $_user');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    _checkDataFromScreens();
     return Scaffold(
-      backgroundColor: AppColors.background,
       // resizeToAvoidBottomInset: true,
       appBar: AppBar(
         elevation: 0,
@@ -37,9 +48,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           icon: const Icon(Icons.arrow_back_ios),
         ),
         title: Text(S.of(context).profile,
-            style: AppStyles.h3.copyWith(
-              fontWeight: FontWeight.w600,
-            )),
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: Theme.of(context).colorScheme.onBackground,
+                fontWeight: FontWeight.w600)),
         centerTitle: true,
       ),
       body: Container(
@@ -80,12 +91,21 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             child: Container(
                               width: 30,
                               height: 30,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: AppColors.primary,
                               ),
                               child: IconButton(
-                                onPressed: () {},
+                                onPressed: () async {
+                                  if (mounted) {
+                                    await BottomSheetChangeProfile.show(
+                                        context, _user, (user) {
+                                      setState(() {
+                                        _user = user;
+                                      });
+                                    });
+                                  }
+                                },
                                 icon: const Icon(
                                   Icons.edit,
                                   color: Colors.white,
@@ -108,11 +128,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     Card(
                         elevation: 0,
                         // border card
-                        color: AppColors.background,
+                        color: Theme.of(context).colorScheme.background,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
-                          side: const BorderSide(
-                            color: AppColors.textFieldsColor,
+                          side: BorderSide(
+                            color: Theme.of(context).colorScheme.onSurface,
                           ),
                         ),
                         // remove padding of card
@@ -123,23 +143,33 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             ListTile(
                               title: Text(
                                 S.of(context).joinDate,
-                                style: AppStyles.h4.copyWith(
-                                  color: AppColors.textFieldsColor,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge
+                                    ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onBackground,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                               ),
                               subtitle: Text(
                                 AppStyles.dateFormat.format(
                                         _user?.createdAt ?? DateTime.now()) ??
                                     '',
-                                style: AppStyles.h4.copyWith(
-                                  color: AppColors.textFieldsColor,
-                                  fontWeight: FontWeight.w400,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge
+                                    ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onBackground,
+                                      fontWeight: FontWeight.w400,
+                                    ),
                               ),
                             ),
-                            const Divider(
-                              color: AppColors.textFieldsHintColor,
+                            Divider(
+                              color: Theme.of(context).colorScheme.onSurface,
                               height: 0,
                               thickness: 1,
                               indent: AppStyles.dividerIndent,
@@ -148,19 +178,29 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             ListTile(
                               title: Text(
                                 S.of(context).lastLogin,
-                                style: AppStyles.h4.copyWith(
-                                  color: AppColors.textFieldsColor,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge
+                                    ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onBackground,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                               ),
                               subtitle: Text(
                                 AppStyles.dateFormat.format(
                                         _user?.lastLogin ?? DateTime.now()) ??
                                     '',
-                                style: AppStyles.h4.copyWith(
-                                  color: AppColors.textFieldsColor,
-                                  fontWeight: FontWeight.w400,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge
+                                    ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onBackground,
+                                      fontWeight: FontWeight.w400,
+                                    ),
                               ),
                             ),
                           ],
@@ -171,7 +211,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               AppStyles.sizedBoxSpace(height: 16),
               SizedBox(
                 width: double.infinity,
-                child: Buttons.primary(
+                child: Buttons.of(context).primary(
                     child: Text(
                       S.of(context).save,
                       style: AppStyles.h3.copyWith(
@@ -192,10 +232,9 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                           title: S.of(context).error,
                           message: error.toString(),
                           positiveText: S.of(context).ok,
-                          onPositivePressed:  () => Navigator.pop(context),
+                          onPositivePressed: () => Navigator.pop(context),
                         );
                       });
-
                     }),
               ),
             ],
@@ -224,7 +263,8 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         _credentialController = TextEditingController(text: _user?.mail);
         break;
       case AuthType.phone:
-        _credentialController = TextEditingController(text: '${Constants.countryCode} ${_user?.phone}');
+        _credentialController = TextEditingController(
+            text: '${Constants.countryCode} ${_user?.phone}');
         break;
       default:
         _credentialController = TextEditingController(text: _user?.mail);

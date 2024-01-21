@@ -4,6 +4,7 @@ import 'package:expense_xpress/services/lang/l10n.dart';
 import 'package:expense_xpress/services/providers/language_provider.dart';
 import 'package:expense_xpress/utils/colors.dart';
 import 'package:expense_xpress/utils/contants.dart';
+import 'package:expense_xpress/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -51,11 +52,14 @@ class _MyAppState extends State<MyApp> {
         builder: (context, provider, child) {
           return MaterialApp(
             title: 'Expense Xpress',
-            theme: ThemeData(
-              fontFamily: 'Inter',
-              colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-              useMaterial3: true,
-            ),
+            // theme: ThemeData(
+            //   fontFamily: 'Inter',
+            //   colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
+            //   useMaterial3: true,
+            // ),
+            theme: AppStyles.lightTheme,
+            darkTheme: AppStyles.darkTheme,
+            themeMode: ThemeMode.system,
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

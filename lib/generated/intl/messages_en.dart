@@ -41,6 +41,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "checkingYourPhone": m0,
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from Gallery"),
+        "choosePhotoFromUsGallery": MessageLookupByLibrary.simpleMessage(
+            "Choose photo from us gallery"),
+        "choosePhotoFromYourGallery": MessageLookupByLibrary.simpleMessage(
+            "Choose photo from your gallery"),
         "credential": MessageLookupByLibrary.simpleMessage("Credential"),
         "defaultGallery":
             MessageLookupByLibrary.simpleMessage("Default Gallery"),
@@ -49,7 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "displayName": MessageLookupByLibrary.simpleMessage("Display Name"),
         "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Don\'t have an account yet? "),
-        "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
+        "editProfile":
+            MessageLookupByLibrary.simpleMessage("Change Profile Picture"),
         "enterCode": MessageLookupByLibrary.simpleMessage(
             "Enter your Verification Code"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
@@ -113,6 +118,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sign In with Google"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Take Photo"),
+        "takePhotoWithYourCamera":
+            MessageLookupByLibrary.simpleMessage("Take photo with your camera"),
         "termRequired": MessageLookupByLibrary.simpleMessage(
             "Please agree to our Terms of Service and Privacy Policy"),
         "termsOfService":
@@ -130,6 +137,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "We sent a verification code to "),
         "youCanCheckYourPhone":
             MessageLookupByLibrary.simpleMessage("You can check your phone"),
+        "youCanEditYourProfileWithUsOptions":
+            MessageLookupByLibrary.simpleMessage(
+                "You can edit your profile with us options"),
         "yourCamera": MessageLookupByLibrary.simpleMessage("Your Camera"),
         "yourCodeOnTheWay":
             MessageLookupByLibrary.simpleMessage("Your code is on the way"),

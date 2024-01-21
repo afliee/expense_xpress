@@ -11,7 +11,7 @@ class Constants {
   static const int otpResendTime = 30;
   static const double bottomNavBarHeight = 56;
   static const double iconSize = 24;
-  static const int avatarDefaultSize = 22;
+  static const int avatarDefaultSize = 20;
   static const double profileImageSize = 100;
   static const String countryCode = "+84";
   static const String appName = "Expense Xpress";
@@ -23,4 +23,5 @@ class Constants {
   static const String language = "language";
   static const String signUpAction = 'sign_up';
   static const String signInAction = 'sign_in';
+  static const String user = 'user';
 }

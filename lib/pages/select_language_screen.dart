@@ -54,10 +54,10 @@ Widget _buildLanguageItem(
         vertical: 10,
       ),
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).colorScheme.background.withOpacity(0.1),
           borderRadius: BorderRadius.circular(AppStyles.buttonBorderRadius),
           border: Border.all(
-            color: isSelected ? AppColors.secondary : Colors.transparent,
+            color: isSelected ? AppColors.secondary : Theme.of(context).highlightColor,
             width: 1,
           ),
           boxShadow: [
@@ -76,8 +76,10 @@ Widget _buildLanguageItem(
             child: RichText(
           text: TextSpan(
             text: language.name,
-            style: AppStyles.h3
-                .copyWith(color: Colors.black, fontWeight: FontWeight.w400),
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontWeight: FontWeight.w500,
+                ),
             children: [
               TextSpan(
                 text: ' (${language.code})',
@@ -106,15 +108,26 @@ Widget _buildUI(
   var _languages = Languages.all;
 
   return Scaffold(
-    backgroundColor: AppColors.background,
+    // backgroundColor: Theme.of(context).colorScheme.background,
     appBar: AppBar(
-      title: Text(
-        S.of(context)?.language ?? '',
-        style: AppStyles.h2.copyWith(
-          fontWeight: FontWeight.w600,
+        title: Text(
+          S.of(context).language ?? '',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              color: Theme.of(context).colorScheme.onBackground,
+              fontWeight: FontWeight.w600),
         ),
-      ),
-    ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Theme.of(context).appBarTheme.backgroundColor!,
+                Theme.of(context).appBarTheme.backgroundColor!.withOpacity(0.6),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+        )),
     body: Container(
       width: double.infinity,
       height: double.infinity,
@@ -140,12 +153,10 @@ Widget _buildUI(
               horizontal: 16,
               vertical: 8,
             ),
-            child: Buttons.primary(
-                child: Text(S.of(context)?.save ?? '',
-                    style: AppStyles.h4.copyWith(
-                      fontSize: 18,
-                      color: Colors.white,
-                    )),
+            child: Buttons.of(context).primary(
+                child: Text(S.of(context).save ?? '',
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Colors.white, fontWeight: FontWeight.w500)),
                 onPressed: () {
                   SharedPreferences.getInstance().then((prefs) {
                     prefs.setString(

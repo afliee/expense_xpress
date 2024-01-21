@@ -680,11 +680,21 @@ class S {
     );
   }
 
-  /// `Edit Profile`
+  /// `Change Profile Picture`
   String get editProfile {
     return Intl.message(
-      'Edit Profile',
+      'Change Profile Picture',
       name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can edit your profile with us options`
+  String get youCanEditYourProfileWithUsOptions {
+    return Intl.message(
+      'You can edit your profile with us options',
+      name: 'youCanEditYourProfileWithUsOptions',
       desc: '',
       args: [],
     );
@@ -765,6 +775,36 @@ class S {
     return Intl.message(
       'Credential',
       name: 'credential',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose photo from us gallery`
+  String get choosePhotoFromUsGallery {
+    return Intl.message(
+      'Choose photo from us gallery',
+      name: 'choosePhotoFromUsGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose photo from your gallery`
+  String get choosePhotoFromYourGallery {
+    return Intl.message(
+      'Choose photo from your gallery',
+      name: 'choosePhotoFromYourGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take photo with your camera`
+  String get takePhotoWithYourCamera {
+    return Intl.message(
+      'Take photo with your camera',
+      name: 'takePhotoWithYourCamera',
       desc: '',
       args: [],
     );

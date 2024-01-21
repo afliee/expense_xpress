@@ -25,7 +25,6 @@ class HomeScreenState extends State<HomeScreen> with MainScreenStateMixin {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: AppColors.background,
       body: Center(
         child: Text('Home Page'),
       ),

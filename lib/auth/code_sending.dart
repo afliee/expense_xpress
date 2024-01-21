@@ -195,10 +195,10 @@ class _CodeSendingState extends State<CodeSending> {
                     _isVerified
                         ? S.of(context).yourCodeOnTheWay
                         : S.of(context).yourPhoneVerifying,
-                    style: AppStyles.h2.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                          color: Theme.of(context).colorScheme.onBackground,
+                          fontWeight: FontWeight.w600,
+                        ),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -208,10 +208,14 @@ class _CodeSendingState extends State<CodeSending> {
                         ? Text(
                             S.of(context).checkingYourPhone(
                                 '${Constants.countryCode} $_phoneNumber'),
-                            style: AppStyles.h4.copyWith(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge
+                                ?.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
+                                  fontWeight: FontWeight.w500,
+                                ),
                             textAlign: TextAlign.center,
                           )
                         : const CircularProgressIndicator()),

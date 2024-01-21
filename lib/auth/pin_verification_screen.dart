@@ -98,12 +98,14 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
         // save user to firestore
         // random a number more than 0 and less than avatarDefaultSize
 
-        int random = DateTime.now().millisecondsSinceEpoch % Constants.avatarDefaultSize;
+        int random =
+            DateTime.now().millisecondsSinceEpoch % Constants.avatarDefaultSize;
 
         await UserService.saveUser(user.User(
                 uid: value.user!.uid,
                 displayName: _name,
-                photoUrl: value.user!.photoURL ?? '${ImagesAsset.avatarDefaultPath}_$random.${ImagesAsset.avatarDefaultExt}',
+                photoUrl: value.user!.photoURL ??
+                    '${ImagesAsset.avatarDefaultPath}_$random.${ImagesAsset.avatarDefaultExt}',
                 phone: _phoneNumber.trim(),
                 mail: value.user!.email,
                 authType: AuthType.phone,
@@ -123,7 +125,10 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
             });
             Navigator.pushAndRemoveUntil(context,
                 MaterialPageRoute(builder: (context) {
-              return MainScreen(user: user, initialIndex: 0,);
+              return MainScreen(
+                user: user,
+                initialIndex: 0,
+              );
             }), (route) => false);
           }
         });
@@ -177,7 +182,10 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
         });
         Navigator.pushAndRemoveUntil(context,
             MaterialPageRoute(builder: (context) {
-          return MainScreen(user: user, initialIndex: 0,);
+          return MainScreen(
+            user: user,
+            initialIndex: 0,
+          );
         }), (route) => false);
       }
     }).catchError((error) {
@@ -239,10 +247,10 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
               )
             : null,
         title: Text(S.of(context).verificationTitle,
-            style: AppStyles.h3.copyWith(
-              color: AppColors.appBarColor,
-              fontWeight: FontWeight.w600,
-            )),
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontWeight: FontWeight.w600,
+                )),
         centerTitle: true,
       ),
       body: Container(
@@ -254,10 +262,10 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
               AppStyles.sizedBoxSpace(height: 18),
               Text(
                 S.of(context).enterCode,
-                style: AppStyles.h1.copyWith(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground,
+                      fontWeight: FontWeight.w600,
+                    ),
                 textAlign: TextAlign.left,
               ),
               Container(
@@ -285,12 +293,14 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                         // transparent true
                         activeFillColor: Colors.transparent,
                         inactiveFillColor: Colors.transparent,
-                        inactiveColor: Colors.black,
-                        activeColor: Colors.black,
-                        selectedColor: Colors.black,
+                        inactiveColor:
+                            Theme.of(context).colorScheme.onBackground,
+                        activeColor: Theme.of(context).colorScheme.onBackground,
+                        selectedColor:
+                            Theme.of(context).colorScheme.onBackground,
                         selectedFillColor: Colors.transparent,
                       ),
-                      cursorColor: Colors.black,
+                      cursorColor: Theme.of(context).colorScheme.onBackground,
                       animationDuration: const Duration(milliseconds: 300),
                       enableActiveFill: true,
                       keyboardType: TextInputType.number,
@@ -310,10 +320,10 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
               // timer countdown resend code
               Text(
                 TimeStampConverter.secondsToMinutes(_startTime),
-                style: AppStyles.h4.copyWith(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground,
+                      fontWeight: FontWeight.w500,
+                    ),
                 textAlign: TextAlign.left,
               ),
               AppStyles.sizedBoxSpace(height: 12),
@@ -322,10 +332,10 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                   textAlign: TextAlign.left,
                   text: TextSpan(
                     text: S.of(context).weSentVerificationCode,
-                    style: AppStyles.h4.copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Theme.of(context).colorScheme.onBackground,
+                          fontWeight: FontWeight.w500,
+                        ),
                     children: [
                       TextSpan(
                         text: ' ${Constants.countryCode} $_phoneNumber ',
@@ -336,10 +346,10 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                       ),
                       TextSpan(
                         text: S.of(context).youCanCheckYourPhone,
-                        style: AppStyles.h4.copyWith(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: Theme.of(context).colorScheme.onBackground,
+                              fontWeight: FontWeight.w500,
+                            ),
                       ),
                     ],
                   )),
@@ -362,7 +372,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
               SizedBox(
                   width: double.infinity,
                   child: _isOtpValid & (_startTime > 0)
-                      ? Buttons.primary(
+                      ? Buttons.of(context).primary(
                           child: Text(
                             S.of(context).verify,
                             style: AppStyles.h3.copyWith(
@@ -378,7 +388,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                               _signIn(context, _optCode);
                             }
                           })
-                      : Buttons.disabled(
+                      : Buttons.of(context).disabled(
                           child: Text(
                             S.of(context).verify,
                             style: AppStyles.h3.copyWith(

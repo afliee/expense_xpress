@@ -44,7 +44,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
+      // backgroundColor: AppColors.background,
       appBar: AppBar(
         elevation: 0,
         // if isfromonboarding is true then show back button
@@ -56,11 +56,12 @@ class _SignInScreenState extends State<SignInScreen> {
                 icon: const Icon(Icons.arrow_back_ios),
               )
             : null,
-        title: Text(S.of(context).signIn,
-            style: AppStyles.h3.copyWith(
-              color: AppColors.appBarColor,
-              fontWeight: FontWeight.w600,
-            )),
+        title: Text(
+          S.of(context).signIn,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+              color: Theme.of(context).colorScheme.onBackground,
+              fontWeight: FontWeight.w600),
+        ),
         centerTitle: true,
       ),
       body: Container(
@@ -91,14 +92,14 @@ class _SignInScreenState extends State<SignInScreen> {
                     AppStyles.sizedBoxSpace(height: 40),
                     SizedBox(
                       width: double.infinity,
-                      child: Buttons.primary(
-                          child: Text(
-                            S.of(context).signIn,
-                            style: AppStyles.h3.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
+                      child: Buttons.of(context).primary(
+                          child: Text(S.of(context).signIn,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
+                                  ?.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500)),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               UserService.alreadyExists(
@@ -153,29 +154,27 @@ Widget _buildNavigator(context) {
                       builder: (context) =>
                           const SignUpScreen(isFromOnBoarding: true)));
             },
-            child: Text(
-              S.of(context).forgotPassword,
-              style: AppStyles.h3.copyWith(
-                fontWeight: FontWeight.w500,
-                color: AppColors.primary,
-              ),
-            ),
+            child: Text(S.of(context).forgotPassword,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground,
+                      fontWeight: FontWeight.w500,
+                    )),
           ),
           AppStyles.sizedBoxSpace(height: 34),
           RichText(
               text: TextSpan(
                   text: S.of(context).dontHaveAccount,
-                  style: AppStyles.h4.copyWith(
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.textFieldsHintColor,
-                  ),
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onBackground.withOpacity(0.6),
+                        fontWeight: FontWeight.w500,
+                      ),
                   children: [
                 TextSpan(
                     text: S.of(context).signUp,
-                    style: AppStyles.h4.copyWith(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.primary,
-                    ),
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontWeight: FontWeight.w500,
+                        ),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         Navigator.push(
@@ -192,7 +191,7 @@ Widget _buildNavigator(context) {
 Widget _buildGoogleButton(context) {
   return SizedBox(
       width: double.infinity,
-      child: Buttons.stroke(
+      child: Buttons.of(context).stroke(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -200,15 +199,15 @@ Widget _buildGoogleButton(context) {
               AppStyles.sizedBoxSpace(width: 8),
               Text(
                 S.of(context).signInWithGoogle,
-                style: AppStyles.h3.copyWith(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground,
+                      fontWeight: FontWeight.w500,
+                    ),
               ),
             ],
           ),
           padding: const EdgeInsets.symmetric(vertical: 8),
-          color: Colors.white,
+          color: Theme.of(context).colorScheme.background.withOpacity(0.1),
           onPressed: () async {
             try {
               UserCredential credential =

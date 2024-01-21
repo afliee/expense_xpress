@@ -19,11 +19,15 @@ class Input {
     return Container(
       child: TextFormField(
         controller: controller,
-        style: style,
+        style: style ??
+            Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontWeight: FontWeight.w500,
+                ),
         decoration: InputDecoration(
           labelText: label,
-          labelStyle: const TextStyle(
-            color: AppColors.textFieldsColor,
+          labelStyle: TextStyle(
+            color: Theme.of(context).textTheme.labelLarge?.color,
           ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: AppStyles.textFieldHorizontalPadding,
@@ -38,16 +42,16 @@ class Input {
             ),
             borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
-          enabledBorder: const OutlineInputBorder(
+          enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: AppColors.textFieldsColor,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
-            borderRadius: BorderRadius.all(Radius.circular(16)),
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
           ),
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return 'Please enter some text';
+            return S.of(context).requireSomeText;
           }
           return null;
         },
@@ -64,16 +68,16 @@ class Input {
       child: TextFormField(
         controller: controller,
         style: style ??
-            AppStyles.h4.copyWith(
-              color: AppColors.textFieldsColor,
-              fontWeight: FontWeight.w400,
-            ),
+            Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontWeight: FontWeight.w500,
+                ),
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
           labelText: label,
           hintText: S.of(context).phoneNumberHint,
-          labelStyle: const TextStyle(
-            color: AppColors.textFieldsColor,
+          labelStyle: TextStyle(
+            color: Theme.of(context).textTheme.labelLarge?.color,
           ),
           prefixText: countryCode,
           contentPadding: const EdgeInsets.symmetric(
@@ -89,9 +93,9 @@ class Input {
             ),
             borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
-          enabledBorder: const OutlineInputBorder(
+          enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: AppColors.textFieldsColor,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
             borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
@@ -115,13 +119,17 @@ class Input {
     return Container(
       child: TextFormField(
         controller: controller,
-        style: style,
+        style: style ??
+            Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontWeight: FontWeight.w500,
+                ),
         obscureText: true,
         decoration: InputDecoration(
           labelText: label,
           hintText: S.of(context).passwordHint,
-          labelStyle: const TextStyle(
-            color: AppColors.textFieldsColor,
+          labelStyle: TextStyle(
+            color: Theme.of(context).textTheme.labelLarge?.color,
           ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: AppStyles.textFieldHorizontalPadding,
@@ -163,9 +171,11 @@ class Input {
         enabled: false,
         decoration: InputDecoration(
           labelText: label,
-          labelStyle: const TextStyle(
-            color: AppColors.textFieldsColor,
-          ),
+          labelStyle: style ??
+              Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.onBackground,
+                    fontWeight: FontWeight.w500,
+                  ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: AppStyles.textFieldHorizontalPadding,
             vertical: AppStyles.textFieldVerticalPadding,

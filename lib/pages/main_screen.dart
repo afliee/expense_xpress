@@ -79,7 +79,7 @@ class MainScreenState extends State<MainScreen> {
           elevation: 2.0,
           child: const Icon(Icons.add, color: Colors.white, size: 24.0)),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      backgroundColor: AppColors.background,
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: _appBarParams?.toAppBar,
       body: PageView(
         controller: _pageController,
@@ -99,7 +99,7 @@ class MainScreenState extends State<MainScreen> {
       bottomNavigationBar: SizedBox(
         height: Constants.bottomNavBarHeight,
         child: BottomAppBar(
-          color: AppColors.background,
+          color: Theme.of(context).colorScheme.background,
           shape: const CircularNotchedRectangle(),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -108,83 +108,71 @@ class MainScreenState extends State<MainScreen> {
               IconButton(
                   iconSize: Constants.iconSize,
                   style: ButtonStyle(
-                      overlayColor:
-                      MaterialStateProperty.all(Colors.transparent)),
+                    overlayColor: MaterialStateProperty.all(Colors.transparent),
+                    animationDuration: const Duration(milliseconds: 300),
+                  ),
                   alignment: Alignment.topCenter,
                   splashColor: Colors.transparent,
                   onPressed: () {
-                    // setState(() {
-                    //   _currentIndex = 0;
-                    // });
-                    // _onTap!(0);
                     _bottomNavBarPressed(0);
                   },
                   icon: const Icon(Icons.home_rounded),
-                  color: AppColors.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   tooltip: S.of(context).home,
                   isSelected: _currentIndex == 0,
-                  selectedIcon:
-                  const Icon(Icons.home_rounded, color: AppColors.secondary)),
+                  selectedIcon: Icon(Icons.home_rounded,
+                      color: Theme.of(context).colorScheme.secondary)),
               IconButton(
                   iconSize: Constants.iconSize,
                   style: ButtonStyle(
-                      overlayColor:
-                      MaterialStateProperty.all(Colors.transparent)),
+                    overlayColor: MaterialStateProperty.all(Colors.transparent),
+                    animationDuration: const Duration(milliseconds: 300),
+                  ),
                   alignment: Alignment.topCenter,
                   splashColor: Colors.transparent,
                   onPressed: () {
-                    // setState(() {
-                    //   _currentIndex = 1;
-                    // });
                     _bottomNavBarPressed(1);
-                    // _onTap!(1);
                   },
                   icon: const Icon(Icons.account_balance_wallet_rounded),
-                  color: AppColors.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   tooltip: S.of(context).history,
                   isSelected: _currentIndex == 1,
-                  selectedIcon: const Icon(Icons.account_balance_wallet_rounded,
-                      color: AppColors.secondary)),
+                  selectedIcon: Icon(Icons.account_balance_wallet_rounded,
+                      color: Theme.of(context).colorScheme.secondary)),
               IconButton(
                   iconSize: Constants.iconSize,
                   style: ButtonStyle(
-                      overlayColor:
-                      MaterialStateProperty.all(Colors.transparent)),
+                    overlayColor: MaterialStateProperty.all(Colors.transparent),
+                    animationDuration: const Duration(milliseconds: 300),
+                  ),
                   alignment: Alignment.topCenter,
                   splashColor: Colors.transparent,
                   onPressed: () {
-                    // setState(() {
-                    //   _currentIndex = 2;
-                    // });
                     _bottomNavBarPressed(2);
-                    // _onTap!(2);
                   },
                   icon: const Icon(Icons.account_balance_rounded),
-                  color: AppColors.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   tooltip: S.of(context).bugdet,
                   isSelected: _currentIndex == 2,
-                  selectedIcon: const Icon(Icons.account_balance_rounded,
-                      color: AppColors.secondary)),
+                  selectedIcon: Icon(Icons.account_balance_rounded,
+                      color: Theme.of(context).colorScheme.secondary)),
               IconButton(
                   iconSize: Constants.iconSize,
                   style: ButtonStyle(
-                      overlayColor:
-                      MaterialStateProperty.all(Colors.transparent)),
+                    overlayColor: MaterialStateProperty.all(Colors.transparent),
+                    animationDuration: const Duration(milliseconds: 300),
+                  ),
                   alignment: Alignment.topCenter,
                   splashColor: Colors.transparent,
                   onPressed: () {
-                    // setState(() {
-                    //   _currentIndex = 3;
-                    // });
                     _bottomNavBarPressed(3);
-                    // _onTap!(3);
                   },
                   icon: const Icon(Icons.person_rounded),
                   tooltip: S.of(context).settings,
-                  color: AppColors.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   isSelected: _currentIndex == 3,
-                  selectedIcon: const Icon(Icons.person_rounded,
-                      color: AppColors.secondary))
+                  selectedIcon: Icon(Icons.person_rounded,
+                      color: Theme.of(context).colorScheme.secondary))
             ],
           ),
         ),
@@ -205,5 +193,3 @@ class MainScreenState extends State<MainScreen> {
     });
   }
 }
-
-
