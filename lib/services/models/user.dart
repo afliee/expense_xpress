@@ -17,6 +17,9 @@ enum AuthType {
 enum AvatarType {
   google,
   phone,
+  gallery,
+  defaultGallery,
+  camera,
   none;
 
   String toJson() => name;
@@ -46,8 +49,8 @@ class User {
   final String? phone;
   late String displayName;
   late String photoUrl;
-  final AuthType? authType;
-  final AvatarType? avatarType;
+  late AuthType? authType;
+  late  AvatarType? avatarType;
   String? locale = LanguageProvider().locale.languageCode;
   DateTime? lastLogin;
   DateTime? createdAt;

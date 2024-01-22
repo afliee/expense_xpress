@@ -43,7 +43,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         elevation: 0,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pop(context, _user!);
           },
           icon: const Icon(Icons.arrow_back_ios),
         ),
@@ -73,7 +73,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               image: DecorationImage(
-                                image: _getImageUrl(),
+                                image: UserService.getPhotoUrl(_user!),
                                 fit: BoxFit.cover,
                               ),
                               boxShadow: [
@@ -225,7 +225,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 
                       UserService.updateUser(_user!).then((value) {
                         AppDialogs.of(context).hideLoadingDialog();
-                        Navigator.pop(context);
+                        Navigator.pop(context, _user!);
                       }).catchError((error) {
                         AppDialogs.of(context).hideLoadingDialog();
                         AppDialogs.of(context).showAlertDialog(
@@ -240,17 +240,6 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
             ],
           )),
     );
-  }
-
-  _getImageUrl() {
-    switch (_user?.avatarType) {
-      case AvatarType.google:
-        return NetworkImage(_user?.photoUrl ?? '');
-      case AvatarType.phone:
-        return AssetImage(_user?.photoUrl ?? ImagesAsset.defaultAvatar);
-      default:
-        return AssetImage(_user?.photoUrl ?? ImagesAsset.defaultAvatar);
-    }
   }
 
   @override

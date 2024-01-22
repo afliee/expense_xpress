@@ -1,5 +1,6 @@
 import 'package:expense_xpress/pages/main_screen.dart';
 import 'package:expense_xpress/pages/profile/user_profile_screen.dart';
+import 'package:expense_xpress/services/functions/user_service.dart';
 import 'package:expense_xpress/services/mixins/main_screen_mixin.dart';
 import 'package:expense_xpress/services/models/user.dart';
 import 'package:expense_xpress/utils/colors.dart';
@@ -36,17 +37,10 @@ class HomeScreenState extends State<HomeScreen> with MainScreenStateMixin {
     super.initState();
     _user = widget.user;
     _key = GlobalKey<HomeScreenState>();
-    switch (_user?.avatarType) {
-      case AvatarType.google:
-        avatar = NetworkImage(_user?.photoUrl ?? '');
-        break;
-      case AvatarType.phone:
-        avatar = AssetImage(_user?.photoUrl ?? ImagesAsset.defaultAvatar);
-        break;
-      default:
-        avatar = AssetImage(ImagesAsset.defaultAvatar);
-    }
+    avatar = UserService.getPhotoUrl(_user!);
   }
+
+  // method when navigating to this page
 
   @override
   void onPageVisible() {
@@ -70,7 +64,12 @@ class HomeScreenState extends State<HomeScreen> with MainScreenStateMixin {
                     context,
                     MaterialPageRoute(
                       builder: (_) => UserProfileScreen(key: _key, user: _user),
-                    ));
+                    )).then((value) => {
+                      setState(() {
+                        if (value != null && value is User) _user = value;
+                        avatar = UserService.getPhotoUrl(_user!);
+                      })
+                    });
               },
               child: CircleAvatar(
                 radius: 20,

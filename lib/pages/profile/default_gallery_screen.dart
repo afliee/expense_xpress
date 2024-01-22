@@ -45,6 +45,7 @@ class _DefaultGalleryScreenState extends State<DefaultGalleryScreen> {
                   print('selected index: $_selectedIndex');
                   user!.photoUrl =
                       '${ImagesAsset.avatarDefaultPath}_${_selectedIndex + 1}.${ImagesAsset.avatarDefaultExt}';
+                  user!.avatarType = AvatarType.defaultGallery;
                   AppDialogs.of(context).showLoadingDialog();
                   try {
                     UserService.updateUser(user!).then((value) => {

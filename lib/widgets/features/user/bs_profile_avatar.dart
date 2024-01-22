@@ -1,11 +1,14 @@
 import 'package:expense_xpress/generated/l10n.dart';
 import 'package:expense_xpress/pages/profile/default_gallery_screen.dart';
+import 'package:expense_xpress/services/functions/user_service.dart';
 import 'package:expense_xpress/services/models/user.dart';
 import 'package:expense_xpress/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class BottomSheetChangeProfile {
-  static Future<void> show(BuildContext context, User? user, Function onAvatarChanged) async {
+  static Future<void> show(
+      BuildContext context, User? user, Function onAvatarChanged) async {
     showModalBottomSheet(
         context: context,
         shape: const RoundedRectangleBorder(
@@ -41,21 +44,22 @@ class BottomSheetChangeProfile {
                 Card(
                   margin: const EdgeInsets.symmetric(vertical: 4),
                   shape: RoundedRectangleBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(16)),
-                    side: BorderSide(
-                      color: Theme.of(context).colorScheme.onSurface,
-                    )
-                  ),
+                      borderRadius: const BorderRadius.all(Radius.circular(16)),
+                      side: BorderSide(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      )),
                   shadowColor: Theme.of(context).primaryColor,
                   elevation: 2,
                   child: ListTile(
                     onTap: () {
                       // Navigator.pop(context);
-                      Navigator.pushReplacement(context, MaterialPageRoute(
-                        builder: (context) => DefaultGalleryScreen(
-                          user: user,
-                        ),
-                      )).then((user) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DefaultGalleryScreen(
+                              user: user,
+                            ),
+                          )).then((user) {
                         print('value: ${user.toString()}');
                         onAvatarChanged(user);
                       });
@@ -88,16 +92,28 @@ class BottomSheetChangeProfile {
                 Card(
                   margin: const EdgeInsets.symmetric(vertical: 4),
                   shape: RoundedRectangleBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(16)),
+                      borderRadius: const BorderRadius.all(Radius.circular(16)),
                       side: BorderSide(
                         color: Theme.of(context).colorScheme.onSurface,
-                    )
-                  ),
+                      )),
                   shadowColor: Theme.of(context).primaryColor,
                   elevation: 2,
                   child: ListTile(
-                    onTap: () {
-                      Navigator.pop(context);
+                    onTap: () async {
+                      // Navigator.pop(context);
+                      final ImagePicker picker = ImagePicker();
+                      final XFile? image =
+                          await picker.pickImage(source: ImageSource.camera);
+                      if (image != null) {
+                        user?.photoUrl = image.path;
+                        user?.avatarType = AvatarType.camera;
+                        UserService.updateUser(user!);
+                        onAvatarChanged(user);
+                        // hide bottom sheet
+                        if (context.mounted) {
+                          Navigator.pop(context, user);
+                        }
+                      }
                     },
                     leading: Icon(
                       Icons.camera_alt,
@@ -126,21 +142,31 @@ class BottomSheetChangeProfile {
                 Card(
                   margin: const EdgeInsets.symmetric(vertical: 4),
                   shape: RoundedRectangleBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(16)),
+                      borderRadius: const BorderRadius.all(Radius.circular(16)),
                       side: BorderSide(
                         color: Theme.of(context).colorScheme.onSurface,
-                      )
-                  ),
+                      )),
                   shadowColor: Theme.of(context).primaryColor,
                   elevation: 2,
                   child: ListTile(
-                    onTap: () {
-                      Navigator.pop(context);
+                    onTap: () async {
+                      // Navigator.pop(context);
+                      final ImagePicker picker = ImagePicker();
+                      final XFile? image =
+                          await picker.pickImage(source: ImageSource.gallery);
+                      if (image != null) {
+                        user?.photoUrl = image.path;
+                        user?.avatarType = AvatarType.gallery;
+                        await UserService.updateUser(user!);
+                        onAvatarChanged(user);
+                        // hide bottom sheet
+                        if (context.mounted) {
+                          Navigator.pop(context, user);
+                        }
+                      }
                     },
-                    leading: Icon(
-                      Icons.photo_library,
-                      color: Theme.of(context).colorScheme.onBackground
-                    ),
+                    leading: Icon(Icons.photo_library,
+                        color: Theme.of(context).colorScheme.onBackground),
                     title: Text(
                       S.of(context).yourGallery,
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -148,7 +174,7 @@ class BottomSheetChangeProfile {
                           fontWeight: FontWeight.w600),
                     ),
                     subtitle: Text(
-                      'Choose a photo from your gallery',
+                      S.of(context).choosePhotoFromYourGallery,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(context).hintColor,
                           fontWeight: FontWeight.w400),
