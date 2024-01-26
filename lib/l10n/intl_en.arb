@@ -88,5 +88,27 @@
   "credential": "Credential",
   "choosePhotoFromUsGallery": "Choose photo from us gallery",
   "choosePhotoFromYourGallery": "Choose photo from your gallery",
-  "takePhotoWithYourCamera": "Take photo with your camera"
+  "takePhotoWithYourCamera": "Take photo with your camera",
+  "profileSettings": "Profile Settings",
+  "unKnown": "UnKnown",
+  "display": "Display",
+  "light": "Light",
+  "dark": "Dark",
+  "system": "System",
+  "personal": "Personal",
+  "yourWallets": "Your wallets",
+  "addNewWallet": "Add new wallet",
+  "walletName": "Wallet name",
+  "walletBalance": "Wallet balance",
+  "walletCurrency": "Wallet currency",
+  "cash": "Cash",
+  "walletType": "{walletType} wallet",
+  "@walletType": {
+    "placeholders": {
+      "walletType": {
+        "type": "String"
+      }
+    }
+  },
+  "categories": "Categories"
 }

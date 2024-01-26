@@ -74,5 +74,20 @@
   "credential": "Thông tin đăng nhập",
   "choosePhotoFromUsGallery": "Chọn ảnh từ thư viện của chúng tôi",
   "choosePhotoFromYourGallery": "Chọn ảnh từ thư viện của bạn",
-  "takePhotoWithYourCamera": "Chụp ảnh với máy ảnh của bạn"
+  "takePhotoWithYourCamera": "Chụp ảnh với máy ảnh của bạn",
+  "profileSettings": "Cài đặt hồ sơ",
+  "unKnown": "Không xác định",
+  "display": "Hiển thị",
+  "light": "Sáng",
+  "dark": "Tối",
+  "system": "Hệ thống",
+  "personal": "Cá nhân",
+  "yourWallets": "Ví của bạn",
+  "addNewWallet": "Thêm ví mới",
+  "walletName": "Tên ví",
+  "walletBalance": "Số dư ví",
+  "walletCurrency": "Tiền tệ",
+  "cash": "Tiền mặt",
+  "walletType": "ví {walletType}",
+  "categories": "Danh mục"
 }

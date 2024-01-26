@@ -26,8 +26,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m1(seconds) =>
       "Please wait ${seconds} seconds to resend the code";
 
+  static String m2(walletType) => "${walletType} wallet";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addNewWallet": MessageLookupByLibrary.simpleMessage("Add new wallet"),
         "agreeToTerms": MessageLookupByLibrary.simpleMessage(
             "By signing up, you agree to our "),
         "alreadyHaveAccount":
@@ -38,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "and": MessageLookupByLibrary.simpleMessage(" and "),
         "bugdet": MessageLookupByLibrary.simpleMessage("Budget"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "cash": MessageLookupByLibrary.simpleMessage("Cash"),
+        "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "checkingYourPhone": m0,
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from Gallery"),
@@ -46,10 +51,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "choosePhotoFromYourGallery": MessageLookupByLibrary.simpleMessage(
             "Choose photo from your gallery"),
         "credential": MessageLookupByLibrary.simpleMessage("Credential"),
+        "dark": MessageLookupByLibrary.simpleMessage("Dark"),
         "defaultGallery":
             MessageLookupByLibrary.simpleMessage("Default Gallery"),
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
             "I didn’t received the code? Send again"),
+        "display": MessageLookupByLibrary.simpleMessage("Display"),
         "displayName": MessageLookupByLibrary.simpleMessage("Display Name"),
         "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Don\'t have an account yet? "),
@@ -68,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "joinDate": MessageLookupByLibrary.simpleMessage("Join Date"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastLogin": MessageLookupByLibrary.simpleMessage("Last Login"),
+        "light": MessageLookupByLibrary.simpleMessage("Light"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
             "There is an issue with this method\n Please try again later"),
@@ -93,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter your password"),
         "passwordRequired": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 8 characters"),
+        "personal": MessageLookupByLibrary.simpleMessage("Personal"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "phoneNumberException": MessageLookupByLibrary.simpleMessage(
             "Please enter your phone number"),
@@ -104,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Phone number is required"),
         "privacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "profileSettings":
+            MessageLookupByLibrary.simpleMessage("Profile Settings"),
         "requireSomeText":
             MessageLookupByLibrary.simpleMessage("Please enter some text"),
         "resendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
@@ -117,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signInWithGoogle":
             MessageLookupByLibrary.simpleMessage("Sign In with Google"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "system": MessageLookupByLibrary.simpleMessage("System"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Take Photo"),
         "takePhotoWithYourCamera":
             MessageLookupByLibrary.simpleMessage("Take photo with your camera"),
@@ -127,12 +139,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
             "Too many attempts! Please try again later"),
         "transactions": MessageLookupByLibrary.simpleMessage("Transactions"),
+        "unKnown": MessageLookupByLibrary.simpleMessage("UnKnown"),
         "verificationCodeRequired": MessageLookupByLibrary.simpleMessage(
             "Verification code is required"),
         "verificationTitle":
             MessageLookupByLibrary.simpleMessage("Verification"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),
         "waitToResendCode": m1,
+        "walletBalance": MessageLookupByLibrary.simpleMessage("Wallet balance"),
+        "walletCurrency":
+            MessageLookupByLibrary.simpleMessage("Wallet currency"),
+        "walletName": MessageLookupByLibrary.simpleMessage("Wallet name"),
+        "walletType": m2,
         "weSentVerificationCode": MessageLookupByLibrary.simpleMessage(
             "We sent a verification code to "),
         "youCanCheckYourPhone":
@@ -146,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "yourGallery": MessageLookupByLibrary.simpleMessage("Your Gallery"),
         "yourName": MessageLookupByLibrary.simpleMessage("Your Name"),
         "yourPhoneVerifying":
-            MessageLookupByLibrary.simpleMessage("Verifying your phone number")
+            MessageLookupByLibrary.simpleMessage("Verifying your phone number"),
+        "yourWallets": MessageLookupByLibrary.simpleMessage("Your wallets")
       };
 }

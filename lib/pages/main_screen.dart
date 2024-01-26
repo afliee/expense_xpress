@@ -1,6 +1,7 @@
 import 'package:expense_xpress/generated/l10n.dart';
 import 'package:expense_xpress/pages/home/history_screen.dart';
 import 'package:expense_xpress/pages/home/home_screen.dart';
+import 'package:expense_xpress/pages/home/settings_screen.dart';
 import 'package:expense_xpress/services/mixins/main_screen_mixin.dart';
 import 'package:expense_xpress/services/models/user.dart';
 import 'package:expense_xpress/utils/colors.dart';
@@ -93,7 +94,9 @@ class MainScreenState extends State<MainScreen> {
             key: _keys[1],
           ),
           const Center(child: Text('Budget')),
-          const Center(child: Text('Profile')),
+          SettingsScreen(
+            key: _keys[3],
+          )
         ],
       ),
       bottomNavigationBar: SizedBox(

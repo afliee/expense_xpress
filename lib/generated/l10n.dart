@@ -809,6 +809,156 @@ class S {
       args: [],
     );
   }
+
+  /// `Profile Settings`
+  String get profileSettings {
+    return Intl.message(
+      'Profile Settings',
+      name: 'profileSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `UnKnown`
+  String get unKnown {
+    return Intl.message(
+      'UnKnown',
+      name: 'unKnown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Display`
+  String get display {
+    return Intl.message(
+      'Display',
+      name: 'display',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light`
+  String get light {
+    return Intl.message(
+      'Light',
+      name: 'light',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark`
+  String get dark {
+    return Intl.message(
+      'Dark',
+      name: 'dark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `System`
+  String get system {
+    return Intl.message(
+      'System',
+      name: 'system',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal`
+  String get personal {
+    return Intl.message(
+      'Personal',
+      name: 'personal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your wallets`
+  String get yourWallets {
+    return Intl.message(
+      'Your wallets',
+      name: 'yourWallets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add new wallet`
+  String get addNewWallet {
+    return Intl.message(
+      'Add new wallet',
+      name: 'addNewWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet name`
+  String get walletName {
+    return Intl.message(
+      'Wallet name',
+      name: 'walletName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet balance`
+  String get walletBalance {
+    return Intl.message(
+      'Wallet balance',
+      name: 'walletBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet currency`
+  String get walletCurrency {
+    return Intl.message(
+      'Wallet currency',
+      name: 'walletCurrency',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash`
+  String get cash {
+    return Intl.message(
+      'Cash',
+      name: 'cash',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{walletType} wallet`
+  String walletType(String walletType) {
+    return Intl.message(
+      '$walletType wallet',
+      name: 'walletType',
+      desc: '',
+      args: [walletType],
+    );
+  }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message(
+      'Categories',
+      name: 'categories',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -26,8 +26,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m1(seconds) =>
       "Vui lòng đợi ${seconds} giây để gửi lại mã xác minh";
 
+  static String m2(walletType) => "ví ${walletType}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addNewWallet": MessageLookupByLibrary.simpleMessage("Thêm ví mới"),
         "agreeToTerms":
             MessageLookupByLibrary.simpleMessage("Tôi đồng ý với các "),
         "alreadyHaveAccount":
@@ -38,6 +41,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "and": MessageLookupByLibrary.simpleMessage(" và "),
         "bugdet": MessageLookupByLibrary.simpleMessage("Ngân sách"),
         "cancel": MessageLookupByLibrary.simpleMessage("Hủy"),
+        "cash": MessageLookupByLibrary.simpleMessage("Tiền mặt"),
+        "categories": MessageLookupByLibrary.simpleMessage("Danh mục"),
         "checkingYourPhone": m0,
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Chọn từ thư viện"),
@@ -47,10 +52,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Chọn ảnh từ thư viện của bạn"),
         "credential":
             MessageLookupByLibrary.simpleMessage("Thông tin đăng nhập"),
+        "dark": MessageLookupByLibrary.simpleMessage("Tối"),
         "defaultGallery":
             MessageLookupByLibrary.simpleMessage("Thư viện mặc định"),
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
             "Không nhận được mã xác minh? Gửi lại"),
+        "display": MessageLookupByLibrary.simpleMessage("Hiển thị"),
         "displayName": MessageLookupByLibrary.simpleMessage("Tên hiển thị"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Bạn chưa có tài khoản?"),
@@ -67,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "joinDate": MessageLookupByLibrary.simpleMessage("Ngày tham gia"),
         "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
         "lastLogin": MessageLookupByLibrary.simpleMessage("Lần đăng nhập cuối"),
+        "light": MessageLookupByLibrary.simpleMessage("Sáng"),
         "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
             "Có vẻ phương thực hiện tại đang gặp vấn đề\n Hãy thử lại sau"),
@@ -92,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Hãy nhập mật khẩu của bạn"),
         "passwordRequired": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu chứa ít nhất 8 ký tự"),
+        "personal": MessageLookupByLibrary.simpleMessage("Cá nhân"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "phoneNumberException":
             MessageLookupByLibrary.simpleMessage("Nhập số điện thoại của bạn"),
@@ -104,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "privacyPolicy":
             MessageLookupByLibrary.simpleMessage("Chính sách bảo mật"),
         "profile": MessageLookupByLibrary.simpleMessage("Hồ sơ"),
+        "profileSettings":
+            MessageLookupByLibrary.simpleMessage("Cài đặt hồ sơ"),
         "requireSomeText":
             MessageLookupByLibrary.simpleMessage("Yêu cầu nhập dữ liệu"),
         "resendCode":
@@ -118,6 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signInWithGoogle":
             MessageLookupByLibrary.simpleMessage("Đăng nhập với Google"),
         "signUp": MessageLookupByLibrary.simpleMessage("Đăng Ký"),
+        "system": MessageLookupByLibrary.simpleMessage("Hệ thống"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Chụp ảnh"),
         "takePhotoWithYourCamera": MessageLookupByLibrary.simpleMessage(
             "Chụp ảnh với máy ảnh của bạn"),
@@ -128,12 +140,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
             "Quá nhiều lần thử! Hãy thử lại sau"),
         "transactions": MessageLookupByLibrary.simpleMessage("Giao dịch"),
+        "unKnown": MessageLookupByLibrary.simpleMessage("Không xác định"),
         "verificationCodeRequired":
             MessageLookupByLibrary.simpleMessage("Yêu cầu mã xác minh"),
         "verificationTitle":
             MessageLookupByLibrary.simpleMessage("Xác minh số điện thoại"),
         "verify": MessageLookupByLibrary.simpleMessage("Xác minh"),
         "waitToResendCode": m1,
+        "walletBalance": MessageLookupByLibrary.simpleMessage("Số dư ví"),
+        "walletCurrency": MessageLookupByLibrary.simpleMessage("Tiền tệ"),
+        "walletName": MessageLookupByLibrary.simpleMessage("Tên ví"),
+        "walletType": m2,
         "weSentVerificationCode": MessageLookupByLibrary.simpleMessage(
             "Chúng tôi đã gửi mã xác minh đến số điện thoại "),
         "youCanCheckYourPhone": MessageLookupByLibrary.simpleMessage(
@@ -147,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "yourGallery": MessageLookupByLibrary.simpleMessage("Thư viện của bạn"),
         "yourName": MessageLookupByLibrary.simpleMessage("Họ và tên"),
         "yourPhoneVerifying": MessageLookupByLibrary.simpleMessage(
-            "Đang xác minh số điện thoại của bạn")
+            "Đang xác minh số điện thoại của bạn"),
+        "yourWallets": MessageLookupByLibrary.simpleMessage("Ví của bạn")
       };
 }

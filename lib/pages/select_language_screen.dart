@@ -34,6 +34,26 @@ class _LanguageSelectionScreenState extends State<LanguageSelectionScreen> {
       });
     });
   }
+
+  @override
+  void initState() {
+    super.initState();
+    SharedPreferences.getInstance().then((prefs) {
+      var languageSelected = prefs.getString(Constants.language);
+      if (languageSelected != null) {
+        // handle logic here
+        if (languageSelected == 'en') {
+          setState(() {
+            _selectedIndex = 0;
+          });
+        } else if (languageSelected == 'vi') {
+          setState(() {
+            _selectedIndex = 1;
+          });
+        }
+      }
+    });
+  }
 }
 
 Widget _buildLanguageItem(
@@ -57,7 +77,9 @@ Widget _buildLanguageItem(
           color: Theme.of(context).colorScheme.background.withOpacity(0.1),
           borderRadius: BorderRadius.circular(AppStyles.buttonBorderRadius),
           border: Border.all(
-            color: isSelected ? AppColors.secondary : Theme.of(context).highlightColor,
+            color: isSelected
+                ? AppColors.secondary
+                : Theme.of(context).highlightColor,
             width: 1,
           ),
           boxShadow: [
@@ -106,7 +128,7 @@ Widget _buildLanguageItem(
 Widget _buildUI(
     BuildContext context, int currentSelected, Function onLanguageChanged) {
   var _languages = Languages.all;
-
+  final _languageProvider = Provider.of<LanguageProvider>(context);
   return Scaffold(
     // backgroundColor: Theme.of(context).colorScheme.background,
     appBar: AppBar(
@@ -162,10 +184,13 @@ Widget _buildUI(
                     prefs.setString(
                         Constants.language, _languages[currentSelected].code);
                     // Navigator.pop(context);
-                    bool isOnboarding =
-                        prefs.getBool(Constants.isOnboarding) ?? false;
-                    if (isOnboarding) {
-                      // user actually see onboarding screen
+                    bool isAuth = prefs.getBool(Constants.isAuth) ?? false;
+                    if (isAuth) {
+                      // change language
+                      _languageProvider
+                          .setLocale(_languages[currentSelected].locale);
+
+                      Navigator.pop(context);
                     } else {
                       // user not see onboarding screen yet
                       // push to onboarding screen

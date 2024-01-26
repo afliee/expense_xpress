@@ -11,6 +11,7 @@ class AppStyles {
   static const double indicatorSelectedSize = 16.0;
   static const double textFieldHorizontalPadding = 16.0;
   static const double textFieldVerticalPadding = 20.0;
+  static const double avatarSize = 100.0;
   static const double pinMargin = 4.0;
   static const double dividerIndent = 8.0;
   static const double h1FontSize = 32.0;

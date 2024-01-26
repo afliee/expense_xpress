@@ -1,6 +1,7 @@
 import 'package:expense_xpress/auth/splash_screen.dart';
 import 'package:expense_xpress/generated/l10n.dart';
 import 'package:expense_xpress/services/lang/l10n.dart';
+import 'package:expense_xpress/services/providers/display_provider.dart';
 import 'package:expense_xpress/services/providers/language_provider.dart';
 import 'package:expense_xpress/utils/colors.dart';
 import 'package:expense_xpress/utils/contants.dart';
@@ -39,7 +40,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-
     // get pref
     // hide status bar
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
@@ -47,9 +47,12 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => LanguageProvider()),
+        ChangeNotifierProvider(create: (_) => DisplayProvider())
       ],
       child: Consumer<LanguageProvider>(
         builder: (context, provider, child) {
+          final displayProvider = Provider.of<DisplayProvider>(context);
+
           return MaterialApp(
             title: 'Expense Xpress',
             // theme: ThemeData(
@@ -59,7 +62,7 @@ class _MyAppState extends State<MyApp> {
             // ),
             theme: AppStyles.lightTheme,
             darkTheme: AppStyles.darkTheme,
-            themeMode: ThemeMode.system,
+            themeMode: displayProvider.themeMode,
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

@@ -1,3 +1,4 @@
+import 'package:expense_xpress/services/functions/wallet_service.dart';
 import 'package:expense_xpress/services/models/wallet.dart';
 import 'package:expense_xpress/services/providers/language_provider.dart';
 import 'package:expense_xpress/utils/timestamp_converter.dart';
@@ -44,6 +45,7 @@ enum UserAttribute {
 
 class User {
   final TimeStampConverter timestampConverter = const TimeStampConverter();
+
   final String uid;
   final String? mail;
   final String? phone;
@@ -69,9 +71,16 @@ class User {
     this.lastLogin,
     this.createdAt,
     this.updatedAt,
+    this.wallets,
   });
 
-  factory User.fromJson(Map<String, dynamic> parseMap) {
+  static Future<User> fromJson(Map<String, dynamic> parseMap) async {
+    // get list wallets by userId from Future<List<Wallet>> getAllByUserId(String userId) async
+    // parseMap['uid'] is userId
+    String userId = parseMap['uid'];
+    List<Wallet> wallets = [];
+    await WalletService.getAllByUserId(userId).then((value) => wallets = value);
+
     return User(
       uid: parseMap['uid'],
       mail: parseMap['mail'],
@@ -87,6 +96,7 @@ class User {
           parseMap['createdAt'] == null ? null : parseMap['createdAt'].toDate(),
       updatedAt:
           parseMap['updatedAt'] == null ? null : parseMap['updatedAt'].toDate(),
+      wallets: wallets,
     );
   }
 

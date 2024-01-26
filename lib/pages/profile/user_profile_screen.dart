@@ -48,7 +48,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           icon: const Icon(Icons.arrow_back_ios),
         ),
         title: Text(S.of(context).profile,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 color: Theme.of(context).colorScheme.onBackground,
                 fontWeight: FontWeight.w600)),
         centerTitle: true,
