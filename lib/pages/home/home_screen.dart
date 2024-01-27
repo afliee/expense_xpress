@@ -60,16 +60,19 @@ class HomeScreenState extends State<HomeScreen> with MainScreenStateMixin {
             // if user has no photoUrl then show default avatar in assets folder or use a network image
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => UserProfileScreen(key: _key, user: _user),
-                    )).then((value) => {
-                      setState(() {
-                        if (value != null && value is User) _user = value;
-                        avatar = UserService.getPhotoUrl(_user!);
-                      })
-                    });
+                if (mounted) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            UserProfileScreen(key: _key, user: _user),
+                      )).then((value) => {
+                        setState(() {
+                          if (value != null && value is User) _user = value;
+                          avatar = UserService.getPhotoUrl(_user!);
+                        })
+                      });
+                }
               },
               child: CircleAvatar(
                 radius: 20,

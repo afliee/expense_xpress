@@ -1,4 +1,5 @@
 import 'package:expense_xpress/generated/l10n.dart';
+import 'package:expense_xpress/pages/categories/categories_screen.dart';
 import 'package:expense_xpress/pages/profile/wallets_screen.dart';
 import 'package:expense_xpress/pages/select_language_screen.dart';
 import 'package:expense_xpress/services/models/option.dart';
@@ -40,6 +41,8 @@ class SettingsGroup {
             leading: const Icon(Icons.category),
             onTap: () {
               print('$_TAG: categories');
+              Navigator.of(_context).push(
+                  MaterialPageRoute(builder: (_) => const CategoriesScreen()));
             }),
       ],
       S.of(_context).display: [

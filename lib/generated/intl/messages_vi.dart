@@ -39,6 +39,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadySignedUp":
             MessageLookupByLibrary.simpleMessage("Bạn đã đăng ký"),
         "and": MessageLookupByLibrary.simpleMessage(" và "),
+        "beauty": MessageLookupByLibrary.simpleMessage("Làm đẹp"),
+        "bills": MessageLookupByLibrary.simpleMessage("Hóa đơn"),
+        "bonus": MessageLookupByLibrary.simpleMessage("Thưởng"),
+        "borrowedMoney": MessageLookupByLibrary.simpleMessage("Tiền vay"),
         "bugdet": MessageLookupByLibrary.simpleMessage("Ngân sách"),
         "cancel": MessageLookupByLibrary.simpleMessage("Hủy"),
         "cash": MessageLookupByLibrary.simpleMessage("Tiền mặt"),
@@ -50,9 +54,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Chọn ảnh từ thư viện của chúng tôi"),
         "choosePhotoFromYourGallery": MessageLookupByLibrary.simpleMessage(
             "Chọn ảnh từ thư viện của bạn"),
+        "clothing": MessageLookupByLibrary.simpleMessage("Quần áo"),
         "credential":
             MessageLookupByLibrary.simpleMessage("Thông tin đăng nhập"),
         "dark": MessageLookupByLibrary.simpleMessage("Tối"),
+        "debtAndLoan": MessageLookupByLibrary.simpleMessage("Nợ/ Cho vay"),
         "defaultGallery":
             MessageLookupByLibrary.simpleMessage("Thư viện mặc định"),
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
@@ -62,18 +68,36 @@ class MessageLookup extends MessageLookupByLibrary {
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Bạn chưa có tài khoản?"),
         "editProfile": MessageLookupByLibrary.simpleMessage("Chỉnh sửa hồ sơ"),
+        "education": MessageLookupByLibrary.simpleMessage("Giáo dục"),
         "enterCode": MessageLookupByLibrary.simpleMessage("Nhập mã xác minh"),
+        "entertainment": MessageLookupByLibrary.simpleMessage("Giải trí"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
+        "expense": MessageLookupByLibrary.simpleMessage("Chi tiêu"),
+        "food": MessageLookupByLibrary.simpleMessage("Ăn uống"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Quên mật khẩu?"),
+        "furniture": MessageLookupByLibrary.simpleMessage("Nội thất"),
+        "gift": MessageLookupByLibrary.simpleMessage("Quà tặng"),
+        "health": MessageLookupByLibrary.simpleMessage("Sức khỏe"),
         "hello": MessageLookupByLibrary.simpleMessage("Xin chào"),
         "history": MessageLookupByLibrary.simpleMessage("Lịch sử"),
         "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+        "homeRepair": MessageLookupByLibrary.simpleMessage("Sửa chữa nhà cửa"),
+        "houseHoldAppliances":
+            MessageLookupByLibrary.simpleMessage("Thiết bị gia dụng"),
+        "houseHoldServices":
+            MessageLookupByLibrary.simpleMessage("Dịch vụ hộ gia đình"),
+        "household": MessageLookupByLibrary.simpleMessage("Hộ gia đình"),
+        "income": MessageLookupByLibrary.simpleMessage("Thu nhập"),
+        "insurance": MessageLookupByLibrary.simpleMessage("Bảo hiểm"),
+        "interestMoney": MessageLookupByLibrary.simpleMessage("Tiền lãi"),
         "invalidCode":
             MessageLookupByLibrary.simpleMessage("Mã xác minh không hợp lệ"),
+        "investment": MessageLookupByLibrary.simpleMessage("Đầu tư"),
         "joinDate": MessageLookupByLibrary.simpleMessage("Ngày tham gia"),
         "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
         "lastLogin": MessageLookupByLibrary.simpleMessage("Lần đăng nhập cuối"),
+        "lentMoney": MessageLookupByLibrary.simpleMessage("Tiền cho vay"),
         "light": MessageLookupByLibrary.simpleMessage("Sáng"),
         "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
@@ -93,6 +117,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Theo dõi dòng tiền của bạn"),
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Làm chủ ngân sách của bạn"),
+        "otherExpense": MessageLookupByLibrary.simpleMessage("Chi phí khác"),
+        "otherIncome": MessageLookupByLibrary.simpleMessage("Thu nhập khác"),
         "password": MessageLookupByLibrary.simpleMessage("Mật khẩu"),
         "passwordException":
             MessageLookupByLibrary.simpleMessage("Nhập mật khẩu của bạn"),
@@ -101,6 +127,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordRequired": MessageLookupByLibrary.simpleMessage(
             "Mật khẩu chứa ít nhất 8 ký tự"),
         "personal": MessageLookupByLibrary.simpleMessage("Cá nhân"),
+        "personalItems": MessageLookupByLibrary.simpleMessage("Đồ cá nhân"),
+        "pet": MessageLookupByLibrary.simpleMessage("Thú cưng"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Số điện thoại"),
         "phoneNumberException":
             MessageLookupByLibrary.simpleMessage("Nhập số điện thoại của bạn"),
@@ -115,14 +143,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Hồ sơ"),
         "profileSettings":
             MessageLookupByLibrary.simpleMessage("Cài đặt hồ sơ"),
+        "rent": MessageLookupByLibrary.simpleMessage("Tiền thuê nhà"),
+        "repayDebt": MessageLookupByLibrary.simpleMessage("Trả nợ"),
         "requireSomeText":
             MessageLookupByLibrary.simpleMessage("Yêu cầu nhập dữ liệu"),
         "resendCode":
             MessageLookupByLibrary.simpleMessage("Gửi lại mã xác minh"),
+        "salary": MessageLookupByLibrary.simpleMessage("Lương"),
         "save": MessageLookupByLibrary.simpleMessage("Lưu"),
         "saveChanges": MessageLookupByLibrary.simpleMessage("Lưu thay đổi"),
+        "savings": MessageLookupByLibrary.simpleMessage("Tiết kiệm"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Chọn ngôn ngữ"),
         "settings": MessageLookupByLibrary.simpleMessage("Cài đặt"),
+        "shopping": MessageLookupByLibrary.simpleMessage("Mua sắm"),
         "signIn": MessageLookupByLibrary.simpleMessage("Đăng Nhập"),
         "signInErrorTitle":
             MessageLookupByLibrary.simpleMessage("Lỗi đăng nhập"),
@@ -140,6 +173,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
             "Quá nhiều lần thử! Hãy thử lại sau"),
         "transactions": MessageLookupByLibrary.simpleMessage("Giao dịch"),
+        "transportation": MessageLookupByLibrary.simpleMessage("Giao thông"),
+        "travel": MessageLookupByLibrary.simpleMessage("Du lịch"),
         "unKnown": MessageLookupByLibrary.simpleMessage("Không xác định"),
         "verificationCodeRequired":
             MessageLookupByLibrary.simpleMessage("Yêu cầu mã xác minh"),

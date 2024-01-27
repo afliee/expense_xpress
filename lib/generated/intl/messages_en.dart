@@ -39,6 +39,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadySignedUp":
             MessageLookupByLibrary.simpleMessage("You already have an account"),
         "and": MessageLookupByLibrary.simpleMessage(" and "),
+        "beauty": MessageLookupByLibrary.simpleMessage("Beauty"),
+        "bills": MessageLookupByLibrary.simpleMessage("Bills"),
+        "bonus": MessageLookupByLibrary.simpleMessage("Bonus"),
+        "borrowedMoney": MessageLookupByLibrary.simpleMessage("Borrowed Money"),
         "bugdet": MessageLookupByLibrary.simpleMessage("Budget"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cash": MessageLookupByLibrary.simpleMessage("Cash"),
@@ -50,8 +54,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Choose photo from us gallery"),
         "choosePhotoFromYourGallery": MessageLookupByLibrary.simpleMessage(
             "Choose photo from your gallery"),
+        "clothing": MessageLookupByLibrary.simpleMessage("Clothing"),
         "credential": MessageLookupByLibrary.simpleMessage("Credential"),
         "dark": MessageLookupByLibrary.simpleMessage("Dark"),
+        "debtAndLoan": MessageLookupByLibrary.simpleMessage("Debt/ Loan"),
         "defaultGallery":
             MessageLookupByLibrary.simpleMessage("Default Gallery"),
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
@@ -62,19 +68,37 @@ class MessageLookup extends MessageLookupByLibrary {
             "Don\'t have an account yet? "),
         "editProfile":
             MessageLookupByLibrary.simpleMessage("Change Profile Picture"),
+        "education": MessageLookupByLibrary.simpleMessage("Education"),
         "enterCode": MessageLookupByLibrary.simpleMessage(
             "Enter your Verification Code"),
+        "entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "expense": MessageLookupByLibrary.simpleMessage("Expense"),
+        "food": MessageLookupByLibrary.simpleMessage("Food"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "furniture": MessageLookupByLibrary.simpleMessage("Furniture"),
+        "gift": MessageLookupByLibrary.simpleMessage("Gift"),
+        "health": MessageLookupByLibrary.simpleMessage("Health"),
         "hello": MessageLookupByLibrary.simpleMessage("Hello"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "homeRepair": MessageLookupByLibrary.simpleMessage("Home Repair"),
+        "houseHoldAppliances":
+            MessageLookupByLibrary.simpleMessage("Household Appliances"),
+        "houseHoldServices":
+            MessageLookupByLibrary.simpleMessage("Household Services"),
+        "household": MessageLookupByLibrary.simpleMessage("Household"),
+        "income": MessageLookupByLibrary.simpleMessage("Income"),
+        "insurance": MessageLookupByLibrary.simpleMessage("Insurance"),
+        "interestMoney": MessageLookupByLibrary.simpleMessage("Interest Money"),
         "invalidCode": MessageLookupByLibrary.simpleMessage(
             "Invalid code! Please try again"),
+        "investment": MessageLookupByLibrary.simpleMessage("Investment"),
         "joinDate": MessageLookupByLibrary.simpleMessage("Join Date"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastLogin": MessageLookupByLibrary.simpleMessage("Last Login"),
+        "lentMoney": MessageLookupByLibrary.simpleMessage("Lent Money"),
         "light": MessageLookupByLibrary.simpleMessage("Light"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
@@ -94,6 +118,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Know where your money goes"),
         "onBoardingTitle3":
             MessageLookupByLibrary.simpleMessage("Planning ahead"),
+        "otherExpense": MessageLookupByLibrary.simpleMessage("Other Expense"),
+        "otherIncome": MessageLookupByLibrary.simpleMessage("Other Income"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordException":
             MessageLookupByLibrary.simpleMessage("Please enter your password"),
@@ -102,6 +128,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordRequired": MessageLookupByLibrary.simpleMessage(
             "Password must be at least 8 characters"),
         "personal": MessageLookupByLibrary.simpleMessage("Personal"),
+        "personalItems": MessageLookupByLibrary.simpleMessage("Personal Items"),
+        "pet": MessageLookupByLibrary.simpleMessage("Pet"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "phoneNumberException": MessageLookupByLibrary.simpleMessage(
             "Please enter your phone number"),
@@ -115,13 +143,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "profileSettings":
             MessageLookupByLibrary.simpleMessage("Profile Settings"),
+        "rent": MessageLookupByLibrary.simpleMessage("Rent"),
+        "repayDebt": MessageLookupByLibrary.simpleMessage("Repay Debt"),
         "requireSomeText":
             MessageLookupByLibrary.simpleMessage("Please enter some text"),
         "resendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
+        "salary": MessageLookupByLibrary.simpleMessage("Salary"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
+        "savings": MessageLookupByLibrary.simpleMessage("Savings"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Language"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "shopping": MessageLookupByLibrary.simpleMessage("Shopping"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "signInErrorTitle":
             MessageLookupByLibrary.simpleMessage("Sign In Error"),
@@ -139,6 +172,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
             "Too many attempts! Please try again later"),
         "transactions": MessageLookupByLibrary.simpleMessage("Transactions"),
+        "transportation":
+            MessageLookupByLibrary.simpleMessage("Transportation"),
+        "travel": MessageLookupByLibrary.simpleMessage("Travel"),
         "unKnown": MessageLookupByLibrary.simpleMessage("UnKnown"),
         "verificationCodeRequired": MessageLookupByLibrary.simpleMessage(
             "Verification code is required"),

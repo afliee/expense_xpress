@@ -181,25 +181,29 @@ Widget _buildUI(
                         color: Colors.white, fontWeight: FontWeight.w500)),
                 onPressed: () {
                   SharedPreferences.getInstance().then((prefs) {
-                    prefs.setString(
-                        Constants.language, _languages[currentSelected].code);
-                    // Navigator.pop(context);
-                    bool isAuth = prefs.getBool(Constants.isAuth) ?? false;
-                    if (isAuth) {
-                      // change language
-                      _languageProvider
-                          .setLocale(_languages[currentSelected].locale);
+                    prefs
+                        .setString(Constants.language,
+                            _languages[currentSelected].code)
+                        .then((value) {
+                          print('language saved with code: ${_languages[currentSelected].code}');
+                      bool isAuth = prefs.getBool(Constants.isAuth) ?? false;
+                      if (isAuth) {
+                        // change language
+                        _languageProvider
+                            .setLocale(_languages[currentSelected].locale);
 
-                      Navigator.pop(context);
-                    } else {
-                      // user not see onboarding screen yet
-                      // push to onboarding screen
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (BuildContext context) {
-                        return AppAnimate()
-                            .fade(child: const OnBoardingScreen());
-                      }));
-                    }
+                        Navigator.pop(context);
+                      } else {
+                        // user not see onboarding screen yet
+                        // push to onboarding screen
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (BuildContext context) {
+                          return AppAnimate()
+                              .fade(child: const OnBoardingScreen());
+                        }));
+                      }
+                    });
+                    // Navigator.pop(context);
                   });
                 }),
           )

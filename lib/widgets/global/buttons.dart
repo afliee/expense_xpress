@@ -14,7 +14,7 @@ class Buttons {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        primary: AppColors.primary,
+        backgroundColor: AppColors.primary,
         elevation: 5,
         shadowColor: Theme.of(_context).shadowColor,
         padding: const EdgeInsets.symmetric(
@@ -34,7 +34,7 @@ class Buttons {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        primary: AppColors.buttonSecondary,
+        backgroundColor: AppColors.buttonSecondary,
         elevation: 5,
         shadowColor: Colors.grey,
         padding: const EdgeInsets.symmetric(
@@ -58,7 +58,7 @@ class Buttons {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 0,
-        primary: color ?? Theme.of(_context).colorScheme.background,
+        backgroundColor: color ?? Theme.of(_context).colorScheme.background,
         // shadowColor: Colors.grey,
         padding: padding ??
             const EdgeInsets.symmetric(

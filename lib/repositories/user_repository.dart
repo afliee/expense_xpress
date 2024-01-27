@@ -14,7 +14,6 @@ import 'package:uuid/uuid.dart';
 
 class UserRepository extends Repository<User, String> {
   // create singleton class
-  BuildContext? _context;
   static final UserRepository _instance = UserRepository._internal();
 
   factory UserRepository() {

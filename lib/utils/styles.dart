@@ -6,6 +6,10 @@ import 'package:intl/intl.dart';
 class AppStyles {
   static const double padding = 16.0;
   static const double margin = 16.0;
+  static const double radius = 12.0;
+  static const double iconSize = 24.0;
+  static const double shadowBlurRadius = 12.0;
+  static const double shadowSpreadRadius = 0.0;
   static const double buttonPadding = 16.0;
   static const double buttonBorderRadius = 12.0;
   static const double indicatorSelectedSize = 16.0;

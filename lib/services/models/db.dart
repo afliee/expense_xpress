@@ -11,4 +11,8 @@ class DB {
   // wallets collection reference
   static final CollectionReference wallets =
       _firestore.collection('wallets');
+
+  // categories collection reference
+  static final CollectionReference categories =
+      _firestore.collection('categories');
 }

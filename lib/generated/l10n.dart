@@ -959,6 +959,336 @@ class S {
       args: [],
     );
   }
+
+  /// `Expense`
+  String get expense {
+    return Intl.message(
+      'Expense',
+      name: 'expense',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Income`
+  String get income {
+    return Intl.message(
+      'Income',
+      name: 'income',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Debt/ Loan`
+  String get debtAndLoan {
+    return Intl.message(
+      'Debt/ Loan',
+      name: 'debtAndLoan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Savings`
+  String get savings {
+    return Intl.message(
+      'Savings',
+      name: 'savings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Food`
+  String get food {
+    return Intl.message(
+      'Food',
+      name: 'food',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clothing`
+  String get clothing {
+    return Intl.message(
+      'Clothing',
+      name: 'clothing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Entertainment`
+  String get entertainment {
+    return Intl.message(
+      'Entertainment',
+      name: 'entertainment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Furniture`
+  String get furniture {
+    return Intl.message(
+      'Furniture',
+      name: 'furniture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shopping`
+  String get shopping {
+    return Intl.message(
+      'Shopping',
+      name: 'shopping',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal Items`
+  String get personalItems {
+    return Intl.message(
+      'Personal Items',
+      name: 'personalItems',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transportation`
+  String get transportation {
+    return Intl.message(
+      'Transportation',
+      name: 'transportation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Household`
+  String get household {
+    return Intl.message(
+      'Household',
+      name: 'household',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Travel`
+  String get travel {
+    return Intl.message(
+      'Travel',
+      name: 'travel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Health`
+  String get health {
+    return Intl.message(
+      'Health',
+      name: 'health',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Education`
+  String get education {
+    return Intl.message(
+      'Education',
+      name: 'education',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pet`
+  String get pet {
+    return Intl.message(
+      'Pet',
+      name: 'pet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gift`
+  String get gift {
+    return Intl.message(
+      'Gift',
+      name: 'gift',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bills`
+  String get bills {
+    return Intl.message(
+      'Bills',
+      name: 'bills',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Insurance`
+  String get insurance {
+    return Intl.message(
+      'Insurance',
+      name: 'insurance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Investment`
+  String get investment {
+    return Intl.message(
+      'Investment',
+      name: 'investment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Household Services`
+  String get houseHoldServices {
+    return Intl.message(
+      'Household Services',
+      name: 'houseHoldServices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Household Appliances`
+  String get houseHoldAppliances {
+    return Intl.message(
+      'Household Appliances',
+      name: 'houseHoldAppliances',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Beauty`
+  String get beauty {
+    return Intl.message(
+      'Beauty',
+      name: 'beauty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home Repair`
+  String get homeRepair {
+    return Intl.message(
+      'Home Repair',
+      name: 'homeRepair',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rent`
+  String get rent {
+    return Intl.message(
+      'Rent',
+      name: 'rent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other Expense`
+  String get otherExpense {
+    return Intl.message(
+      'Other Expense',
+      name: 'otherExpense',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Salary`
+  String get salary {
+    return Intl.message(
+      'Salary',
+      name: 'salary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bonus`
+  String get bonus {
+    return Intl.message(
+      'Bonus',
+      name: 'bonus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interest Money`
+  String get interestMoney {
+    return Intl.message(
+      'Interest Money',
+      name: 'interestMoney',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other Income`
+  String get otherIncome {
+    return Intl.message(
+      'Other Income',
+      name: 'otherIncome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Borrowed Money`
+  String get borrowedMoney {
+    return Intl.message(
+      'Borrowed Money',
+      name: 'borrowedMoney',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lent Money`
+  String get lentMoney {
+    return Intl.message(
+      'Lent Money',
+      name: 'lentMoney',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repay Debt`
+  String get repayDebt {
+    return Intl.message(
+      'Repay Debt',
+      name: 'repayDebt',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
