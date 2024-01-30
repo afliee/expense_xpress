@@ -143,5 +143,34 @@
   "otherIncome": "Other Income",
   "borrowedMoney": "Borrowed Money",
   "lentMoney": "Lent Money",
-  "repayDebt": "Repay Debt"
+  "repayDebt": "Repay Debt",
+  "addNewCategory": "Add New Category",
+  "categoryName": "Category Name",
+  "yourCanPickIcon": "You can pick icon",
+  "categoryAlreadyExists": "Category already exists",
+  "categoryGroup": "Category Group",
+  "confirm": "Confirm",
+  "delete": "Delete",
+  "edit": "Edit",
+  "success": "Success",
+  "createCategorySuccess": "Create category successfully",
+  "deleteCategory": "Delete Category",
+  "deleteCategoryMessage": "Are you sure to delete this category?",
+  "areYouSureToContinue": "Are you sure to continue?",
+  "viewAll": "View All",
+  "view": "View",
+  "createCategoryFailed": "Create category failed",
+  "tryAgain": "Try Again",
+  "chooseAction": "Choose Action",
+  "chooseActionFor": "Choose Action for '{categoryName}'",
+  "@chooseActionFor": {
+    "placeholders": {
+      "categoryName": {
+        "type": "String"
+      }
+    }
+  },
+  "editCategorySuccess": "Edit category successfully",
+  "deleteCategorySuccess": "Delete category successfully",
+  "somethingWentWrongInProcess": "Something went wrong in process"
 }

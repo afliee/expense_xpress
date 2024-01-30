@@ -1289,6 +1289,226 @@ class S {
       args: [],
     );
   }
+
+  /// `Add New Category`
+  String get addNewCategory {
+    return Intl.message(
+      'Add New Category',
+      name: 'addNewCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category Name`
+  String get categoryName {
+    return Intl.message(
+      'Category Name',
+      name: 'categoryName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can pick icon`
+  String get yourCanPickIcon {
+    return Intl.message(
+      'You can pick icon',
+      name: 'yourCanPickIcon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category already exists`
+  String get categoryAlreadyExists {
+    return Intl.message(
+      'Category already exists',
+      name: 'categoryAlreadyExists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category Group`
+  String get categoryGroup {
+    return Intl.message(
+      'Category Group',
+      name: 'categoryGroup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message(
+      'Confirm',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message(
+      'Edit',
+      name: 'edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success`
+  String get success {
+    return Intl.message(
+      'Success',
+      name: 'success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create category successfully`
+  String get createCategorySuccess {
+    return Intl.message(
+      'Create category successfully',
+      name: 'createCategorySuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Category`
+  String get deleteCategory {
+    return Intl.message(
+      'Delete Category',
+      name: 'deleteCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure to delete this category?`
+  String get deleteCategoryMessage {
+    return Intl.message(
+      'Are you sure to delete this category?',
+      name: 'deleteCategoryMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure to continue?`
+  String get areYouSureToContinue {
+    return Intl.message(
+      'Are you sure to continue?',
+      name: 'areYouSureToContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View All`
+  String get viewAll {
+    return Intl.message(
+      'View All',
+      name: 'viewAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View`
+  String get view {
+    return Intl.message(
+      'View',
+      name: 'view',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create category failed`
+  String get createCategoryFailed {
+    return Intl.message(
+      'Create category failed',
+      name: 'createCategoryFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get tryAgain {
+    return Intl.message(
+      'Try Again',
+      name: 'tryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Action`
+  String get chooseAction {
+    return Intl.message(
+      'Choose Action',
+      name: 'chooseAction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Action for '{categoryName}'`
+  String chooseActionFor(String categoryName) {
+    return Intl.message(
+      'Choose Action for \'$categoryName\'',
+      name: 'chooseActionFor',
+      desc: '',
+      args: [categoryName],
+    );
+  }
+
+  /// `Edit category successfully`
+  String get editCategorySuccess {
+    return Intl.message(
+      'Edit category successfully',
+      name: 'editCategorySuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete category successfully`
+  String get deleteCategorySuccess {
+    return Intl.message(
+      'Delete category successfully',
+      name: 'deleteCategorySuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong in process`
+  String get somethingWentWrongInProcess {
+    return Intl.message(
+      'Something went wrong in process',
+      name: 'somethingWentWrongInProcess',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

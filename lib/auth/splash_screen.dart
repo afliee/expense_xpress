@@ -3,6 +3,7 @@ import 'package:expense_xpress/auth/sign_in_screen.dart';
 import 'package:expense_xpress/pages/main_screen.dart';
 import 'package:expense_xpress/pages/select_language_screen.dart';
 import 'package:expense_xpress/services/functions/user_service.dart';
+import 'package:expense_xpress/services/providers/language_provider.dart';
 import 'package:expense_xpress/utils/contants.dart';
 import 'package:expense_xpress/utils/images.dart';
 import 'package:expense_xpress/widgets/global/animate.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -35,6 +37,8 @@ class _SplashScreenState extends State<SplashScreen> {
   bool isDarkMode = false;
 
   _redirectPage(context) {
+    LanguageProvider _languageProvider =
+        Provider.of<LanguageProvider>(context, listen: false);
     SharedPreferences.getInstance().then((prefs) async {
       var languageSelected = prefs.getString(Constants.language);
       if (languageSelected != null) {
@@ -42,6 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
         if (isAuth) {
           var user = await UserService.getCurrentUser();
           if (user != null) {
+            _languageProvider.setLocale(Locale(languageSelected));
             // user is logged in
             // push to home screen
             Navigator.pushReplacement(context,

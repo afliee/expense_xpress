@@ -29,6 +29,36 @@ class Buttons {
     );
   }
 
+  // button primary with icon
+  Widget primaryWithIcon(
+      {required Widget child,
+      required Function() onPressed,
+      required Widget icon}) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: AppColors.primary,
+        elevation: 5,
+        shadowColor: Theme.of(_context).shadowColor,
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppStyles.buttonPadding,
+          vertical: AppStyles.buttonPadding,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppStyles.buttonBorderRadius),
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          icon,
+          const SizedBox(width: 8),
+          child,
+        ],
+      ),
+    );
+  }
+
   static Widget secondary(
       {required Widget child, required Function() onPressed}) {
     return ElevatedButton(

@@ -200,6 +200,59 @@ class Input {
     );
   }
 
+  Widget select(
+      {required label,
+        required value,
+      required controller,
+      required List<DropdownMenuItem> items,
+      required onChanged,
+      style}) {
+    return Container(
+      child: DropdownButtonFormField<dynamic>(
+        // styles for dropdown button
+        // style for dropdown label
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return S.of(context).requireSomeText;
+          }
+          return null;
+        },
+
+        decoration: InputDecoration(
+          labelText: label,
+          labelStyle: style ??
+              Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.onBackground,
+                    fontWeight: FontWeight.w500,
+                  ),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: AppStyles.textFieldHorizontalPadding,
+            vertical: AppStyles.textFieldVerticalPadding,
+          ),
+          border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.tertiary,
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.textFieldsColor,
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+          ),
+        ),
+        value: value,
+        items: items,
+        onChanged: onChanged,
+      ),
+    );
+  }
+
   Widget checkbox({required label, required value, required onChanged}) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,

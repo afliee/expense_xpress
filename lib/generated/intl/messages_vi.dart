@@ -23,13 +23,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(phoneNumber) =>
       "Kiểm tra số điện thoại ${phoneNumber} của bạn và nhập mã xác minh ở bước kế tiếp để xác minh số điện thoại của bạn";
 
-  static String m1(seconds) =>
+  static String m1(categoryName) => "Chọn hành động cho \'${categoryName}\'";
+
+  static String m2(seconds) =>
       "Vui lòng đợi ${seconds} giây để gửi lại mã xác minh";
 
-  static String m2(walletType) => "ví ${walletType}";
+  static String m3(walletType) => "ví ${walletType}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addNewCategory":
+            MessageLookupByLibrary.simpleMessage("Thêm danh mục mới"),
         "addNewWallet": MessageLookupByLibrary.simpleMessage("Thêm ví mới"),
         "agreeToTerms":
             MessageLookupByLibrary.simpleMessage("Tôi đồng ý với các "),
@@ -39,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadySignedUp":
             MessageLookupByLibrary.simpleMessage("Bạn đã đăng ký"),
         "and": MessageLookupByLibrary.simpleMessage(" và "),
+        "areYouSureToContinue": MessageLookupByLibrary.simpleMessage(
+            "Bạn có chắc chắn muốn tiếp tục?"),
         "beauty": MessageLookupByLibrary.simpleMessage("Làm đẹp"),
         "bills": MessageLookupByLibrary.simpleMessage("Hóa đơn"),
         "bonus": MessageLookupByLibrary.simpleMessage("Thưởng"),
@@ -47,7 +53,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Hủy"),
         "cash": MessageLookupByLibrary.simpleMessage("Tiền mặt"),
         "categories": MessageLookupByLibrary.simpleMessage("Danh mục"),
+        "categoryAlreadyExists":
+            MessageLookupByLibrary.simpleMessage("Danh mục đã tồn tại"),
+        "categoryGroup": MessageLookupByLibrary.simpleMessage("Nhóm danh mục"),
+        "categoryName": MessageLookupByLibrary.simpleMessage("Tên danh mục"),
         "checkingYourPhone": m0,
+        "chooseAction": MessageLookupByLibrary.simpleMessage("Chọn hành động"),
+        "chooseActionFor": m1,
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Chọn từ thư viện"),
         "choosePhotoFromUsGallery": MessageLookupByLibrary.simpleMessage(
@@ -55,18 +67,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "choosePhotoFromYourGallery": MessageLookupByLibrary.simpleMessage(
             "Chọn ảnh từ thư viện của bạn"),
         "clothing": MessageLookupByLibrary.simpleMessage("Quần áo"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Xác nhận"),
+        "createCategoryFailed":
+            MessageLookupByLibrary.simpleMessage("Tạo danh mục thất bại"),
+        "createCategorySuccess":
+            MessageLookupByLibrary.simpleMessage("Tạo danh mục thành công"),
         "credential":
             MessageLookupByLibrary.simpleMessage("Thông tin đăng nhập"),
         "dark": MessageLookupByLibrary.simpleMessage("Tối"),
         "debtAndLoan": MessageLookupByLibrary.simpleMessage("Nợ/ Cho vay"),
         "defaultGallery":
             MessageLookupByLibrary.simpleMessage("Thư viện mặc định"),
+        "delete": MessageLookupByLibrary.simpleMessage("Xóa"),
+        "deleteCategory": MessageLookupByLibrary.simpleMessage("Xóa danh mục"),
+        "deleteCategoryMessage": MessageLookupByLibrary.simpleMessage(
+            "Bạn có chắc chắn muốn xóa danh mục này?"),
+        "deleteCategorySuccess":
+            MessageLookupByLibrary.simpleMessage("Xóa danh mục thành công"),
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
             "Không nhận được mã xác minh? Gửi lại"),
         "display": MessageLookupByLibrary.simpleMessage("Hiển thị"),
         "displayName": MessageLookupByLibrary.simpleMessage("Tên hiển thị"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Bạn chưa có tài khoản?"),
+        "edit": MessageLookupByLibrary.simpleMessage("Chỉnh sửa"),
+        "editCategorySuccess": MessageLookupByLibrary.simpleMessage(
+            "Chỉnh sửa danh mục thành công"),
         "editProfile": MessageLookupByLibrary.simpleMessage("Chỉnh sửa hồ sơ"),
         "education": MessageLookupByLibrary.simpleMessage("Giáo dục"),
         "enterCode": MessageLookupByLibrary.simpleMessage("Nhập mã xác minh"),
@@ -162,6 +188,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "signInWithGoogle":
             MessageLookupByLibrary.simpleMessage("Đăng nhập với Google"),
         "signUp": MessageLookupByLibrary.simpleMessage("Đăng Ký"),
+        "somethingWentWrongInProcess": MessageLookupByLibrary.simpleMessage(
+            "Đã xảy ra lỗi trong quá trình xử lý"),
+        "success": MessageLookupByLibrary.simpleMessage("Thành công"),
         "system": MessageLookupByLibrary.simpleMessage("Hệ thống"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Chụp ảnh"),
         "takePhotoWithYourCamera": MessageLookupByLibrary.simpleMessage(
@@ -175,17 +204,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "transactions": MessageLookupByLibrary.simpleMessage("Giao dịch"),
         "transportation": MessageLookupByLibrary.simpleMessage("Giao thông"),
         "travel": MessageLookupByLibrary.simpleMessage("Du lịch"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Thử lại"),
         "unKnown": MessageLookupByLibrary.simpleMessage("Không xác định"),
         "verificationCodeRequired":
             MessageLookupByLibrary.simpleMessage("Yêu cầu mã xác minh"),
         "verificationTitle":
             MessageLookupByLibrary.simpleMessage("Xác minh số điện thoại"),
         "verify": MessageLookupByLibrary.simpleMessage("Xác minh"),
-        "waitToResendCode": m1,
+        "view": MessageLookupByLibrary.simpleMessage("Xem"),
+        "viewAll": MessageLookupByLibrary.simpleMessage("Xem tất cả"),
+        "waitToResendCode": m2,
         "walletBalance": MessageLookupByLibrary.simpleMessage("Số dư ví"),
         "walletCurrency": MessageLookupByLibrary.simpleMessage("Tiền tệ"),
         "walletName": MessageLookupByLibrary.simpleMessage("Tên ví"),
-        "walletType": m2,
+        "walletType": m3,
         "weSentVerificationCode": MessageLookupByLibrary.simpleMessage(
             "Chúng tôi đã gửi mã xác minh đến số điện thoại "),
         "youCanCheckYourPhone": MessageLookupByLibrary.simpleMessage(
@@ -194,6 +226,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Bạn có thể chỉnh sửa hồ sơ của mình với các tùy chọn sau"),
         "yourCamera": MessageLookupByLibrary.simpleMessage("Máy ảnh của bạn"),
+        "yourCanPickIcon": MessageLookupByLibrary.simpleMessage(
+            "Bạn có thể chọn biểu tượng cho danh mục của mình"),
         "yourCodeOnTheWay": MessageLookupByLibrary.simpleMessage(
             "Mã xác minh đang được gửi đến số điện thoại của bạn"),
         "yourGallery": MessageLookupByLibrary.simpleMessage("Thư viện của bạn"),

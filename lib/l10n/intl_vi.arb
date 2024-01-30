@@ -122,5 +122,34 @@
   "otherIncome": "Thu nhập khác",
   "borrowedMoney": "Tiền vay",
   "lentMoney": "Tiền cho vay",
-  "repayDebt": "Trả nợ"
+  "repayDebt": "Trả nợ",
+  "addNewCategory": "Thêm danh mục mới",
+  "categoryName": "Tên danh mục",
+  "yourCanPickIcon": "Bạn có thể chọn biểu tượng cho danh mục của mình",
+  "categoryAlreadyExists": "Danh mục đã tồn tại",
+  "categoryGroup" : "Nhóm danh mục",
+  "confirm": "Xác nhận",
+  "delete": "Xóa",
+  "edit": "Chỉnh sửa",
+  "success": "Thành công",
+  "createCategorySuccess": "Tạo danh mục thành công",
+  "deleteCategory": "Xóa danh mục",
+  "deleteCategoryMessage": "Bạn có chắc chắn muốn xóa danh mục này?",
+  "areYouSureToContinue": "Bạn có chắc chắn muốn tiếp tục?",
+  "viewAll": "Xem tất cả",
+  "view": "Xem",
+  "createCategoryFailed": "Tạo danh mục thất bại",
+  "tryAgain": "Thử lại",
+  "chooseAction": "Chọn hành động",
+  "chooseActionFor": "Chọn hành động cho '{categoryName}'",
+  "@chooseActionFor": {
+    "placeholders": {
+      "categoryName": {
+        "type": "String"
+      }
+    }
+  },
+  "editCategorySuccess": "Chỉnh sửa danh mục thành công",
+  "deleteCategorySuccess": "Xóa danh mục thành công",
+  "somethingWentWrongInProcess": "Đã xảy ra lỗi trong quá trình xử lý"
 }

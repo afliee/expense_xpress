@@ -23,13 +23,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(phoneNumber) =>
       "Checking your phone ${phoneNumber} and enter the code in next step to verify your phone number";
 
-  static String m1(seconds) =>
+  static String m1(categoryName) => "Choose Action for \'${categoryName}\'";
+
+  static String m2(seconds) =>
       "Please wait ${seconds} seconds to resend the code";
 
-  static String m2(walletType) => "${walletType} wallet";
+  static String m3(walletType) => "${walletType} wallet";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addNewCategory":
+            MessageLookupByLibrary.simpleMessage("Add New Category"),
         "addNewWallet": MessageLookupByLibrary.simpleMessage("Add new wallet"),
         "agreeToTerms": MessageLookupByLibrary.simpleMessage(
             "By signing up, you agree to our "),
@@ -39,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadySignedUp":
             MessageLookupByLibrary.simpleMessage("You already have an account"),
         "and": MessageLookupByLibrary.simpleMessage(" and "),
+        "areYouSureToContinue":
+            MessageLookupByLibrary.simpleMessage("Are you sure to continue?"),
         "beauty": MessageLookupByLibrary.simpleMessage("Beauty"),
         "bills": MessageLookupByLibrary.simpleMessage("Bills"),
         "bonus": MessageLookupByLibrary.simpleMessage("Bonus"),
@@ -47,7 +53,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cash": MessageLookupByLibrary.simpleMessage("Cash"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "categoryAlreadyExists":
+            MessageLookupByLibrary.simpleMessage("Category already exists"),
+        "categoryGroup": MessageLookupByLibrary.simpleMessage("Category Group"),
+        "categoryName": MessageLookupByLibrary.simpleMessage("Category Name"),
         "checkingYourPhone": m0,
+        "chooseAction": MessageLookupByLibrary.simpleMessage("Choose Action"),
+        "chooseActionFor": m1,
         "chooseFromGallery":
             MessageLookupByLibrary.simpleMessage("Choose from Gallery"),
         "choosePhotoFromUsGallery": MessageLookupByLibrary.simpleMessage(
@@ -55,17 +67,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "choosePhotoFromYourGallery": MessageLookupByLibrary.simpleMessage(
             "Choose photo from your gallery"),
         "clothing": MessageLookupByLibrary.simpleMessage("Clothing"),
+        "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "createCategoryFailed":
+            MessageLookupByLibrary.simpleMessage("Create category failed"),
+        "createCategorySuccess": MessageLookupByLibrary.simpleMessage(
+            "Create category successfully"),
         "credential": MessageLookupByLibrary.simpleMessage("Credential"),
         "dark": MessageLookupByLibrary.simpleMessage("Dark"),
         "debtAndLoan": MessageLookupByLibrary.simpleMessage("Debt/ Loan"),
         "defaultGallery":
             MessageLookupByLibrary.simpleMessage("Default Gallery"),
+        "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+        "deleteCategory":
+            MessageLookupByLibrary.simpleMessage("Delete Category"),
+        "deleteCategoryMessage": MessageLookupByLibrary.simpleMessage(
+            "Are you sure to delete this category?"),
+        "deleteCategorySuccess": MessageLookupByLibrary.simpleMessage(
+            "Delete category successfully"),
         "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
             "I didn’t received the code? Send again"),
         "display": MessageLookupByLibrary.simpleMessage("Display"),
         "displayName": MessageLookupByLibrary.simpleMessage("Display Name"),
         "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Don\'t have an account yet? "),
+        "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+        "editCategorySuccess":
+            MessageLookupByLibrary.simpleMessage("Edit category successfully"),
         "editProfile":
             MessageLookupByLibrary.simpleMessage("Change Profile Picture"),
         "education": MessageLookupByLibrary.simpleMessage("Education"),
@@ -161,6 +188,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "signInWithGoogle":
             MessageLookupByLibrary.simpleMessage("Sign In with Google"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "somethingWentWrongInProcess": MessageLookupByLibrary.simpleMessage(
+            "Something went wrong in process"),
+        "success": MessageLookupByLibrary.simpleMessage("Success"),
         "system": MessageLookupByLibrary.simpleMessage("System"),
         "takePhoto": MessageLookupByLibrary.simpleMessage("Take Photo"),
         "takePhotoWithYourCamera":
@@ -175,18 +205,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "transportation":
             MessageLookupByLibrary.simpleMessage("Transportation"),
         "travel": MessageLookupByLibrary.simpleMessage("Travel"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
         "unKnown": MessageLookupByLibrary.simpleMessage("UnKnown"),
         "verificationCodeRequired": MessageLookupByLibrary.simpleMessage(
             "Verification code is required"),
         "verificationTitle":
             MessageLookupByLibrary.simpleMessage("Verification"),
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),
-        "waitToResendCode": m1,
+        "view": MessageLookupByLibrary.simpleMessage("View"),
+        "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
+        "waitToResendCode": m2,
         "walletBalance": MessageLookupByLibrary.simpleMessage("Wallet balance"),
         "walletCurrency":
             MessageLookupByLibrary.simpleMessage("Wallet currency"),
         "walletName": MessageLookupByLibrary.simpleMessage("Wallet name"),
-        "walletType": m2,
+        "walletType": m3,
         "weSentVerificationCode": MessageLookupByLibrary.simpleMessage(
             "We sent a verification code to "),
         "youCanCheckYourPhone":
@@ -195,6 +228,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "You can edit your profile with us options"),
         "yourCamera": MessageLookupByLibrary.simpleMessage("Your Camera"),
+        "yourCanPickIcon":
+            MessageLookupByLibrary.simpleMessage("You can pick icon"),
         "yourCodeOnTheWay":
             MessageLookupByLibrary.simpleMessage("Your code is on the way"),
         "yourGallery": MessageLookupByLibrary.simpleMessage("Your Gallery"),

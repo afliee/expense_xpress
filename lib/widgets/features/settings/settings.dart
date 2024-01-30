@@ -42,7 +42,8 @@ class SettingsGroup {
             onTap: () {
               print('$_TAG: categories');
               Navigator.of(_context).push(
-                  MaterialPageRoute(builder: (_) => const CategoriesScreen()));
+                  MaterialPageRoute(builder: (_) => const CategoriesScreen(
+                  )));
             }),
       ],
       S.of(_context).display: [

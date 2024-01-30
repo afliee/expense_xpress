@@ -12,6 +12,7 @@ class AppStyles {
   static const double shadowSpreadRadius = 0.0;
   static const double buttonPadding = 16.0;
   static const double buttonBorderRadius = 12.0;
+  static const double bottomSheetBorderRadius = 16.0;
   static const double indicatorSelectedSize = 16.0;
   static const double textFieldHorizontalPadding = 16.0;
   static const double textFieldVerticalPadding = 20.0;

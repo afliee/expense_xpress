@@ -38,6 +38,7 @@ class Category {
   final CategoryGroup group;
   final String? description;
   late String? translatedName;
+  late bool isDefault;
 
   Category({
     required this.id,
@@ -46,6 +47,7 @@ class Category {
     required this.group,
     this.description,
     this.translatedName,
+    this.isDefault = false,
   });
 
   static Category fromJson(Map<String, dynamic> json) {
@@ -55,6 +57,8 @@ class Category {
       image: json['image'] as String,
       group: CategoryGroup.fromJson(json['group'] as String),
       description: json['description'] as String?,
+      translatedName: json['translatedName'] as String?,
+      isDefault: json['isDefault'] as bool,
     );
   }
 
@@ -65,6 +69,8 @@ class Category {
       'image': image,
       'group': group.toJson(),
       'description': description,
+      'translatedName': translatedName,
+      'isDefault': isDefault,
     };
   }
 }
