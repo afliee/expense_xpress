@@ -25,15 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(categoryName) => "Choose Action for \'${categoryName}\'";
 
-  static String m2(seconds) =>
+  static String m2(date) => "Due ${date}";
+
+  static String m3(seconds) =>
       "Please wait ${seconds} seconds to resend the code";
 
-  static String m3(walletType) => "${walletType} wallet";
+  static String m4(walletType) => "${walletType} wallet";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addNewCategory":
             MessageLookupByLibrary.simpleMessage("Add New Category"),
+        "addNewTransaction":
+            MessageLookupByLibrary.simpleMessage("Add New Transaction"),
         "addNewWallet": MessageLookupByLibrary.simpleMessage("Add new wallet"),
         "agreeToTerms": MessageLookupByLibrary.simpleMessage(
             "By signing up, you agree to our "),
@@ -45,13 +49,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "and": MessageLookupByLibrary.simpleMessage(" and "),
         "areYouSureToContinue":
             MessageLookupByLibrary.simpleMessage("Are you sure to continue?"),
+        "balance": MessageLookupByLibrary.simpleMessage("Balance"),
+        "bankAccount": MessageLookupByLibrary.simpleMessage("Bank Account"),
         "beauty": MessageLookupByLibrary.simpleMessage("Beauty"),
         "bills": MessageLookupByLibrary.simpleMessage("Bills"),
         "bonus": MessageLookupByLibrary.simpleMessage("Bonus"),
         "borrowedMoney": MessageLookupByLibrary.simpleMessage("Borrowed Money"),
+        "budgets": MessageLookupByLibrary.simpleMessage("Budgets"),
         "bugdet": MessageLookupByLibrary.simpleMessage("Budget"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cash": MessageLookupByLibrary.simpleMessage("Cash"),
+        "cashFlow": MessageLookupByLibrary.simpleMessage("Cash Flow"),
+        "cashWallet": MessageLookupByLibrary.simpleMessage("Cash Wallet"),
+        "cashWalletDescription": MessageLookupByLibrary.simpleMessage(
+            "Cash Wallet is the wallet that you can use to store your cash"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "categoryAlreadyExists":
             MessageLookupByLibrary.simpleMessage("Category already exists"),
@@ -72,7 +83,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create category failed"),
         "createCategorySuccess": MessageLookupByLibrary.simpleMessage(
             "Create category successfully"),
+        "createNewWallet":
+            MessageLookupByLibrary.simpleMessage("Create New Wallet"),
+        "createWalletFailed":
+            MessageLookupByLibrary.simpleMessage("Create wallet failed"),
+        "createWalletSuccess":
+            MessageLookupByLibrary.simpleMessage("Create wallet successfully"),
         "credential": MessageLookupByLibrary.simpleMessage("Credential"),
+        "creditCard": MessageLookupByLibrary.simpleMessage("Credit Card"),
+        "creditCardDescription": MessageLookupByLibrary.simpleMessage(
+            "Track your credit card transactions and pay your bills on time"),
+        "currency": MessageLookupByLibrary.simpleMessage("Currency"),
         "dark": MessageLookupByLibrary.simpleMessage("Dark"),
         "debtAndLoan": MessageLookupByLibrary.simpleMessage("Debt/ Loan"),
         "defaultGallery":
@@ -90,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "displayName": MessageLookupByLibrary.simpleMessage("Display Name"),
         "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
             "Don\'t have an account yet? "),
+        "dueDate": m2,
         "edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "editCategorySuccess":
             MessageLookupByLibrary.simpleMessage("Edit category successfully"),
@@ -100,6 +122,21 @@ class MessageLookup extends MessageLookupByLibrary {
             "Enter your Verification Code"),
         "entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
         "error": MessageLookupByLibrary.simpleMessage("Error"),
+        "errorOccurred": MessageLookupByLibrary.simpleMessage("Error occurred"),
+        "expectedDate": MessageLookupByLibrary.simpleMessage("Expected date"),
+        "expectedNumber":
+            MessageLookupByLibrary.simpleMessage("Expected number"),
+        "expectedNumberIsRequired":
+            MessageLookupByLibrary.simpleMessage("Expected number is required"),
+        "expectedNumberMustBeGreaterThanZero":
+            MessageLookupByLibrary.simpleMessage(
+                "Expected number must be greater than zero"),
+        "expectedNumberMustGreaterThanBalanceAndInitialBalance":
+            MessageLookupByLibrary.simpleMessage(
+                "Expected number must be greater than balance and initial balance"),
+        "expectedNumberMustGreaterThanZero":
+            MessageLookupByLibrary.simpleMessage(
+                "Expected number must be greater than zero"),
         "expense": MessageLookupByLibrary.simpleMessage("Expense"),
         "food": MessageLookupByLibrary.simpleMessage("Food"),
         "forgotPassword":
@@ -117,6 +154,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Household Services"),
         "household": MessageLookupByLibrary.simpleMessage("Household"),
         "income": MessageLookupByLibrary.simpleMessage("Income"),
+        "initialBalance":
+            MessageLookupByLibrary.simpleMessage("Initial Balance"),
+        "initialBalanceIsRequired":
+            MessageLookupByLibrary.simpleMessage("Initial balance is required"),
+        "initialBalanceMustBeGreaterThanZero":
+            MessageLookupByLibrary.simpleMessage(
+                "Initial balance must be greater than zero"),
+        "initialBalanceMustLessThanBalance":
+            MessageLookupByLibrary.simpleMessage(
+                "Initial balance must be less than balance"),
         "insurance": MessageLookupByLibrary.simpleMessage("Insurance"),
         "interestMoney": MessageLookupByLibrary.simpleMessage("Interest Money"),
         "invalidCode": MessageLookupByLibrary.simpleMessage(
@@ -126,12 +173,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lastLogin": MessageLookupByLibrary.simpleMessage("Last Login"),
         "lentMoney": MessageLookupByLibrary.simpleMessage("Lent Money"),
+        "letStartByCreatingNewBudget": MessageLookupByLibrary.simpleMessage(
+            "Let\'s start by creating a new budget"),
         "light": MessageLookupByLibrary.simpleMessage("Light"),
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
             "There is an issue with this method\n Please try again later"),
+        "monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
+        "newBudget": MessageLookupByLibrary.simpleMessage("New Budget"),
+        "newWallet": MessageLookupByLibrary.simpleMessage("New Wallet"),
+        "noData": MessageLookupByLibrary.simpleMessage("No Data"),
         "notValidPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Not a valid phone number"),
+        "notifyMe": MessageLookupByLibrary.simpleMessage("Notify me"),
+        "notifyMeWhenBalanceIsLow": MessageLookupByLibrary.simpleMessage(
+            "Notify me when balance is low"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onBoardingDescription1": MessageLookupByLibrary.simpleMessage(
             "Become your own money manager and make every cent count."),
@@ -175,10 +231,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "requireSomeText":
             MessageLookupByLibrary.simpleMessage("Please enter some text"),
         "resendCode": MessageLookupByLibrary.simpleMessage("Resend Code"),
+        "restoreWallet": MessageLookupByLibrary.simpleMessage("Restore Wallet"),
         "salary": MessageLookupByLibrary.simpleMessage("Salary"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
+        "saveWallet": MessageLookupByLibrary.simpleMessage("Save Wallet"),
         "savings": MessageLookupByLibrary.simpleMessage("Savings"),
+        "savingsWallet": MessageLookupByLibrary.simpleMessage("Savings Wallet"),
+        "savingsWalletDescription": MessageLookupByLibrary.simpleMessage(
+            "Savings Wallet is the wallet that you can use to store your savings"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Language"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "shopping": MessageLookupByLibrary.simpleMessage("Shopping"),
@@ -199,6 +260,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please agree to our Terms of Service and Privacy Policy"),
         "termsOfService":
             MessageLookupByLibrary.simpleMessage("Terms of Service"),
+        "thisMethodCurrentlyNotSupported": MessageLookupByLibrary.simpleMessage(
+            "This method is currently not supported"),
         "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
             "Too many attempts! Please try again later"),
         "transactions": MessageLookupByLibrary.simpleMessage("Transactions"),
@@ -207,6 +270,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "travel": MessageLookupByLibrary.simpleMessage("Travel"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
         "unKnown": MessageLookupByLibrary.simpleMessage("UnKnown"),
+        "valueYouWantToSave":
+            MessageLookupByLibrary.simpleMessage("Time you want to save"),
         "verificationCodeRequired": MessageLookupByLibrary.simpleMessage(
             "Verification code is required"),
         "verificationTitle":
@@ -214,14 +279,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "verify": MessageLookupByLibrary.simpleMessage("Verify"),
         "view": MessageLookupByLibrary.simpleMessage("View"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
-        "waitToResendCode": m2,
+        "waitToResendCode": m3,
         "walletBalance": MessageLookupByLibrary.simpleMessage("Wallet balance"),
+        "walletBalanceRequired":
+            MessageLookupByLibrary.simpleMessage("Wallet balance is required"),
         "walletCurrency":
             MessageLookupByLibrary.simpleMessage("Wallet currency"),
         "walletName": MessageLookupByLibrary.simpleMessage("Wallet name"),
-        "walletType": m3,
+        "walletNameRequired":
+            MessageLookupByLibrary.simpleMessage("Wallet name is required"),
+        "walletType": m4,
         "weSentVerificationCode": MessageLookupByLibrary.simpleMessage(
             "We sent a verification code to "),
+        "weekly": MessageLookupByLibrary.simpleMessage("Weekly"),
+        "yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
         "youCanCheckYourPhone":
             MessageLookupByLibrary.simpleMessage("You can check your phone"),
         "youCanEditYourProfileWithUsOptions":

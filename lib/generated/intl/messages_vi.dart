@@ -25,15 +25,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(categoryName) => "Chọn hành động cho \'${categoryName}\'";
 
-  static String m2(seconds) =>
+  static String m2(date) => "Hết hạn: ${date}";
+
+  static String m3(seconds) =>
       "Vui lòng đợi ${seconds} giây để gửi lại mã xác minh";
 
-  static String m3(walletType) => "ví ${walletType}";
+  static String m4(walletType) => "ví ${walletType}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "addNewCategory":
             MessageLookupByLibrary.simpleMessage("Thêm danh mục mới"),
+        "addNewTransaction":
+            MessageLookupByLibrary.simpleMessage("Thêm giao dịch mới"),
         "addNewWallet": MessageLookupByLibrary.simpleMessage("Thêm ví mới"),
         "agreeToTerms":
             MessageLookupByLibrary.simpleMessage("Tôi đồng ý với các "),
@@ -45,13 +49,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "and": MessageLookupByLibrary.simpleMessage(" và "),
         "areYouSureToContinue": MessageLookupByLibrary.simpleMessage(
             "Bạn có chắc chắn muốn tiếp tục?"),
+        "balance": MessageLookupByLibrary.simpleMessage("Số dư"),
+        "bankAccount":
+            MessageLookupByLibrary.simpleMessage("Tài khoản ngân hàng"),
         "beauty": MessageLookupByLibrary.simpleMessage("Làm đẹp"),
         "bills": MessageLookupByLibrary.simpleMessage("Hóa đơn"),
         "bonus": MessageLookupByLibrary.simpleMessage("Thưởng"),
         "borrowedMoney": MessageLookupByLibrary.simpleMessage("Tiền vay"),
+        "budgets": MessageLookupByLibrary.simpleMessage("Ngân sách"),
         "bugdet": MessageLookupByLibrary.simpleMessage("Ngân sách"),
         "cancel": MessageLookupByLibrary.simpleMessage("Hủy"),
         "cash": MessageLookupByLibrary.simpleMessage("Tiền mặt"),
+        "cashFlow": MessageLookupByLibrary.simpleMessage("Dòng tiền"),
+        "cashWallet": MessageLookupByLibrary.simpleMessage("Ví tiền mặt"),
+        "cashWalletDescription":
+            MessageLookupByLibrary.simpleMessage("Ví tiền mặt của bạn"),
         "categories": MessageLookupByLibrary.simpleMessage("Danh mục"),
         "categoryAlreadyExists":
             MessageLookupByLibrary.simpleMessage("Danh mục đã tồn tại"),
@@ -72,8 +84,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tạo danh mục thất bại"),
         "createCategorySuccess":
             MessageLookupByLibrary.simpleMessage("Tạo danh mục thành công"),
+        "createNewWallet": MessageLookupByLibrary.simpleMessage("Thêm ví mới"),
+        "createWalletFailed":
+            MessageLookupByLibrary.simpleMessage("Tạo ví thất bại"),
+        "createWalletSuccess":
+            MessageLookupByLibrary.simpleMessage("Tạo ví thành công"),
         "credential":
             MessageLookupByLibrary.simpleMessage("Thông tin đăng nhập"),
+        "creditCard": MessageLookupByLibrary.simpleMessage("Thẻ tín dụng"),
+        "creditCardDescription": MessageLookupByLibrary.simpleMessage(
+            "Theo dõi các khoản thanh toán thẻ tín dụng của bạn"),
+        "currency": MessageLookupByLibrary.simpleMessage("Tiền tệ"),
         "dark": MessageLookupByLibrary.simpleMessage("Tối"),
         "debtAndLoan": MessageLookupByLibrary.simpleMessage("Nợ/ Cho vay"),
         "defaultGallery":
@@ -90,6 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "displayName": MessageLookupByLibrary.simpleMessage("Tên hiển thị"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Bạn chưa có tài khoản?"),
+        "dueDate": m2,
         "edit": MessageLookupByLibrary.simpleMessage("Chỉnh sửa"),
         "editCategorySuccess": MessageLookupByLibrary.simpleMessage(
             "Chỉnh sửa danh mục thành công"),
@@ -98,6 +120,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterCode": MessageLookupByLibrary.simpleMessage("Nhập mã xác minh"),
         "entertainment": MessageLookupByLibrary.simpleMessage("Giải trí"),
         "error": MessageLookupByLibrary.simpleMessage("Lỗi"),
+        "errorOccurred": MessageLookupByLibrary.simpleMessage("Đã xảy ra lỗi"),
+        "expectedDate":
+            MessageLookupByLibrary.simpleMessage("Giá trị mong đợi là ngày"),
+        "expectedNumber":
+            MessageLookupByLibrary.simpleMessage("Giá trị mong đợi là số"),
+        "expectedNumberIsRequired": MessageLookupByLibrary.simpleMessage(
+            "Giá trị mong đợi là bắt buộc"),
+        "expectedNumberMustBeGreaterThanZero":
+            MessageLookupByLibrary.simpleMessage(
+                "Giá trị mong đợi phải lớn hơn 0"),
+        "expectedNumberMustGreaterThanBalanceAndInitialBalance":
+            MessageLookupByLibrary.simpleMessage(
+                "Giá trị mong đợi phải lớn hơn số dư và số dư ban đầu"),
+        "expectedNumberMustGreaterThanZero":
+            MessageLookupByLibrary.simpleMessage(
+                "Giá trị mong đợi phải lớn hơn 0"),
         "expense": MessageLookupByLibrary.simpleMessage("Chi tiêu"),
         "food": MessageLookupByLibrary.simpleMessage("Ăn uống"),
         "forgotPassword":
@@ -115,6 +153,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Dịch vụ hộ gia đình"),
         "household": MessageLookupByLibrary.simpleMessage("Hộ gia đình"),
         "income": MessageLookupByLibrary.simpleMessage("Thu nhập"),
+        "initialBalance": MessageLookupByLibrary.simpleMessage("Số dư ban đầu"),
+        "initialBalanceIsRequired":
+            MessageLookupByLibrary.simpleMessage("Số dư ban đầu là bắt buộc"),
+        "initialBalanceMustBeGreaterThanZero":
+            MessageLookupByLibrary.simpleMessage(
+                "Số dư ban đầu phải lớn hơn 0"),
+        "initialBalanceMustLessThanBalance":
+            MessageLookupByLibrary.simpleMessage(
+                "Số dư ban đầu phải nhỏ hơn số dư"),
         "insurance": MessageLookupByLibrary.simpleMessage("Bảo hiểm"),
         "interestMoney": MessageLookupByLibrary.simpleMessage("Tiền lãi"),
         "invalidCode":
@@ -124,12 +171,21 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Ngôn ngữ"),
         "lastLogin": MessageLookupByLibrary.simpleMessage("Lần đăng nhập cuối"),
         "lentMoney": MessageLookupByLibrary.simpleMessage("Tiền cho vay"),
+        "letStartByCreatingNewBudget": MessageLookupByLibrary.simpleMessage(
+            "Hãy bắt đầu với việc tạo ngân sách mới"),
         "light": MessageLookupByLibrary.simpleMessage("Sáng"),
         "logout": MessageLookupByLibrary.simpleMessage("Đăng xuất"),
         "maybeIssueWithThisMethod": MessageLookupByLibrary.simpleMessage(
             "Có vẻ phương thực hiện tại đang gặp vấn đề\n Hãy thử lại sau"),
+        "monthly": MessageLookupByLibrary.simpleMessage("Tháng"),
+        "newBudget": MessageLookupByLibrary.simpleMessage("Thêm mới"),
+        "newWallet": MessageLookupByLibrary.simpleMessage("Thêm ví mới"),
+        "noData": MessageLookupByLibrary.simpleMessage("Không có dữ liệu"),
         "notValidPhoneNumber":
             MessageLookupByLibrary.simpleMessage("Số điện thoại không hợp lệ"),
+        "notifyMe": MessageLookupByLibrary.simpleMessage("Thông báo cho tôi"),
+        "notifyMeWhenBalanceIsLow": MessageLookupByLibrary.simpleMessage(
+            "Thông báo cho tôi khi số dư ví thấp"),
         "ok": MessageLookupByLibrary.simpleMessage("OK"),
         "onBoardingDescription1": MessageLookupByLibrary.simpleMessage(
             "Quản lý tài chính cá nhân của bạn với ứng dụng tiện lợi."),
@@ -175,10 +231,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Yêu cầu nhập dữ liệu"),
         "resendCode":
             MessageLookupByLibrary.simpleMessage("Gửi lại mã xác minh"),
+        "restoreWallet": MessageLookupByLibrary.simpleMessage("Khôi phục ví"),
         "salary": MessageLookupByLibrary.simpleMessage("Lương"),
         "save": MessageLookupByLibrary.simpleMessage("Lưu"),
         "saveChanges": MessageLookupByLibrary.simpleMessage("Lưu thay đổi"),
+        "saveWallet": MessageLookupByLibrary.simpleMessage("Lưu ví"),
         "savings": MessageLookupByLibrary.simpleMessage("Tiết kiệm"),
+        "savingsWallet": MessageLookupByLibrary.simpleMessage("Ví tiết kiệm"),
+        "savingsWalletDescription":
+            MessageLookupByLibrary.simpleMessage("Ví tiết kiệm của bạn"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Chọn ngôn ngữ"),
         "settings": MessageLookupByLibrary.simpleMessage("Cài đặt"),
         "shopping": MessageLookupByLibrary.simpleMessage("Mua sắm"),
@@ -199,6 +260,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Hãy đồng ý với các điều khoản và chính sách của chúng tôi"),
         "termsOfService":
             MessageLookupByLibrary.simpleMessage("Điều khoản dịch vụ"),
+        "thisMethodCurrentlyNotSupported": MessageLookupByLibrary.simpleMessage(
+            "Phương thức này hiện không được hỗ trợ"),
         "tooManyAttempts": MessageLookupByLibrary.simpleMessage(
             "Quá nhiều lần thử! Hãy thử lại sau"),
         "transactions": MessageLookupByLibrary.simpleMessage("Giao dịch"),
@@ -206,6 +269,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "travel": MessageLookupByLibrary.simpleMessage("Du lịch"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Thử lại"),
         "unKnown": MessageLookupByLibrary.simpleMessage("Không xác định"),
+        "valueYouWantToSave":
+            MessageLookupByLibrary.simpleMessage("Ngày bạn muốn hoàn thành"),
         "verificationCodeRequired":
             MessageLookupByLibrary.simpleMessage("Yêu cầu mã xác minh"),
         "verificationTitle":
@@ -213,13 +278,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "verify": MessageLookupByLibrary.simpleMessage("Xác minh"),
         "view": MessageLookupByLibrary.simpleMessage("Xem"),
         "viewAll": MessageLookupByLibrary.simpleMessage("Xem tất cả"),
-        "waitToResendCode": m2,
+        "waitToResendCode": m3,
         "walletBalance": MessageLookupByLibrary.simpleMessage("Số dư ví"),
+        "walletBalanceRequired":
+            MessageLookupByLibrary.simpleMessage("Số dư ví là bắt buộc"),
         "walletCurrency": MessageLookupByLibrary.simpleMessage("Tiền tệ"),
         "walletName": MessageLookupByLibrary.simpleMessage("Tên ví"),
-        "walletType": m3,
+        "walletNameRequired":
+            MessageLookupByLibrary.simpleMessage("Tên ví là bắt buộc"),
+        "walletType": m4,
         "weSentVerificationCode": MessageLookupByLibrary.simpleMessage(
             "Chúng tôi đã gửi mã xác minh đến số điện thoại "),
+        "weekly": MessageLookupByLibrary.simpleMessage("Tuần"),
+        "yearly": MessageLookupByLibrary.simpleMessage("Năm"),
         "youCanCheckYourPhone": MessageLookupByLibrary.simpleMessage(
             "Bạn có thể kiểm tra điện thoại của mình để xác minh mã xác minh"),
         "youCanEditYourProfileWithUsOptions":

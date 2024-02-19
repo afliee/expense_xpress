@@ -76,6 +76,7 @@ class AppDialogs {
             ),
             if (negativeText != null)
               CupertinoDialogAction(
+                isDestructiveAction: true,
                 onPressed: onNegativePressed,
                 child: Text(negativeText),
               ),
@@ -106,6 +107,37 @@ class AppDialogs {
           onPressed: onActionPressed ?? () {},
         ),
       ),
+    );
+  }
+
+  void showCupertinoModal({
+    required String title,
+    required Widget child,
+    String positiveText = 'Ok',
+    String? negativeText,
+    required Function() onPositivePressed,
+    VoidCallback? onNegativePressed,
+  }) {
+    showCupertinoModalPopup(
+      context: context,
+      builder: (context) {
+        return CupertinoActionSheet(
+          title: Text(title),
+          message: child,
+          actions: [
+            CupertinoActionSheetAction(
+              onPressed: onPositivePressed,
+              child: Text(positiveText),
+            ),
+            if (negativeText != null)
+              CupertinoActionSheetAction(
+                onPressed: onNegativePressed ?? () {},
+                child: Text(negativeText),
+                isDestructiveAction: true,
+              ),
+          ],
+        );
+      },
     );
   }
 }

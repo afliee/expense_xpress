@@ -100,19 +100,21 @@ class AppStyles {
       iconTheme: IconThemeData(color: Colors.black87),
     ),
     fontFamily: AppFonts.roboto,
-    scaffoldBackgroundColor: AppColors.background,
+    // scaffoldBackgroundColor: AppColors.background,
     splashColor: Colors.transparent,
   );
 
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     useMaterial3: true,
-    primaryColor: AppColors.darkModePrimary,
+    // primaryColor have more priority
+    primaryColor: AppColors.primary,
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primary,
       brightness: Brightness.dark,
-      primary: AppColors.darkModePrimary,
-      // background: AppColors.darkModeBackground,
+      primary: AppColors.primary,
+      // primary: AppColors.darkModePrimary,
+      background: AppColors.darkModeBackground,
       // onBackground: AppColors.darkModeOnBackground,
     ),
     // colorScheme: ColorScheme.fromSwatch(
@@ -127,7 +129,8 @@ class AppStyles {
       iconTheme: IconThemeData(color: Colors.white),
     ),
     fontFamily: AppFonts.roboto,
-    scaffoldBackgroundColor: AppColors.darkModeBackground,
+    // scaffoldBackgroundColor: AppColors.darkModeBackground,
+    scaffoldBackgroundColor: Colors.black87,
     splashColor: Colors.transparent,
   );
 }

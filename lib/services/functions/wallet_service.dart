@@ -4,6 +4,10 @@ import 'package:expense_xpress/services/models/wallet.dart';
 class WalletService {
   static final WalletRepository _walletRepository = WalletRepository();
 
+  static Future<Wallet> create(Wallet wallet) async {
+    return await _walletRepository.create(wallet);
+  }
+
   static Future<List<Wallet>> getAllByUserId(String userId) async {
     return await _walletRepository.getAllByUserId(userId);
   }

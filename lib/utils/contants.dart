@@ -9,6 +9,7 @@ class Constants {
   static const int optMaxAge = 60;
   static const int otpLength = 6;
   static const int otpResendTime = 30;
+  static const int walletDayLimit = 30;
   static const double bottomNavBarHeight = 56;
   static const double iconSize = 24;
   static const int avatarDefaultSize = 20;
@@ -24,4 +25,5 @@ class Constants {
   static const String signUpAction = 'sign_up';
   static const String signInAction = 'sign_in';
   static const String user = 'user';
+  static const String theme = 'theme';
 }

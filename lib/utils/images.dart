@@ -13,4 +13,5 @@ class ImagesAsset {
   static String codeSending = '$_imagesPath/im_code_sending.svg';
 
   static String defaultAvatar = '$_imagesPath/im_avatar_default.png';
+  static String emptyState = '$_imagesPath/im_empty_state.png';
 }

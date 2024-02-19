@@ -53,6 +53,10 @@ class _MyAppState extends State<MyApp> {
         builder: (context, provider, child) {
           final displayProvider = Provider.of<DisplayProvider>(context);
 
+          SharedPreferences.getInstance().then((prefs) {
+            var _theme = prefs.getInt(Constants.theme) ?? 2;
+            displayProvider.themeMode = DisplayProvider.intToThemeMode(_theme);
+          });
           return MaterialApp(
             title: 'Expense Xpress',
             // theme: ThemeData(

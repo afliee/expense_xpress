@@ -1509,6 +1509,426 @@ class S {
       args: [],
     );
   }
+
+  /// `Cash Flow`
+  String get cashFlow {
+    return Intl.message(
+      'Cash Flow',
+      name: 'cashFlow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash Wallet`
+  String get cashWallet {
+    return Intl.message(
+      'Cash Wallet',
+      name: 'cashWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash Wallet is the wallet that you can use to store your cash`
+  String get cashWalletDescription {
+    return Intl.message(
+      'Cash Wallet is the wallet that you can use to store your cash',
+      name: 'cashWalletDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bank Account`
+  String get bankAccount {
+    return Intl.message(
+      'Bank Account',
+      name: 'bankAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit Card`
+  String get creditCard {
+    return Intl.message(
+      'Credit Card',
+      name: 'creditCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track your credit card transactions and pay your bills on time`
+  String get creditCardDescription {
+    return Intl.message(
+      'Track your credit card transactions and pay your bills on time',
+      name: 'creditCardDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Transaction`
+  String get addNewTransaction {
+    return Intl.message(
+      'Add New Transaction',
+      name: 'addNewTransaction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create New Wallet`
+  String get createNewWallet {
+    return Intl.message(
+      'Create New Wallet',
+      name: 'createNewWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Wallet`
+  String get newWallet {
+    return Intl.message(
+      'New Wallet',
+      name: 'newWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Balance`
+  String get balance {
+    return Intl.message(
+      'Balance',
+      name: 'balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Currency`
+  String get currency {
+    return Intl.message(
+      'Currency',
+      name: 'currency',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet name is required`
+  String get walletNameRequired {
+    return Intl.message(
+      'Wallet name is required',
+      name: 'walletNameRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet balance is required`
+  String get walletBalanceRequired {
+    return Intl.message(
+      'Wallet balance is required',
+      name: 'walletBalanceRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notify me`
+  String get notifyMe {
+    return Intl.message(
+      'Notify me',
+      name: 'notifyMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notify me when balance is low`
+  String get notifyMeWhenBalanceIsLow {
+    return Intl.message(
+      'Notify me when balance is low',
+      name: 'notifyMeWhenBalanceIsLow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Savings Wallet`
+  String get savingsWallet {
+    return Intl.message(
+      'Savings Wallet',
+      name: 'savingsWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Savings Wallet is the wallet that you can use to store your savings`
+  String get savingsWalletDescription {
+    return Intl.message(
+      'Savings Wallet is the wallet that you can use to store your savings',
+      name: 'savingsWalletDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Initial Balance`
+  String get initialBalance {
+    return Intl.message(
+      'Initial Balance',
+      name: 'initialBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This method is currently not supported`
+  String get thisMethodCurrentlyNotSupported {
+    return Intl.message(
+      'This method is currently not supported',
+      name: 'thisMethodCurrentlyNotSupported',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Wallet`
+  String get saveWallet {
+    return Intl.message(
+      'Save Wallet',
+      name: 'saveWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create wallet successfully`
+  String get createWalletSuccess {
+    return Intl.message(
+      'Create wallet successfully',
+      name: 'createWalletSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create wallet failed`
+  String get createWalletFailed {
+    return Intl.message(
+      'Create wallet failed',
+      name: 'createWalletFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error occurred`
+  String get errorOccurred {
+    return Intl.message(
+      'Error occurred',
+      name: 'errorOccurred',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expected number`
+  String get expectedNumber {
+    return Intl.message(
+      'Expected number',
+      name: 'expectedNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expected date`
+  String get expectedDate {
+    return Intl.message(
+      'Expected date',
+      name: 'expectedDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time you want to save`
+  String get valueYouWantToSave {
+    return Intl.message(
+      'Time you want to save',
+      name: 'valueYouWantToSave',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expected number is required`
+  String get expectedNumberIsRequired {
+    return Intl.message(
+      'Expected number is required',
+      name: 'expectedNumberIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expected number must be greater than zero`
+  String get expectedNumberMustGreaterThanZero {
+    return Intl.message(
+      'Expected number must be greater than zero',
+      name: 'expectedNumberMustGreaterThanZero',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expected number must be greater than balance and initial balance`
+  String get expectedNumberMustGreaterThanBalanceAndInitialBalance {
+    return Intl.message(
+      'Expected number must be greater than balance and initial balance',
+      name: 'expectedNumberMustGreaterThanBalanceAndInitialBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expected number must be greater than zero`
+  String get expectedNumberMustBeGreaterThanZero {
+    return Intl.message(
+      'Expected number must be greater than zero',
+      name: 'expectedNumberMustBeGreaterThanZero',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Initial balance is required`
+  String get initialBalanceIsRequired {
+    return Intl.message(
+      'Initial balance is required',
+      name: 'initialBalanceIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Initial balance must be greater than zero`
+  String get initialBalanceMustBeGreaterThanZero {
+    return Intl.message(
+      'Initial balance must be greater than zero',
+      name: 'initialBalanceMustBeGreaterThanZero',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Initial balance must be less than balance`
+  String get initialBalanceMustLessThanBalance {
+    return Intl.message(
+      'Initial balance must be less than balance',
+      name: 'initialBalanceMustLessThanBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Due {date}`
+  String dueDate(String date) {
+    return Intl.message(
+      'Due $date',
+      name: 'dueDate',
+      desc: '',
+      args: [date],
+    );
+  }
+
+  /// `Restore Wallet`
+  String get restoreWallet {
+    return Intl.message(
+      'Restore Wallet',
+      name: 'restoreWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Budgets`
+  String get budgets {
+    return Intl.message(
+      'Budgets',
+      name: 'budgets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Budget`
+  String get newBudget {
+    return Intl.message(
+      'New Budget',
+      name: 'newBudget',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Weekly`
+  String get weekly {
+    return Intl.message(
+      'Weekly',
+      name: 'weekly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly`
+  String get monthly {
+    return Intl.message(
+      'Monthly',
+      name: 'monthly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yearly`
+  String get yearly {
+    return Intl.message(
+      'Yearly',
+      name: 'yearly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Data`
+  String get noData {
+    return Intl.message(
+      'No Data',
+      name: 'noData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's start by creating a new budget`
+  String get letStartByCreatingNewBudget {
+    return Intl.message(
+      'Let\'s start by creating a new budget',
+      name: 'letStartByCreatingNewBudget',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,4 +1,5 @@
 import 'package:expense_xpress/generated/l10n.dart';
+import 'package:expense_xpress/pages/home/budgets_screen.dart';
 import 'package:expense_xpress/pages/home/history_screen.dart';
 import 'package:expense_xpress/pages/home/home_screen.dart';
 import 'package:expense_xpress/pages/home/settings_screen.dart';
@@ -93,7 +94,9 @@ class MainScreenState extends State<MainScreen> {
           HistoryScreen(
             key: _keys[1],
           ),
-          const Center(child: Text('Budget')),
+          BudgetScreen(
+            key: _keys[2],
+          ),
           SettingsScreen(
             key: _keys[3],
           )

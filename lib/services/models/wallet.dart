@@ -11,6 +11,18 @@ enum WalletType {
   investment,
   loan,
   other,
+  savings;
+
+  static WalletType fromJson(int type) {
+    return WalletType.values.firstWhere(
+      (element) => element.index == type,
+      orElse: () => WalletType.cash,
+    );
+  }
+
+  int toJson() {
+    return index;
+  }
 }
 
 class Wallet {
@@ -18,17 +30,17 @@ class Wallet {
   final String? userId;
   final String name;
   WalletType type = WalletType.cash;
-  final DateTime? dueDate;
+  late DateTime? dueDate;
   final double? balance;
   final double? initialBalance;
   final double? expectedBalance;
   final double? limit;
-  final CurrencyUnit? unit;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
-  final bool? isDeleted;
-  final bool? isNotify;
-  final bool? isDefault;
+  late CurrencyUnit? unit;
+  late DateTime? createdAt;
+  late DateTime? updatedAt;
+  late bool? isDeleted;
+  late bool? isNotify;
+  late bool? isDefault;
 
   Wallet(
       {required this.id,
@@ -40,12 +52,12 @@ class Wallet {
       this.initialBalance,
       this.expectedBalance,
       this.limit,
-      this.unit,
+      this.unit = CurrencyUnit.vnd,
       this.createdAt,
       this.updatedAt,
-      this.isDeleted,
+      this.isDeleted = false,
       this.isNotify,
-      this.isDefault});
+      this.isDefault = false});
 
   factory Wallet.fromJson(Map<String, dynamic> json) {
     const TimeStampConverter timestampConverter = TimeStampConverter();
@@ -53,13 +65,10 @@ class Wallet {
       id: json['id'] as String,
       userId: json['userId'] as String?,
       name: json['name'] as String,
-      type: WalletType.values.firstWhere(
-        (element) => element.index == json['type'] as int,
-        orElse: () => WalletType.cash,
-      ),
+      type: WalletType.fromJson(json['type'] as int),
       dueDate: json['dueDate'] == null
           ? null
-          : DateTime.parse(json['dueDate'] as String),
+          : timestampConverter.fromJson(json['dueDate'] as Timestamp),
       balance: (json['balance'] as num?)?.toDouble(),
       initialBalance: (json['initialBalance'] as num?)?.toDouble(),
       expectedBalance: (json['expectedBalance'] as num?)?.toDouble(),

@@ -25,13 +25,22 @@ class WalletRepository extends Repository<Wallet, String> {
   @override
   Future<Wallet> delete(String id) {
     // TODO: implement delete
+    var now = DateTime.now();
     throw UnimplementedError();
   }
 
   @override
-  Future<Wallet> get(String id) {
-    // TODO: implement get
-    throw UnimplementedError();
+  Future<Wallet> get(String id) async {
+    try {
+      CollectionReference userWallets = _wallets.doc(id).collection('wallets');
+      DocumentSnapshot wallet = await userWallets.doc(id).get();
+      if (wallet.exists) {
+        return Wallet.fromJson(wallet.data() as Map<String, dynamic>);
+      }
+      throw Exception('Wallet not found');
+    } catch (e) {
+      rethrow;
+    }
   }
 
   @override

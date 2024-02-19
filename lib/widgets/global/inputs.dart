@@ -20,14 +20,25 @@ class Input {
       child: TextFormField(
         controller: controller,
         style: style ??
-            Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onBackground,
-                  fontWeight: FontWeight.w500,
-                ),
+            Theme
+                .of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(
+              color: Theme
+                  .of(context)
+                  .colorScheme
+                  .onBackground,
+              fontWeight: FontWeight.w500,
+            ),
         decoration: InputDecoration(
           labelText: label,
           labelStyle: TextStyle(
-            color: Theme.of(context).textTheme.labelLarge?.color,
+            color: Theme
+                .of(context)
+                .textTheme
+                .labelLarge
+                ?.color,
           ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: AppStyles.textFieldHorizontalPadding,
@@ -44,14 +55,19 @@ class Input {
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Theme.of(context).colorScheme.onSurface,
+              color: Theme
+                  .of(context)
+                  .colorScheme
+                  .onSurface,
             ),
             borderRadius: const BorderRadius.all(Radius.circular(16)),
           ),
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return S.of(context).requireSomeText;
+            return S
+                .of(context)
+                .requireSomeText;
           }
           return null;
         },
@@ -59,25 +75,37 @@ class Input {
     );
   }
 
-  Widget phoneNumber(
-      {required label,
-      required controller,
-      required countryCode,
-      TextStyle? style}) {
+  Widget phoneNumber({required label,
+    required controller,
+    required countryCode,
+    TextStyle? style}) {
     return Container(
       child: TextFormField(
         controller: controller,
         style: style ??
-            Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onBackground,
-                  fontWeight: FontWeight.w500,
-                ),
+            Theme
+                .of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(
+              color: Theme
+                  .of(context)
+                  .colorScheme
+                  .onBackground,
+              fontWeight: FontWeight.w500,
+            ),
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
           labelText: label,
-          hintText: S.of(context).phoneNumberHint,
+          hintText: S
+              .of(context)
+              .phoneNumberHint,
           labelStyle: TextStyle(
-            color: Theme.of(context).textTheme.labelLarge?.color,
+            color: Theme
+                .of(context)
+                .textTheme
+                .labelLarge
+                ?.color,
           ),
           prefixText: countryCode,
           contentPadding: const EdgeInsets.symmetric(
@@ -95,16 +123,23 @@ class Input {
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Theme.of(context).colorScheme.onSurface,
+              color: Theme
+                  .of(context)
+                  .colorScheme
+                  .onSurface,
             ),
             borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return S.of(context).phoneNumberException;
+            return S
+                .of(context)
+                .phoneNumberException;
           } else if (value.length < 9) {
-            return S.of(context).phoneNumberNotValid;
+            return S
+                .of(context)
+                .phoneNumberNotValid;
           }
           return null;
         },
@@ -120,16 +155,29 @@ class Input {
       child: TextFormField(
         controller: controller,
         style: style ??
-            Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onBackground,
-                  fontWeight: FontWeight.w500,
-                ),
+            Theme
+                .of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(
+              color: Theme
+                  .of(context)
+                  .colorScheme
+                  .onBackground,
+              fontWeight: FontWeight.w500,
+            ),
         obscureText: true,
         decoration: InputDecoration(
           labelText: label,
-          hintText: S.of(context).passwordHint,
+          hintText: S
+              .of(context)
+              .passwordHint,
           labelStyle: TextStyle(
-            color: Theme.of(context).textTheme.labelLarge?.color,
+            color: Theme
+                .of(context)
+                .textTheme
+                .labelLarge
+                ?.color,
           ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: AppStyles.textFieldHorizontalPadding,
@@ -153,9 +201,13 @@ class Input {
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return S.of(context).passwordException;
+            return S
+                .of(context)
+                .passwordException;
           } else if (value.length < Constants.passwordMinLength) {
-            return S.of(context).passwordRequired;
+            return S
+                .of(context)
+                .passwordRequired;
           }
           return null;
         },
@@ -172,10 +224,17 @@ class Input {
         decoration: InputDecoration(
           labelText: label,
           labelStyle: style ??
-              Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                    fontWeight: FontWeight.w500,
-                  ),
+              Theme
+                  .of(context)
+                  .textTheme
+                  .bodyLarge
+                  ?.copyWith(
+                color: Theme
+                    .of(context)
+                    .colorScheme
+                    .onBackground,
+                fontWeight: FontWeight.w500,
+              ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: AppStyles.textFieldHorizontalPadding,
             vertical: AppStyles.textFieldVerticalPadding,
@@ -200,13 +259,12 @@ class Input {
     );
   }
 
-  Widget select(
-      {required label,
-        required value,
-      required controller,
-      required List<DropdownMenuItem> items,
-      required onChanged,
-      style}) {
+  Widget select({required label,
+    required value,
+    required controller,
+    required List<DropdownMenuItem> items,
+    required onChanged,
+    style}) {
     return Container(
       child: DropdownButtonFormField<dynamic>(
         // styles for dropdown button
@@ -214,18 +272,26 @@ class Input {
         autovalidateMode: AutovalidateMode.onUserInteraction,
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return S.of(context).requireSomeText;
+            return S
+                .of(context)
+                .requireSomeText;
           }
           return null;
         },
-
         decoration: InputDecoration(
           labelText: label,
           labelStyle: style ??
-              Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground,
-                    fontWeight: FontWeight.w500,
-                  ),
+              Theme
+                  .of(context)
+                  .textTheme
+                  .bodyLarge
+                  ?.copyWith(
+                color: Theme
+                    .of(context)
+                    .colorScheme
+                    .onBackground,
+                fontWeight: FontWeight.w500,
+              ),
           contentPadding: const EdgeInsets.symmetric(
             horizontal: AppStyles.textFieldHorizontalPadding,
             vertical: AppStyles.textFieldVerticalPadding,
@@ -267,4 +333,193 @@ class Input {
       ],
     );
   }
+
+  Widget textInline({
+    required label,
+    required controller,
+    String? hint,
+    String? Function(String?)? validator,
+    style,
+  }) {
+    return TextFormField(
+      decoration: InputDecoration(
+          labelText: label,
+          hintText: hint,
+          labelStyle: style ??
+              Theme
+                  .of(context)
+                  .textTheme
+                  .bodyLarge
+                  ?.copyWith(
+                color: Theme
+                    .of(context)
+                    .colorScheme
+                    .onBackground,
+                fontWeight: FontWeight.w500,
+              ),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: AppStyles.textFieldHorizontalPadding,
+            vertical: AppStyles.textFieldVerticalPadding,
+          ),
+          border: const UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.textFieldsColor,
+            ),
+          )),
+      controller: controller,
+      style: style ??
+          Theme
+              .of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(
+            color: Theme
+                .of(context)
+                .colorScheme
+                .onBackground,
+            fontWeight: FontWeight.w500,
+          ),
+      // check if not validator then return default validator
+      validator: validator ??
+              (value) {
+            if (value == null || value.isEmpty) {
+              return S
+                  .of(context)
+                  .requireSomeText;
+            }
+            return null;
+          },
+    );
+  }
+
+  Widget number({
+    required label,
+    required controller,
+    String? hint,
+    String? Function(String?)? validator,
+    void Function(String?)? onChanged,
+    void Function()? onTap,
+    void Function()? onEditingComplete,
+    formatters,
+    style,
+  }) {
+    return TextFormField(
+      decoration: InputDecoration(
+        labelText: label,
+        hintText: hint,
+        labelStyle: style ??
+            Theme
+                .of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(
+              color: Theme
+                  .of(context)
+                  .colorScheme
+                  .onBackground,
+              fontWeight: FontWeight.w500,
+            ),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: AppStyles.textFieldHorizontalPadding,
+          vertical: AppStyles.textFieldVerticalPadding,
+        ),
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(16)),
+        ),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: AppColors.tertiary,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
+        ),
+        enabledBorder: const OutlineInputBorder(
+          borderSide: BorderSide(
+            color: AppColors.textFieldsColor,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
+        ),
+      ),
+      style: style ??
+          Theme
+              .of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(
+            color: Theme
+                .of(context)
+                .colorScheme
+                .onBackground,
+            fontWeight: FontWeight.w500,
+          ),
+      controller: controller,
+      keyboardType: TextInputType.number,
+      validator: validator ??
+              (value) {
+            if (value == null || value.isEmpty) {
+              return S
+                  .of(context)
+                  .requireSomeText;
+            }
+            return null;
+          },
+      onChanged: onChanged,
+      inputFormatters: formatters ??
+          [
+            FilteringTextInputFormatter.digitsOnly,
+          ],
+      onTap: onTap,
+      onEditingComplete: onEditingComplete,
+    );
+  }
+
+  Widget numberInline({
+    required label,
+    required controller,
+    String? hint,
+    String? Function(String?)? validator,
+    style,
+  }) {
+    return TextFormField(
+      decoration: InputDecoration(
+          labelText: label,
+          hintText: hint,
+          labelStyle: style ??
+              Theme
+                  .of(context)
+                  .textTheme
+                  .bodyLarge
+                  ?.copyWith(
+                color: Theme
+                    .of(context)
+                    .colorScheme
+                    .onBackground,
+                fontWeight: FontWeight.w500,
+              ),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: AppStyles.textFieldHorizontalPadding,
+            vertical: AppStyles.textFieldVerticalPadding,
+          ),
+          border: const UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColors.textFieldsColor,
+            ),
+          )),
+      controller: controller,
+      keyboardType: TextInputType.number,
+      // check if not validator then return default validator
+      validator: validator ??
+              (value) {
+            if (value == null || value.isEmpty) {
+              return S
+                  .of(context)
+                  .requireSomeText;
+            }
+            return null;
+          },
+      inputFormatters: [
+        FilteringTextInputFormatter.digitsOnly,
+      ],
+    );
+  }
+
 }
